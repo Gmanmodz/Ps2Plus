@@ -3,8 +3,8 @@
 [d edition pro ]
 [d chip 16F18876 ]
 [d frameptr 6 ]
-"15 /home/matthew/Projects/Ps2Plus/firmware/Controller.c
-[e E12122 . `uc
+"15 C:\Users\Gunnar\Desktop\Ps2Plus\firmware\Controller.c
+[e E11980 . `uc
 DLeft 0
 DDown 1
 DRight 2
@@ -15,7 +15,7 @@ L3 6
 Select 7
 ]
 "24
-[e E12132 . `uc
+[e E11990 . `uc
 Square 0
 X 1
 Circle 2
@@ -25,8 +25,8 @@ L1 5
 R2 6
 L2 7
 ]
-"50 /home/matthew/Projects/Ps2Plus/firmware/PicConfig.c
-[e E12122 . `uc
+"56 C:\Users\Gunnar\Desktop\Ps2Plus\firmware\PicConfig.c
+[e E11980 . `uc
 SPI_MASTER_OSC_DIV4 32
 SPI_MASTER_OSC_DIV16 33
 SPI_MASTER_OSC_DIV64 34
@@ -34,20 +34,20 @@ SPI_MASTER_TMR2 35
 SPI_SLAVE_SS_EN 36
 SPI_SLAVE_SS_DIS 37
 ]
-[e E12130 . `uc
+[e E11988 . `uc
 SPI_DATA_SAMPLE_MIDDLE 0
 SPI_DATA_SAMPLE_END 128
 ]
-[e E12134 . `uc
+[e E11992 . `uc
 SPI_CLOCK_IDLE_HIGH 16
 SPI_CLOCK_IDLE_LOW 0
 ]
-[e E12138 . `uc
+[e E11996 . `uc
 SPI_IDLE_2_ACTIVE 0
 SPI_ACTIVE_2_IDLE 64
 ]
-"10 /home/matthew/Projects/Ps2Plus/firmware/Spi.c
-[e E12122 . `uc
+"11 C:\Users\Gunnar\Desktop\Ps2Plus\firmware\Spi.c
+[e E11980 . `uc
 SPI_MASTER_OSC_DIV4 32
 SPI_MASTER_OSC_DIV16 33
 SPI_MASTER_OSC_DIV64 34
@@ -55,65 +55,65 @@ SPI_MASTER_TMR2 35
 SPI_SLAVE_SS_EN 36
 SPI_SLAVE_SS_DIS 37
 ]
-[e E12130 . `uc
+[e E11988 . `uc
 SPI_DATA_SAMPLE_MIDDLE 0
 SPI_DATA_SAMPLE_END 128
 ]
-[e E12134 . `uc
+[e E11992 . `uc
 SPI_CLOCK_IDLE_HIGH 16
 SPI_CLOCK_IDLE_LOW 0
 ]
-[e E12138 . `uc
+[e E11996 . `uc
 SPI_IDLE_2_ACTIVE 0
 SPI_ACTIVE_2_IDLE 64
 ]
-"5 /opt/microchip/xc8/v2.05/pic/sources/c99/common/awdiv.c
+"5 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
 [v ___awdiv __awdiv `(i  1 e 2 0 ]
-"10 /opt/microchip/xc8/v2.05/pic/sources/c99/common/sprcadd.c
+"10 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
-"15 /opt/microchip/xc8/v2.05/pic/sources/c99/common/Umul16.c
+"15 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul16.c
 [v ___wmul __wmul `(ui  1 e 2 0 ]
-"4 /opt/microchip/xc8/v2.05/pic/sources/c99/common/Umul8_16.c
+"4 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul8_16.c
 [v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
-"6 /opt/microchip/xc8/v2.05/pic/sources/c99/pic/__eeprom.c
+"6 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\pic\__eeprom.c
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"12 /home/matthew/Projects/Ps2Plus/firmware/Controller.c
+"12 C:\Users\Gunnar\Desktop\Ps2Plus\firmware\Controller.c
 [v _readController readController `(v  1 e 1 0 ]
-"98
+"93
 [v _Map Map `(uc  1 s 1 Map ]
-"103
+"98
 [v _lutInit lutInit `(v  1 e 1 0 ]
-"165
+"156
 [v _readADC readADC `(ui  1 e 2 0 ]
-"176
+"167
 [v _reversebyte reversebyte `(uc  1 e 1 0 ]
-"184
+"175
 [v _readControllerAnalog readControllerAnalog `(v  1 e 1 0 ]
-"195
+"186
 [v _configureController configureController `(v  1 e 1 0 ]
-"24 /home/matthew/Projects/Ps2Plus/firmware/main.c
+"27 C:\Users\Gunnar\Desktop\Ps2Plus\firmware\main.c
 [v _pollController pollController `(v  1 e 1 0 ]
-"57
+"58
 [v _PS2Command PS2Command `II(v  1 e 1 0 ]
-"384
+"418
 [v _main main `(v  1 e 1 0 ]
-"3 /home/matthew/Projects/Ps2Plus/firmware/Nvm.c
+"9 C:\Users\Gunnar\Desktop\Ps2Plus\firmware\Nvm.c
 [v _eepromWrite eepromWrite `(v  1 e 1 0 ]
-"29
+"33
 [v _eepromRead eepromRead `(uc  1 e 1 0 ]
-"46
+"48
 [v _nvmUnlock nvmUnlock `(v  1 e 1 0 ]
-"3 /home/matthew/Projects/Ps2Plus/firmware/PicConfig.c
+"9 C:\Users\Gunnar\Desktop\Ps2Plus\firmware\PicConfig.c
 [v _ppsUnlock ppsUnlock `(v  1 e 1 0 ]
-"9
-[v _ppsLock ppsLock `(v  1 e 1 0 ]
 "15
+[v _ppsLock ppsLock `(v  1 e 1 0 ]
+"21
 [v _adcInit adcInit `(v  1 e 1 0 ]
-"26
+"32
 [v _picInit picInit `(v  1 e 1 0 ]
-"10 /home/matthew/Projects/Ps2Plus/firmware/Spi.c
+"10 C:\Users\Gunnar\Desktop\Ps2Plus\firmware\Spi.c
 [v _spiInit spiInit `(v  1 e 1 0 ]
 "27
 [v _spiReceiveWait spiReceiveWait `(v  1 e 1 0 ]
@@ -121,55 +121,17 @@ SPI_ACTIVE_2_IDLE 64
 [v _spiWrite spiWrite `(v  1 e 1 0 ]
 "37
 [v _spiRead spiRead `(uc  1 e 1 0 ]
-"86 /home/matthew/Projects/Ps2Plus/firmware/Controller.h
-[v _digitalStateFirst digitalStateFirst `uc  1 e 1 0 ]
-"87
-[v _digitalStateSecond digitalStateSecond `uc  1 e 1 0 ]
-"89
-[v _analogStateFirst analogStateFirst `[8]uc  1 e 8 0 ]
-"90
-[v _analogStateSecond analogStateSecond `[8]uc  1 e 8 0 ]
-"93
-[v _rxData rxData `uc  1 e 1 0 ]
-"94
-[v _ryData ryData `uc  1 e 1 0 ]
-"95
-[v _lxData lxData `uc  1 e 1 0 ]
-"96
-[v _lyData lyData `uc  1 e 1 0 ]
-"98
-[v _lutLX lutLX `[256]uc  1 e 256 @9968 ]
-"99
-[v _lutLY lutLY `[256]uc  1 e 256 @9712 ]
-"100
-[v _lutRX lutRX `[256]uc  1 e 256 @9456 ]
-"101
-[v _lutRY lutRY `[256]uc  1 e 256 @9200 ]
-"106
-[v _DigitalControllerByte1 DigitalControllerByte1 `[8]uc  1 e 8 0 ]
-"107
-[v _DigitalControllerByte2 DigitalControllerByte2 `[8]uc  1 e 8 0 ]
-"108
-[v _PreviousDigitalByte1 PreviousDigitalByte1 `[8]uc  1 e 8 0 ]
-"109
-[v _PreviousDigitalByte2 PreviousDigitalByte2 `[8]uc  1 e 8 0 ]
-"111
-[v _IndexDigitalByte1 IndexDigitalByte1 `[8]uc  1 e 8 0 ]
-"112
-[v _IndexDigitalByte2 IndexDigitalByte2 `[8]uc  1 e 8 0 ]
-"114
-[v _index index `uc  1 e 1 0 ]
 [s S212 . 1 `uc 1 INTEDG 1 0 :1:0 
 `uc 1 . 1 0 :5:1 
 `uc 1 PEIE 1 0 :1:6 
 `uc 1 GIE 1 0 :1:7 
 ]
-"364 /opt/microchip/xc8/v2.05/pic/include/pic16f18876.h
+"364 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18876.h
 [u S217 . 1 `S212 1 . 1 0 ]
 [v _INTCONbits INTCONbits `VES217  1 e 1 @11 ]
 "670
 [v _TRISA TRISA `VEuc  1 e 1 @17 ]
-[s S401 . 1 `uc 1 TRISA0 1 0 :1:0 
+[s S398 . 1 `uc 1 TRISA0 1 0 :1:0 
 `uc 1 TRISA1 1 0 :1:1 
 `uc 1 TRISA2 1 0 :1:2 
 `uc 1 TRISA3 1 0 :1:3 
@@ -179,13 +141,13 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 TRISA7 1 0 :1:7 
 ]
 "687
-[u S410 . 1 `S401 1 . 1 0 ]
-[v _TRISAbits TRISAbits `VES410  1 e 1 @17 ]
+[u S407 . 1 `S398 1 . 1 0 ]
+[v _TRISAbits TRISAbits `VES407  1 e 1 @17 ]
 "732
 [v _TRISB TRISB `VEuc  1 e 1 @18 ]
 "794
 [v _TRISC TRISC `VEuc  1 e 1 @19 ]
-[s S380 . 1 `uc 1 TRISC0 1 0 :1:0 
+[s S377 . 1 `uc 1 TRISC0 1 0 :1:0 
 `uc 1 TRISC1 1 0 :1:1 
 `uc 1 TRISC2 1 0 :1:2 
 `uc 1 TRISC3 1 0 :1:3 
@@ -195,8 +157,8 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 TRISC7 1 0 :1:7 
 ]
 "811
-[u S389 . 1 `S380 1 . 1 0 ]
-[v _TRISCbits TRISCbits `VES389  1 e 1 @19 ]
+[u S386 . 1 `S377 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES386  1 e 1 @19 ]
 "856
 [v _TRISD TRISD `VEuc  1 e 1 @20 ]
 "918
@@ -252,7 +214,7 @@ SPI_ACTIVE_2_IDLE 64
 [v _SSP1BUF SSP1BUF `VEuc  1 e 1 @396 ]
 "4825
 [v _SSP1STAT SSP1STAT `VEuc  1 e 1 @399 ]
-[s S473 . 1 `uc 1 BF 1 0 :1:0 
+[s S470 . 1 `uc 1 BF 1 0 :1:0 
 `uc 1 UA 1 0 :1:1 
 `uc 1 R_nW 1 0 :1:2 
 `uc 1 S 1 0 :1:3 
@@ -262,33 +224,33 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 SMP 1 0 :1:7 
 ]
 "4934
-[s S482 . 1 `uc 1 . 1 0 :2:0 
+[s S479 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R_W 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D_A 1 0 :1:5 
 ]
-[s S487 . 1 `uc 1 . 1 0 :2:0 
+[s S484 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nW 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nA 1 0 :1:5 
 ]
-[s S492 . 1 `uc 1 . 1 0 :2:0 
+[s S489 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nWRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nADDRESS 1 0 :1:5 
 ]
-[s S497 . 1 `uc 1 . 1 0 :2:0 
+[s S494 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 READ_WRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 DATA_ADDRESS 1 0 :1:5 
 ]
-[s S502 . 1 `uc 1 . 1 0 :2:0 
+[s S499 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 I2C_READ 1 0 :1:2 
 `uc 1 I2C_START 1 0 :1:3 
 `uc 1 I2C_STOP 1 0 :1:4 
 `uc 1 I2C_DAT 1 0 :1:5 
 ]
-[s S508 . 1 `uc 1 BF1 1 0 :1:0 
+[s S505 . 1 `uc 1 BF1 1 0 :1:0 
 `uc 1 UA1 1 0 :1:1 
 `uc 1 R 1 0 :1:2 
 `uc 1 START 1 0 :1:3 
@@ -297,51 +259,51 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 CKE1 1 0 :1:6 
 `uc 1 SMP1 1 0 :1:7 
 ]
-[s S517 . 1 `uc 1 . 1 0 :2:0 
+[s S514 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 RW 1 0 :1:2 
 `uc 1 START1 1 0 :1:3 
 `uc 1 STOP1 1 0 :1:4 
 `uc 1 DA 1 0 :1:5 
 ]
-[s S523 . 1 `uc 1 . 1 0 :2:0 
+[s S520 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 RW1 1 0 :1:2 
 `uc 1 I2C_START1 1 0 :1:3 
 `uc 1 I2C_STOP2 1 0 :1:4 
 `uc 1 DA1 1 0 :1:5 
 ]
-[s S529 . 1 `uc 1 . 1 0 :2:0 
+[s S526 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 I2C_READ1 1 0 :1:2 
 `uc 1 S2 1 0 :1:3 
 `uc 1 P2 1 0 :1:4 
 `uc 1 DATA_ADDRESS1 1 0 :1:5 
 ]
-[s S535 . 1 `uc 1 . 1 0 :2:0 
+[s S532 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 READ_WRITE1 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D_A1 1 0 :1:5 
 ]
-[s S540 . 1 `uc 1 . 1 0 :2:0 
+[s S537 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R_W1 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D_nA1 1 0 :1:5 
 ]
-[s S545 . 1 `uc 1 . 1 0 :2:0 
+[s S542 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R_nW1 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 I2C_DAT1 1 0 :1:5 
 ]
-[s S550 . 1 `uc 1 . 1 0 :2:0 
+[s S547 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nW2 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nA2 1 0 :1:5 
 ]
-[s S555 . 1 `uc 1 . 1 0 :2:0 
+[s S552 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nWRITE1 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nADDRESS1 1 0 :1:5 
 ]
-[u S560 . 1 `S473 1 . 1 0 `S482 1 . 1 0 `S487 1 . 1 0 `S492 1 . 1 0 `S497 1 . 1 0 `S502 1 . 1 0 `S508 1 . 1 0 `S517 1 . 1 0 `S523 1 . 1 0 `S529 1 . 1 0 `S535 1 . 1 0 `S540 1 . 1 0 `S545 1 . 1 0 `S550 1 . 1 0 `S555 1 . 1 0 ]
-[v _SSP1STATbits SSP1STATbits `VES560  1 e 1 @399 ]
+[u S557 . 1 `S470 1 . 1 0 `S479 1 . 1 0 `S484 1 . 1 0 `S489 1 . 1 0 `S494 1 . 1 0 `S499 1 . 1 0 `S505 1 . 1 0 `S514 1 . 1 0 `S520 1 . 1 0 `S526 1 . 1 0 `S532 1 . 1 0 `S537 1 . 1 0 `S542 1 . 1 0 `S547 1 . 1 0 `S552 1 . 1 0 ]
+[v _SSP1STATbits SSP1STATbits `VES557  1 e 1 @399 ]
 "5189
 [v _SSP1CON1 SSP1CON1 `VEuc  1 e 1 @400 ]
 "23257
@@ -350,7 +312,7 @@ SPI_ACTIVE_2_IDLE 64
 [v _NVMADRH NVMADRH `VEuc  1 e 1 @2075 ]
 "23375
 [v _NVMDATL NVMDATL `VEuc  1 e 1 @2076 ]
-[s S691 . 1 `uc 1 RD 1 0 :1:0 
+[s S688 . 1 `uc 1 RD 1 0 :1:0 
 `uc 1 WR 1 0 :1:1 
 `uc 1 WREN 1 0 :1:2 
 `uc 1 WRERR 1 0 :1:3 
@@ -359,8 +321,8 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 NVMREGS 1 0 :1:6 
 ]
 "23503
-[u S699 . 1 `S691 1 . 1 0 ]
-[v _NVMCON1bits NVMCON1bits `VES699  1 e 1 @2078 ]
+[u S696 . 1 `S688 1 . 1 0 ]
+[v _NVMCON1bits NVMCON1bits `VES696  1 e 1 @2078 ]
 "23543
 [v _NVMCON2 NVMCON2 `VEuc  1 e 1 @2079 ]
 "29866
@@ -430,7 +392,45 @@ SPI_ACTIVE_2_IDLE 64
 [v _SSP1IE SSP1IE `VEb  1 e 0 @14536 ]
 "43240
 [v _SSP1IF SSP1IF `VEb  1 e 0 @14456 ]
-"16 /home/matthew/Projects/Ps2Plus/firmware/main.c
+"78 C:\Users\Gunnar\Desktop\Ps2Plus\firmware\Controller.h
+[v _digitalStateFirst digitalStateFirst `uc  1 e 1 0 ]
+"79
+[v _digitalStateSecond digitalStateSecond `uc  1 e 1 0 ]
+"81
+[v _analogStateFirst analogStateFirst `[8]uc  1 e 8 0 ]
+"82
+[v _analogStateSecond analogStateSecond `[8]uc  1 e 8 0 ]
+"85
+[v _rxData rxData `uc  1 e 1 0 ]
+"86
+[v _ryData ryData `uc  1 e 1 0 ]
+"87
+[v _lxData lxData `uc  1 e 1 0 ]
+"88
+[v _lyData lyData `uc  1 e 1 0 ]
+"90
+[v _lutLX lutLX `[256]uc  1 e 256 @9968 ]
+"91
+[v _lutLY lutLY `[256]uc  1 e 256 @9712 ]
+"92
+[v _lutRX lutRX `[256]uc  1 e 256 @9456 ]
+"93
+[v _lutRY lutRY `[256]uc  1 e 256 @9200 ]
+"97
+[v _DigitalControllerByte1 DigitalControllerByte1 `[8]uc  1 e 8 0 ]
+"98
+[v _DigitalControllerByte2 DigitalControllerByte2 `[8]uc  1 e 8 0 ]
+"99
+[v _PreviousDigitalByte1 PreviousDigitalByte1 `[8]uc  1 e 8 0 ]
+"100
+[v _PreviousDigitalByte2 PreviousDigitalByte2 `[8]uc  1 e 8 0 ]
+"102
+[v _IndexDigitalByte1 IndexDigitalByte1 `[8]uc  1 e 8 0 ]
+"103
+[v _IndexDigitalByte2 IndexDigitalByte2 `[8]uc  1 e 8 0 ]
+"105
+[v _index index `uc  1 e 1 0 ]
+"16 C:\Users\Gunnar\Desktop\Ps2Plus\firmware\main.c
 [v _response response `[20]uc  1 e 20 0 ]
 "17
 [v _responseLength responseLength `uc  1 e 1 0 ]
@@ -442,103 +442,109 @@ SPI_ACTIVE_2_IDLE 64
 [v _escapeMode escapeMode `uc  1 e 1 0 ]
 "21
 [v _previousCmd previousCmd `uc  1 e 1 0 ]
-"384
+"23
+[v _INIT_PRESSURE_SENSOR_byte3 INIT_PRESSURE_SENSOR_byte3 `uc  1 e 1 0 ]
+"24
+[v _INIT_PRESSURE_SENSOR_byte4 INIT_PRESSURE_SENSOR_byte4 `uc  1 e 1 0 ]
+"25
+[v _analogMode_pressure analogMode_pressure `uc  1 e 1 0 ]
+"418
 [v _main main `(v  1 e 1 0 ]
 {
-"392
-[v main@slaveSelect slaveSelect `uc  1 a 1 47 ]
-"394
-[v main@count count `uc  1 a 1 46 ]
-"393
-[v main@slaveSelectStatePrev slaveSelectStatePrev `uc  1 a 1 45 ]
-"437
+"426
+[v main@slaveSelect slaveSelect `uc  1 a 1 45 ]
+"428
+[v main@count count `uc  1 a 1 44 ]
+"427
+[v main@slaveSelectStatePrev slaveSelectStatePrev `uc  1 a 1 43 ]
+"468
 } 0
-"184 /home/matthew/Projects/Ps2Plus/firmware/Controller.c
+"175 C:\Users\Gunnar\Desktop\Ps2Plus\firmware\Controller.c
 [v _readControllerAnalog readControllerAnalog `(v  1 e 1 0 ]
 {
-"193
+"184
 } 0
-"176
+"167
 [v _reversebyte reversebyte `(uc  1 e 1 0 ]
 {
 [v reversebyte@byte byte `uc  1 a 1 wreg ]
 [v reversebyte@byte byte `uc  1 a 1 wreg ]
-[v reversebyte@byte byte `uc  1 a 1 3 ]
-"182
+[v reversebyte@byte byte `uc  1 a 1 4 ]
+"173
 } 0
-"26 /home/matthew/Projects/Ps2Plus/firmware/PicConfig.c
+"32 C:\Users\Gunnar\Desktop\Ps2Plus\firmware\PicConfig.c
 [v _picInit picInit `(v  1 e 1 0 ]
 {
-"65
+"71
 } 0
-"10 /home/matthew/Projects/Ps2Plus/firmware/Spi.c
+"10 C:\Users\Gunnar\Desktop\Ps2Plus\firmware\Spi.c
 [v _spiInit spiInit `(v  1 e 1 0 ]
 {
-[v spiInit@sType sType `E12122  1 a 1 wreg ]
-[v spiInit@sType sType `E12122  1 a 1 wreg ]
-[v spiInit@sDataSample sDataSample `E12130  1 p 1 0 ]
-[v spiInit@sClockIdle sClockIdle `E12134  1 p 1 1 ]
-[v spiInit@sTransmitEdge sTransmitEdge `E12138  1 p 1 2 ]
+[v spiInit@sType sType `E11980  1 a 1 wreg ]
+[v spiInit@sType sType `E11980  1 a 1 wreg ]
+[v spiInit@sDataSample sDataSample `E11988  1 p 1 0 ]
+[v spiInit@sClockIdle sClockIdle `E11992  1 p 1 1 ]
+[v spiInit@sTransmitEdge sTransmitEdge `E11996  1 p 1 2 ]
 "13
-[v spiInit@sType sType `E12122  1 a 1 3 ]
+[v spiInit@sType sType `E11980  1 a 1 4 ]
 "25
 } 0
-"3 /home/matthew/Projects/Ps2Plus/firmware/PicConfig.c
+"9 C:\Users\Gunnar\Desktop\Ps2Plus\firmware\PicConfig.c
 [v _ppsUnlock ppsUnlock `(v  1 e 1 0 ]
-{
-"7
-} 0
-"9
-[v _ppsLock ppsLock `(v  1 e 1 0 ]
 {
 "13
 } 0
-"103 /home/matthew/Projects/Ps2Plus/firmware/Controller.c
+"15
+[v _ppsLock ppsLock `(v  1 e 1 0 ]
+{
+"19
+} 0
+"98 C:\Users\Gunnar\Desktop\Ps2Plus\firmware\Controller.c
 [v _lutInit lutInit `(v  1 e 1 0 ]
 {
-"115
-[v lutInit@position position `i  1 a 2 42 ]
-"113
-[v lutInit@ryMax ryMax `uc  1 a 1 41 ]
-"112
-[v lutInit@ryMin ryMin `uc  1 a 1 40 ]
-"111
-[v lutInit@rxMax rxMax `uc  1 a 1 39 ]
 "110
-[v lutInit@rxMin rxMin `uc  1 a 1 38 ]
+[v lutInit@position position `i  1 a 2 40 ]
 "108
-[v lutInit@lyMax lyMax `uc  1 a 1 37 ]
+[v lutInit@ryMax ryMax `uc  1 a 1 39 ]
 "107
-[v lutInit@lyMin lyMin `uc  1 a 1 36 ]
+[v lutInit@ryMin ryMin `uc  1 a 1 38 ]
 "106
-[v lutInit@lxMax lxMax `uc  1 a 1 35 ]
+[v lutInit@rxMax rxMax `uc  1 a 1 37 ]
 "105
-[v lutInit@lxMin lxMin `uc  1 a 1 34 ]
-"163
+[v lutInit@rxMin rxMin `uc  1 a 1 36 ]
+"103
+[v lutInit@lyMax lyMax `uc  1 a 1 35 ]
+"102
+[v lutInit@lyMin lyMin `uc  1 a 1 34 ]
+"101
+[v lutInit@lxMax lxMax `uc  1 a 1 33 ]
+"100
+[v lutInit@lxMin lxMin `uc  1 a 1 32 ]
+"154
 } 0
-"29 /home/matthew/Projects/Ps2Plus/firmware/Nvm.c
+"33 C:\Users\Gunnar\Desktop\Ps2Plus\firmware\Nvm.c
 [v _eepromRead eepromRead `(uc  1 e 1 0 ]
 {
 [v eepromRead@address address `uc  1 a 1 wreg ]
-"31
-[v eepromRead@data data `uc  1 a 1 2 ]
-"29
-[v eepromRead@address address `uc  1 a 1 wreg ]
+"35
+[v eepromRead@data data `uc  1 a 1 1 ]
 "33
-[v eepromRead@address address `uc  1 a 1 1 ]
-"42
+[v eepromRead@address address `uc  1 a 1 wreg ]
+"37
+[v eepromRead@address address `uc  1 a 1 0 ]
+"46
 } 0
-"98 /home/matthew/Projects/Ps2Plus/firmware/Controller.c
+"93 C:\Users\Gunnar\Desktop\Ps2Plus\firmware\Controller.c
 [v _Map Map `(uc  1 s 1 Map ]
 {
-[v Map@x x `i  1 p 2 15 ]
-[v Map@inMin inMin `i  1 p 2 17 ]
-[v Map@inMax inMax `i  1 p 2 19 ]
-[v Map@outMin outMin `i  1 p 2 21 ]
-[v Map@outMax outMax `i  1 p 2 23 ]
-"101
+[v Map@x x `i  1 p 2 13 ]
+[v Map@inMin inMin `i  1 p 2 15 ]
+[v Map@inMax inMax `i  1 p 2 17 ]
+[v Map@outMin outMin `i  1 p 2 19 ]
+[v Map@outMax outMax `i  1 p 2 21 ]
+"96
 } 0
-"15 /opt/microchip/xc8/v2.05/pic/sources/c99/common/Umul16.c
+"15 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul16.c
 [v ___wmul __wmul `(ui  1 e 2 0 ]
 {
 "17
@@ -548,47 +554,47 @@ SPI_ACTIVE_2_IDLE 64
 [v ___wmul@multiplicand multiplicand `ui  1 p 2 2 ]
 "53
 } 0
-"5 /opt/microchip/xc8/v2.05/pic/sources/c99/common/awdiv.c
+"5 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
 [v ___awdiv __awdiv `(i  1 e 2 0 ]
 {
 "10
-[v ___awdiv@quotient quotient `i  1 a 2 13 ]
+[v ___awdiv@quotient quotient `i  1 a 2 11 ]
 "11
-[v ___awdiv@sign sign `uc  1 a 1 12 ]
-[v ___awdiv@counter counter `uc  1 a 1 11 ]
+[v ___awdiv@sign sign `uc  1 a 1 10 ]
+[v ___awdiv@counter counter `uc  1 a 1 9 ]
 "5
-[v ___awdiv@divisor divisor `i  1 p 2 6 ]
-[v ___awdiv@dividend dividend `i  1 p 2 8 ]
+[v ___awdiv@divisor divisor `i  1 p 2 4 ]
+[v ___awdiv@dividend dividend `i  1 p 2 6 ]
 "41
 } 0
-"195 /home/matthew/Projects/Ps2Plus/firmware/Controller.c
+"186 C:\Users\Gunnar\Desktop\Ps2Plus\firmware\Controller.c
 [v _configureController configureController `(v  1 e 1 0 ]
 {
-"215
-[v configureController@ry ry `uc  1 a 1 21 ]
-"214
-[v configureController@rx rx `uc  1 a 1 20 ]
-"213
-[v configureController@ly ly `uc  1 a 1 19 ]
-"212
-[v configureController@lx lx `uc  1 a 1 18 ]
-"209
-[v configureController@ryMax ryMax `uc  1 a 1 17 ]
-"208
-[v configureController@ryMin ryMin `uc  1 a 1 16 ]
-"207
-[v configureController@rxMax rxMax `uc  1 a 1 15 ]
 "206
-[v configureController@rxMin rxMin `uc  1 a 1 14 ]
+[v configureController@ry ry `uc  1 a 1 19 ]
+"205
+[v configureController@rx rx `uc  1 a 1 18 ]
 "204
-[v configureController@lyMax lyMax `uc  1 a 1 13 ]
+[v configureController@ly ly `uc  1 a 1 17 ]
 "203
-[v configureController@lyMin lyMin `uc  1 a 1 12 ]
-"202
-[v configureController@lxMax lxMax `uc  1 a 1 11 ]
-"201
-[v configureController@lxMin lxMin `uc  1 a 1 10 ]
-"305
+[v configureController@lx lx `uc  1 a 1 16 ]
+"200
+[v configureController@ryMax ryMax `uc  1 a 1 15 ]
+"199
+[v configureController@ryMin ryMin `uc  1 a 1 14 ]
+"198
+[v configureController@rxMax rxMax `uc  1 a 1 13 ]
+"197
+[v configureController@rxMin rxMin `uc  1 a 1 12 ]
+"195
+[v configureController@lyMax lyMax `uc  1 a 1 11 ]
+"194
+[v configureController@lyMin lyMin `uc  1 a 1 10 ]
+"193
+[v configureController@lxMax lxMax `uc  1 a 1 9 ]
+"192
+[v configureController@lxMin lxMin `uc  1 a 1 8 ]
+"296
 } 0
 "12
 [v _readController readController `(v  1 e 1 0 ]
@@ -596,46 +602,46 @@ SPI_ACTIVE_2_IDLE 64
 [v readController@analogMode analogMode `uc  1 a 1 wreg ]
 [v readController@analogMode analogMode `uc  1 a 1 wreg ]
 "15
-[v readController@analogMode analogMode `uc  1 a 1 2 ]
-"96
+[v readController@analogMode analogMode `uc  1 a 1 0 ]
+"91
 } 0
-"165
+"156
 [v _readADC readADC `(ui  1 e 2 0 ]
 {
-[v readADC@channel channel `i  1 p 2 0 ]
-"174
+[v readADC@channel channel `i  1 p 2 4 ]
+"165
 } 0
-"3 /home/matthew/Projects/Ps2Plus/firmware/Nvm.c
+"9 C:\Users\Gunnar\Desktop\Ps2Plus\firmware\Nvm.c
 [v _eepromWrite eepromWrite `(v  1 e 1 0 ]
 {
 [v eepromWrite@address address `uc  1 a 1 wreg ]
-"6
-[v eepromWrite@interruptStatus interruptStatus `uc  1 a 1 2 ]
-"3
+"12
+[v eepromWrite@interruptStatus interruptStatus `uc  1 a 1 1 ]
+"9
 [v eepromWrite@address address `uc  1 a 1 wreg ]
-[v eepromWrite@data data `uc  1 p 1 0 ]
-"6
-[v eepromWrite@address address `uc  1 a 1 1 ]
-"25
+[v eepromWrite@data data `uc  1 p 1 4 ]
+"12
+[v eepromWrite@address address `uc  1 a 1 0 ]
+"31
 } 0
-"46
+"48
 [v _nvmUnlock nvmUnlock `(v  1 e 1 0 ]
 {
-"53
+"54
 } 0
-"15 /home/matthew/Projects/Ps2Plus/firmware/PicConfig.c
+"21 C:\Users\Gunnar\Desktop\Ps2Plus\firmware\PicConfig.c
 [v _adcInit adcInit `(v  1 e 1 0 ]
 {
-"22
+"28
 } 0
-"57 /home/matthew/Projects/Ps2Plus/firmware/main.c
+"58 C:\Users\Gunnar\Desktop\Ps2Plus\firmware\main.c
 [v _PS2Command PS2Command `II(v  1 e 1 0 ]
 {
-"61
-[v PS2Command@cmd cmd `uc  1 a 1 4 ]
-"380
+"62
+[v PS2Command@cmd cmd `uc  1 a 1 3 ]
+"415
 } 0
-"32 /home/matthew/Projects/Ps2Plus/firmware/Spi.c
+"32 C:\Users\Gunnar\Desktop\Ps2Plus\firmware\Spi.c
 [v _spiWrite spiWrite `(v  1 e 1 0 ]
 {
 [v spiWrite@dat dat `uc  1 a 1 wreg ]
@@ -654,12 +660,12 @@ SPI_ACTIVE_2_IDLE 64
 {
 "30
 } 0
-"24 /home/matthew/Projects/Ps2Plus/firmware/main.c
+"27 C:\Users\Gunnar\Desktop\Ps2Plus\firmware\main.c
 [v _pollController pollController `(v  1 e 1 0 ]
 {
 [v pollController@response response `*.4uc  1 a 1 wreg ]
 [v pollController@response response `*.4uc  1 a 1 wreg ]
-"26
+"29
 [v pollController@response response `*.4uc  1 a 1 1 ]
-"55
+"56
 } 0

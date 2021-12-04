@@ -1,2 +1,1 @@
-dist/default/production/__eeprom.p1: \
-  /opt/microchip/xc8/v2.05/pic/sources/c99/pic/__eeprom.c
+ dist/default/production/__eeprom.d  dist/default/production/__eeprom.p1:  C:/Program\ Files\ (x86)/Microchip/xc8/v2.10/pic/sources/c90/pic/__eeprom.c

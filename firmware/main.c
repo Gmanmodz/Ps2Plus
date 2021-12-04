@@ -16,25 +16,24 @@
 char response[20] = {ANALOG_MODE, END_HEADER};
 char responseLength = 9;
 char cmdCounter = 0;
-char analogMode = 1; //0 for digital mode
+char analogMode = 0; //0 for digital mode
 char escapeMode = 0;
 char previousCmd;
 
+char INIT_PRESSURE_SENSOR_byte3 = 0;    //stores data from 0x40 command
+char INIT_PRESSURE_SENSOR_byte4 = 0;    //stores data from 0x40 command
+char analogMode_pressure = 0;           //a new mode for 0x79
 
 void pollController(char response[20]) {
 
-    responseLength = 5;
-
     response[2] = digitalStateFirst;
     response[3] = digitalStateSecond;
-
     response[4] = rxData;
     response[5] = ryData;
     response[6] = lxData;
-    response[7] = lyData;
-
-    if (analogMode) {
-
+    response[7] = lyData;   
+        
+    if(analogMode_pressure) {
         responseLength = 20;
 
         response[8] = analogStateFirst[2];
@@ -50,7 +49,9 @@ void pollController(char response[20]) {
         response[18] = analogStateSecond[7];
         response[19] = analogStateSecond[6];
     }
-
+    else {
+        responseLength = 5;
+    }
 
 }
 
@@ -66,6 +67,12 @@ void __interrupt() PS2Command() {
 
                 switch (previousCmd) {
                     
+                    case INIT_PRESSURE_SENSOR:
+                        
+                        INIT_PRESSURE_SENSOR_byte3 = cmd;
+                        analogMode_pressure = 1;        //if we get here, let's go into 0x79 mode
+                        
+                        break;
                     case MAIN_POLLING:
                        
                         if(cmd == 0x80)
@@ -87,16 +94,35 @@ void __interrupt() PS2Command() {
                         if (cmd == 0x80)
                             analogMode = 1;
                         else
-                            analogMode = 0;
+                            analogMode = 0; analogMode_pressure = 0;
                         break;
 
+                    case DEVICE_DESCRIPTOR_FIRST:
+                        if (cmd == 0x80) { //command 0x01
+                            response[2] = 0x00;
+                            response[3] = 0x00;
+                            response[4] = 0x80; //0x01 reversed
+                            response[5] = 0x80; //0x01 reversed
+                            response[6] = 0x80; //0x01 reversed
+                            response[7] = 0x28; //0x14 reversed
+                        } else {
+                            response[2] = 0x00;
+                            response[3] = 0x00;
+                            response[4] = 0x80; //0x01 reversed
+                            response[5] = 0x40; //0x02 reversed
+                            response[6] = 0x00;
+                            response[7] = 0x50; //0x0A reversed
+                        }                           
+                        
+                        break;
+                        
                     case DEVICE_DESCRIPTOR_LAST:
 
                         if (cmd == 0x80) {
                             response[2] = 0x00;
                             response[3] = 0x00;
                             response[4] = 0x00;
-                            response[5] = 0x60;
+                            response[5] = 0xE0; 
                             response[6] = 0x00;
                             response[7] = 0x00;
                         } else {
@@ -110,7 +136,6 @@ void __interrupt() PS2Command() {
 
                         break;
 
-
                     case CONTROL_RESPONSE:
                         //Obtain which buttons we want to collect analog data from here
                         break;
@@ -119,12 +144,16 @@ void __interrupt() PS2Command() {
 
                 break;
 
-
-
             case 4:
 
                 switch (previousCmd) { //Large Motor
-
+                    
+                    case INIT_PRESSURE_SENSOR:
+                        
+                        INIT_PRESSURE_SENSOR_byte4 = cmd;
+                        analogMode_pressure = 1;    //if we get here, let's go into 0x79 mode
+                        
+                        break;
                     case MAIN_POLLING:
                         if (cmd != 0xFF) {
                            // LARGE_MOTOR = 1;
@@ -152,21 +181,14 @@ void __interrupt() PS2Command() {
                          * from analog information from.
                          */
 
-                        if (analogMode) {
-                            response[2] = 0xFF;
-                            response[3] = 0xFF;
-                            response[4] = 0xC0; //0x03 reversed
-                            response[5] = 0x00;
-                            response[6] = 0x00;
-                            response[7] = 0x5A;
-                        } else {
-                            response[2] = 0x00;
-                            response[3] = 0x00;
-                            response[4] = 0x00;
-                            response[5] = 0x00;
-                            response[6] = 0x00;
-                            response[7] = 0x5A;
-                        }
+                        response[2] = 0x00;
+                        response[3] = 0x00;
+                        response[4] = 0x40;
+                        response[5] = 0x00;
+                        response[6] = 0x00;
+                        response[7] = 0x5A;
+                        
+                        previousCmd = cmd;
 
                         break;
 
@@ -189,9 +211,8 @@ void __interrupt() PS2Command() {
                             response[4] = 0x00;
                             response[5] = 0x00;
                             response[6] = 0x00;
-                            response[7] = 0x5A;
+                            response[7] = 0x00;
                         }
-
 
                         break;
 
@@ -204,7 +225,6 @@ void __interrupt() PS2Command() {
                         pollController(response);
                         previousCmd = cmd;
 
-
                         break;
 
                     case ENTER_EXIT_ESCAPE:
@@ -213,8 +233,20 @@ void __interrupt() PS2Command() {
                          * except that depending on the 3rd byte tells the controller
                          * to be in escape mode or not.
                          */
-                        pollController(response);
+                        if(escapeMode) {
+                            response[2] = 0x00;
+                            response[3] = 0x00;
+                            response[4] = 0x00;
+                            response[5] = 0x00;
+                            response[6] = 0x00;
+                            response[7] = 0x00;
+                        }
+                        else {
+                            pollController(response);              
+                        }
+                        
                         previousCmd = cmd;
+                        
                         break;
 
                     case ANALOG_DIGITAL_SWITCH:
@@ -230,8 +262,8 @@ void __interrupt() PS2Command() {
                         response[6] = 0x00;
                         response[7] = 0x00;
 
-
                         previousCmd = cmd;
+                        
                         break;
 
                     case STATUS_INFO:
@@ -254,7 +286,6 @@ void __interrupt() PS2Command() {
                         response[6] = 0x80; //0x01 reversed
                         response[7] = 0x00;
 
-
                         break;
 
                     case DEVICE_DESCRIPTOR_FIRST:
@@ -269,6 +300,8 @@ void __interrupt() PS2Command() {
                         response[5] = 0x80;
                         response[6] = 0x80;
                         response[7] = 0x50; //0x0A reversed
+                        
+                        previousCmd = cmd;
 
                         break;
 
@@ -285,7 +318,6 @@ void __interrupt() PS2Command() {
                         response[5] = 0x00;
                         response[6] = 0x80; //0x01 reversed
                         response[7] = 0x00;
-
 
                         break;
 
@@ -315,8 +347,8 @@ void __interrupt() PS2Command() {
                          * a default response.
                          */
 
-                        response[2] = 0x00;
-                        response[3] = 0x01;
+                        response[2] = 0xFF;
+                        response[3] = 0xFF;
                         response[4] = 0xFF;
                         response[5] = 0xFF;
                         response[6] = 0xFF;
@@ -346,39 +378,41 @@ void __interrupt() PS2Command() {
                 break;
         }
 
-        //Output the correct controller state
-        if (escapeMode) {
-            response[0] = ESCAPE_MODE;
-        } else {
-
-            if (analogMode)
-                response[0] = ANALOG_MODE;
-            else
-                response[0] = DIGITAL_MODE;
-
-        }
-
-
         //transmit
         spiWrite(response[cmdCounter]);
+        
+        ACK = 0;
+        __delay_us(1);
+        ACK = 1;
 
         //Increment index to next command
         if (cmdCounter < responseLength) {
             cmdCounter++;
         }
-
-
-        ACK = 0;
-        __delay_us(1);
-        ACK = 1;
+        
+        //Output the correct controller state
+        if (escapeMode) {
+            response[0] = ESCAPE_MODE;
+        } 
+        else {
+            if (analogMode) {
+                if(analogMode_pressure) {
+                    response[0] = ANALOG_MODE_PRESSURE;
+                }
+                else {
+                    response[0] = ANALOG_MODE;
+                }
+            }
+            else {
+                response[0] = DIGITAL_MODE;
+            }
+        }        
      
         SSP1IF = 0;
 
     }
 
-
 }
-
 
 
 void main(void) {
@@ -426,15 +460,9 @@ void main(void) {
             previousCmd = 0x00;
         }
 
-
         readController(analogMode);
         
         readControllerAnalog();
     }
     
-
-    
 }
-
-
-

@@ -1,12 +1,7 @@
-# 1 "/opt/microchip/xc8/v2.05/pic/sources/c99/pic/compiler_support.c"
-# 1 "<built-in>" 1
-# 1 "<built-in>" 3
-# 288 "<built-in>" 3
-# 1 "<command line>" 1
-# 1 "<built-in>" 2
-# 1 "/opt/microchip/xc8/v2.05/pic/include/language_support.h" 1 3
-# 2 "<built-in>" 2
-# 1 "/opt/microchip/xc8/v2.05/pic/sources/c99/pic/compiler_support.c" 2
+
+# 1 "C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\pic\compiler_support.c"
+
+# 1
 __persistent unsigned char __BTEMP12;
 __persistent unsigned char __BTEMP13;
 __persistent unsigned char __BTEMP14;
@@ -39,3 +34,4 @@ __persistent unsigned char __BTEMP40;
 __persistent unsigned char __BTEMP41;
 __persistent unsigned char __BTEMP42;
 __persistent unsigned char __BTEMP43;
+

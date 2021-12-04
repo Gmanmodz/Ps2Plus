@@ -1,7 +1,8 @@
-build/default/production/main.p1:  \
-main.c  \
+ build/default/production/main.d  \
+ build/default/production/main.p1:  \
+ main.c  \
 Opcodes.h  \
-Spi.h  \
-PicConfig.h  \
 Controller.h  \
-Nvm.h 
+Nvm.h  \
+PicConfig.h  \
+Spi.h 
