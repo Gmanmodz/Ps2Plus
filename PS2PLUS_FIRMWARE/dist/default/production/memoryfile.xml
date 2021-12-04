@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <executable name="dist/default/production\PS2PLUS_FIRMWARE.production.hex">
+    <memory name="program">
+      <units>words</units>
+      <length>16384</length>
+      <used>2623</used>
+      <free>13761</free>
+    </memory>
+    <memory name="data">
+      <units>bytes</units>
+      <length>2048</length>
+      <used>1179</used>
+      <free>869</free>
+    </memory>
+  </executable>
+</project>
