@@ -89,14 +89,7 @@ void __interrupt() PS2Command() {
                             response[5] = 0x80; //0x01 reversed
                             response[6] = 0x80; //0x01 reversed
                             response[7] = 0x28; //0x14 reversed
-                        } else {
-                            response[2] = 0x00;
-                            response[3] = 0x00;
-                            response[4] = 0x80; //0x01 reversed
-                            response[5] = 0x40; //0x02 reversed
-                            response[6] = 0x00;
-                            response[7] = 0x50; //0x0A reversed
-                        }                                                  
+                        }                                               
                         break;
                     case DEVICE_DESCRIPTOR_LAST:
                         if (cmd == 0x80) {
@@ -104,13 +97,6 @@ void __interrupt() PS2Command() {
                             response[3] = 0x00;
                             response[4] = 0x00;
                             response[5] = 0xE0; 
-                            response[6] = 0x00;
-                            response[7] = 0x00;
-                        } else {
-                            response[2] = 0x00;
-                            response[3] = 0x00;
-                            response[4] = 0x00;
-                            response[5] = 0x20;
                             response[6] = 0x00;
                             response[7] = 0x00;
                         }
@@ -251,15 +237,14 @@ void __interrupt() PS2Command() {
                     case DEVICE_DESCRIPTOR_FIRST:
                         /*
                          * This commands deal with reading a fixed constant from
-                         * the controller. The following was obtained from a sample
-                         * playing Kingdom Hearts 2. The one I found online did not work.
+                         * the controller. 
                          */
                         response[2] = 0x00;
                         response[3] = 0x00;
                         response[4] = 0x80; //0x01 reversed
-                        response[5] = 0x80;
-                        response[6] = 0x80;
-                        response[7] = 0x50; //0x0A reversed                       
+                        response[5] = 0x40; //0x02 reversed
+                        response[6] = 0x00;
+                        response[7] = 0x50; //0x0A reversed                   
                         previousCmd = cmd;
                         break;
                     case DEVICE_DESCRIPTOR_SECOND:
@@ -370,14 +355,10 @@ void main(void) {
         else LED = 0;
         
         //Analog button mode switch
-        if(!AN_btn){
-            if(!MODE_LOCK) {
-                if(AN_latch) {
-                    if(analogMode >= 1) analogMode = 0;
-                    else analogMode = 1;
-                    AN_latch = 0;
-                }
-            }
+        if(!AN_btn && !MODE_LOCK && AN_latch){
+            if(analogMode >= 1) analogMode = 0;
+            else analogMode = 1;
+            AN_latch = 0;
         }
         else AN_latch = 1;
              

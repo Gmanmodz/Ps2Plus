@@ -125,10 +125,10 @@
 #define RIGHT_ANALOG_Y RC7
 
 #define ANALOG_BTN RD4
-#define LED RD4
+#define LED RD5
 
-#define SMALL_MOTOR RD4
-#define LARGE_MOTOR RD4
+#define SMALL_MOTOR RD6
+#define LARGE_MOTOR RD7
 
 #define LX_ADC_CHAN 0b10001
 #define LY_ADC_CHAN 0b010000

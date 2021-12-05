@@ -21261,8 +21261,8 @@ case 0x02:
 INIT_PRESSURE_SENSOR_byte3 = cmd;
 break;
 case 0x42:
-if(MAP_SMALL_MOTOR == 0 && cmd == 0xFF) RD4 = 1;
-else RD4 = 0;
+if(MAP_SMALL_MOTOR == 0 && cmd == 0xFF) RD6 = 1;
+else RD6 = 0;
 break;
 case 0xC2:
 if (cmd == 0x80) escapeMode = 1;
@@ -21280,13 +21280,6 @@ response[4] = 0x80;
 response[5] = 0x80;
 response[6] = 0x80;
 response[7] = 0x28;
-} else {
-response[2] = 0x00;
-response[3] = 0x00;
-response[4] = 0x80;
-response[5] = 0x40;
-response[6] = 0x00;
-response[7] = 0x50;
 }
 break;
 case 0x32:
@@ -21295,13 +21288,6 @@ response[2] = 0x00;
 response[3] = 0x00;
 response[4] = 0x00;
 response[5] = 0xE0;
-response[6] = 0x00;
-response[7] = 0x00;
-} else {
-response[2] = 0x00;
-response[3] = 0x00;
-response[4] = 0x00;
-response[5] = 0x20;
 response[6] = 0x00;
 response[7] = 0x00;
 }
@@ -21321,8 +21307,8 @@ case 0x02:
 INIT_PRESSURE_SENSOR_byte4 = cmd;
 break;
 case 0x42:
-if(MAP_LARGE_MOTOR == 0x80 && reversebyte(cmd) >= 0x40) RD4 = 1;
-else RD4 = 0;
+if(MAP_LARGE_MOTOR == 0x80 && reversebyte(cmd) >= 0x40) RD7 = 1;
+else RD7 = 0;
 break;
 case 0x22:
 if(cmd == 0xC0) MODE_LOCK = 1;
@@ -21349,7 +21335,7 @@ default:
 switch (cmd) {
 case 0x02:
 
-# 163
+# 149
 response[2] = 0x00;
 response[3] = 0x00;
 response[4] = 0x40;
@@ -21360,7 +21346,7 @@ previousCmd = cmd;
 break;
 case 0x82:
 
-# 177
+# 163
 if(analogMode == 0) {
 response[2] = 0x00;
 response[3] = 0x00;
@@ -21382,13 +21368,13 @@ response[6] = 0x00;
 break;
 case 0x42:
 
-# 201
+# 187
 pollController(response);
 previousCmd = cmd;
 break;
 case 0xC2:
 
-# 210
+# 196
 if(escapeMode) {
 response[2] = 0x00;
 response[3] = 0x00;
@@ -21404,7 +21390,7 @@ previousCmd = cmd;
 break;
 case 0x22:
 
-# 228
+# 214
 response[2] = 0x00;
 response[3] = 0x00;
 response[4] = 0x00;
@@ -21415,7 +21401,7 @@ previousCmd = cmd;
 break;
 case 0xA2:
 
-# 243
+# 229
 response[2] = 0xC0;
 response[3] = 0x40;
 if (analogMode >= 1) response[4] = 0x80;
@@ -21426,18 +21412,18 @@ response[7] = 0x00;
 break;
 case 0x62:
 
-# 257
+# 242
 response[2] = 0x00;
 response[3] = 0x00;
 response[4] = 0x80;
-response[5] = 0x80;
-response[6] = 0x80;
+response[5] = 0x40;
+response[6] = 0x00;
 response[7] = 0x50;
 previousCmd = cmd;
 break;
 case 0xE2:
 
-# 271
+# 256
 response[2] = 0x00;
 response[3] = 0x00;
 response[4] = 0x40;
@@ -21447,7 +21433,7 @@ response[7] = 0x00;
 break;
 case 0x32:
 
-# 284
+# 269
 response[2] = 0x00;
 response[3] = 0x00;
 response[4] = 0x00;
@@ -21458,7 +21444,7 @@ previousCmd = cmd;
 break;
 case 0xB2:
 
-# 297
+# 282
 response[2] = MAP_SMALL_MOTOR;
 response[3] = MAP_LARGE_MOTOR;
 response[4] = 0xFF;
@@ -21469,7 +21455,7 @@ previousCmd = cmd;
 break;
 case 0xF2:
 
-# 309
+# 294
 response[2] = 0x00;
 response[3] = 0x00;
 response[4] = 0x00;
@@ -21530,18 +21516,14 @@ if(digitalStateFirst == 0x7F && digitalStateSecond == 0x5F){
 configureController();
 }
 
-if(analogMode >= 1) RD4 = 1;
-else RD4 = 0;
+if(analogMode >= 1) RD5 = 1;
+else RD5 = 0;
 
 
-if(!AN_btn){
-if(!MODE_LOCK) {
-if(AN_latch) {
+if(!AN_btn && !MODE_LOCK && AN_latch){
 if(analogMode >= 1) analogMode = 0;
 else analogMode = 1;
 AN_latch = 0;
-}
-}
 }
 else AN_latch = 1;
 

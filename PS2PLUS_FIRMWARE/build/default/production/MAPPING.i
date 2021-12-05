@@ -21054,7 +21054,7 @@ void IO_MAPPING() {
 TRISA = 0xFF;
 TRISB = 0xFF;
 TRISC = 0xFF;
-TRISD = 0xEF;
+TRISD = 0xFF;
 TRISE = 0xFF;
 
 
@@ -21070,6 +21070,9 @@ WPUB = 0xFF;
 WPUC = 0x04;
 WPUD = 0x01;
 WPUE = 0;
+
+TRISDbits.TRISD5 = 0;
+WPUDbits.WPUD4 = 1;
 
 TRISCbits.TRISC5 = 0;
 TRISAbits.TRISA4 = 0;

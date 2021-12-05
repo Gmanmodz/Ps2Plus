@@ -90,7 +90,7 @@ void IO_MAPPING() {
     TRISA = 0xFF;
     TRISB = 0xFF;
     TRISC = 0xFF;
-    TRISD = 0xEF; //Rumble on RD4
+    TRISD = 0xFF;
     TRISE = 0xFF;
 
     //analog pins on RC0, RC1, RC6, RC7  
@@ -106,6 +106,9 @@ void IO_MAPPING() {
     WPUC = 0x04;
     WPUD = 0x01;
     WPUE = 0;
+    
+    TRISDbits.TRISD5 = 0;
+    WPUDbits.WPUD4 = 1;
 
     TRISCbits.TRISC5 = 0; //clear pin for SDO1
     TRISAbits.TRISA4 = 0; //Set RA4 as output for ack

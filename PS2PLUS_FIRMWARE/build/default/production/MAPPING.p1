@@ -29,6 +29,22 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _WPUD `Vuc ~T0 @X0 0 e@3930 ]
 "35880
 [v _WPUE `Vuc ~T0 @X0 0 e@3941 ]
+"862
+[s S44 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S44 . TRISD0 TRISD1 TRISD2 TRISD3 TRISD4 TRISD5 TRISD6 TRISD7 ]
+"861
+[u S43 `S44 1 ]
+[n S43 . . ]
+"873
+[v _TRISDbits `VS43 ~T0 @X0 0 e@20 ]
+"35482
+[s S1548 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1548 . WPUD0 WPUD1 WPUD2 WPUD3 WPUD4 WPUD5 WPUD6 WPUD7 ]
+"35481
+[u S1547 `S1548 1 ]
+[n S1547 . . ]
+"35493
+[v _WPUDbits `VS1547 ~T0 @X0 0 e@3930 ]
 "800
 [s S42 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S42 . TRISC0 TRISC1 TRISC2 TRISC3 TRISC4 TRISC5 TRISC6 TRISC7 ]
@@ -13742,9 +13758,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;MAPPING.c: 92: TRISC = 0xFF;
 "92
 [e = _TRISC -> -> 255 `i `uc ]
-[; ;MAPPING.c: 93: TRISD = 0xEF;
+[; ;MAPPING.c: 93: TRISD = 0xFF;
 "93
-[e = _TRISD -> -> 239 `i `uc ]
+[e = _TRISD -> -> 255 `i `uc ]
 [; ;MAPPING.c: 94: TRISE = 0xFF;
 "94
 [e = _TRISE -> -> 255 `i `uc ]
@@ -13778,22 +13794,28 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;MAPPING.c: 108: WPUE = 0;
 "108
 [e = _WPUE -> -> 0 `i `uc ]
-[; ;MAPPING.c: 110: TRISCbits.TRISC5 = 0;
+[; ;MAPPING.c: 110: TRISDbits.TRISD5 = 0;
 "110
-[e = . . _TRISCbits 0 5 -> -> 0 `i `uc ]
-[; ;MAPPING.c: 111: TRISAbits.TRISA4 = 0;
+[e = . . _TRISDbits 0 5 -> -> 0 `i `uc ]
+[; ;MAPPING.c: 111: WPUDbits.WPUD4 = 1;
 "111
-[e = . . _TRISAbits 0 4 -> -> 0 `i `uc ]
-[; ;MAPPING.c: 112: ppsUnlock();
-"112
-[e ( _ppsUnlock ..  ]
-[; ;MAPPING.c: 113: RC5PPS = 0x15;
+[e = . . _WPUDbits 0 4 -> -> 1 `i `uc ]
+[; ;MAPPING.c: 113: TRISCbits.TRISC5 = 0;
 "113
-[e = _RC5PPS -> -> 21 `i `uc ]
-[; ;MAPPING.c: 114: ppsLock();
+[e = . . _TRISCbits 0 5 -> -> 0 `i `uc ]
+[; ;MAPPING.c: 114: TRISAbits.TRISA4 = 0;
 "114
-[e ( _ppsLock ..  ]
-[; ;MAPPING.c: 115: }
+[e = . . _TRISAbits 0 4 -> -> 0 `i `uc ]
+[; ;MAPPING.c: 115: ppsUnlock();
 "115
+[e ( _ppsUnlock ..  ]
+[; ;MAPPING.c: 116: RC5PPS = 0x15;
+"116
+[e = _RC5PPS -> -> 21 `i `uc ]
+[; ;MAPPING.c: 117: ppsLock();
+"117
+[e ( _ppsLock ..  ]
+[; ;MAPPING.c: 118: }
+"118
 [e :UE 1601 ]
 }

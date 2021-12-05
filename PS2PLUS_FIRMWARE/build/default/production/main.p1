@@ -5,10 +5,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _SSP1IF `Vb ~T0 @X0 0 e@14456 ]
 "43 Spi.h
 [v _spiRead `(uc ~T0 @X0 0 ef ]
-"41821 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18876.h
-[v _RD4 `Vb ~T0 @X0 0 e@124 ]
+"41863 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18876.h
+[v _RD6 `Vb ~T0 @X0 0 e@126 ]
 "77 Controller.h
 [v _reversebyte `(uc ~T0 @X0 0 ef1`uc ]
+"41884 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18876.h
+[v _RD7 `Vb ~T0 @X0 0 e@127 ]
 "41 Spi.h
 [v _spiWrite `(v ~T0 @X0 0 ef1`uc ]
 "41290 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18876.h
@@ -28,7 +30,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _lutInit `(v ~T0 @X0 0 ef ]
 "82
 [v _configureController `(v ~T0 @X0 0 ef ]
-"41311 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18876.h
+"41842 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18876.h
+[v _RD5 `Vb ~T0 @X0 0 e@125 ]
+"41311
 [v _RA5 `Vb ~T0 @X0 0 e@101 ]
 "4615
 [v _SSP1BUF `Vuc ~T0 @X0 0 e@396 ]
@@ -14094,15 +14098,15 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 72: case 0x42:
 "72
 [e :U 1612 ]
-[; ;main.c: 73: if(MAP_SMALL_MOTOR == 0 && cmd == 0xFF) RD4 = 1;
+[; ;main.c: 73: if(MAP_SMALL_MOTOR == 0 && cmd == 0xFF) RD6 = 1;
 "73
 [e $ ! && == -> _MAP_SMALL_MOTOR `i -> 0 `i == -> _cmd `i -> 255 `i 1613  ]
-[e = _RD4 -> -> 1 `i `b ]
+[e = _RD6 -> -> 1 `i `b ]
 [e $U 1614  ]
 "74
 [e :U 1613 ]
-[; ;main.c: 74: else RD4 = 0;
-[e = _RD4 -> -> 0 `i `b ]
+[; ;main.c: 74: else RD6 = 0;
+[e = _RD6 -> -> 0 `i `b ]
 [e :U 1614 ]
 [; ;main.c: 75: break;
 "75
@@ -14166,112 +14170,64 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = *U + &U _response * -> -> -> 7 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 40 `i `uc ]
 "92
 }
-[; ;main.c: 92: } else {
-[e $U 1623  ]
 [e :U 1622 ]
-{
-[; ;main.c: 93: response[2] = 0x00;
+[; ;main.c: 92: }
+[; ;main.c: 93: break;
 "93
-[e = *U + &U _response * -> -> -> 2 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 0 `i `uc ]
-[; ;main.c: 94: response[3] = 0x00;
+[e $U 1609  ]
+[; ;main.c: 94: case 0x32:
 "94
-[e = *U + &U _response * -> -> -> 3 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 0 `i `uc ]
-[; ;main.c: 95: response[4] = 0x80;
-"95
-[e = *U + &U _response * -> -> -> 4 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 128 `i `uc ]
-[; ;main.c: 96: response[5] = 0x40;
-"96
-[e = *U + &U _response * -> -> -> 5 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 64 `i `uc ]
-[; ;main.c: 97: response[6] = 0x00;
-"97
-[e = *U + &U _response * -> -> -> 6 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 0 `i `uc ]
-[; ;main.c: 98: response[7] = 0x50;
-"98
-[e = *U + &U _response * -> -> -> 7 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 80 `i `uc ]
-"99
-}
 [e :U 1623 ]
-[; ;main.c: 99: }
-[; ;main.c: 100: break;
-"100
-[e $U 1609  ]
-[; ;main.c: 101: case 0x32:
-"101
-[e :U 1624 ]
-[; ;main.c: 102: if (cmd == 0x80) {
-"102
-[e $ ! == -> _cmd `i -> 128 `i 1625  ]
+[; ;main.c: 95: if (cmd == 0x80) {
+"95
+[e $ ! == -> _cmd `i -> 128 `i 1624  ]
 {
-[; ;main.c: 103: response[2] = 0x00;
-"103
+[; ;main.c: 96: response[2] = 0x00;
+"96
 [e = *U + &U _response * -> -> -> 2 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 0 `i `uc ]
-[; ;main.c: 104: response[3] = 0x00;
-"104
+[; ;main.c: 97: response[3] = 0x00;
+"97
 [e = *U + &U _response * -> -> -> 3 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 0 `i `uc ]
-[; ;main.c: 105: response[4] = 0x00;
-"105
+[; ;main.c: 98: response[4] = 0x00;
+"98
 [e = *U + &U _response * -> -> -> 4 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 0 `i `uc ]
-[; ;main.c: 106: response[5] = 0xE0;
-"106
+[; ;main.c: 99: response[5] = 0xE0;
+"99
 [e = *U + &U _response * -> -> -> 5 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 224 `i `uc ]
-[; ;main.c: 107: response[6] = 0x00;
-"107
+[; ;main.c: 100: response[6] = 0x00;
+"100
 [e = *U + &U _response * -> -> -> 6 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 0 `i `uc ]
-[; ;main.c: 108: response[7] = 0x00;
-"108
+[; ;main.c: 101: response[7] = 0x00;
+"101
 [e = *U + &U _response * -> -> -> 7 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 0 `i `uc ]
-"109
+"102
 }
-[; ;main.c: 109: } else {
-[e $U 1626  ]
+[e :U 1624 ]
+[; ;main.c: 102: }
+[; ;main.c: 103: break;
+"103
+[e $U 1609  ]
+[; ;main.c: 104: case 0xF2:
+"104
 [e :U 1625 ]
-{
-[; ;main.c: 110: response[2] = 0x00;
-"110
-[e = *U + &U _response * -> -> -> 2 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 0 `i `uc ]
-[; ;main.c: 111: response[3] = 0x00;
-"111
-[e = *U + &U _response * -> -> -> 3 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 0 `i `uc ]
-[; ;main.c: 112: response[4] = 0x00;
-"112
-[e = *U + &U _response * -> -> -> 4 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 0 `i `uc ]
-[; ;main.c: 113: response[5] = 0x20;
-"113
-[e = *U + &U _response * -> -> -> 5 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 32 `i `uc ]
-[; ;main.c: 114: response[6] = 0x00;
-"114
-[e = *U + &U _response * -> -> -> 6 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 0 `i `uc ]
-[; ;main.c: 115: response[7] = 0x00;
-"115
-[e = *U + &U _response * -> -> -> 7 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 0 `i `uc ]
-"116
-}
-[e :U 1626 ]
-[; ;main.c: 116: }
-[; ;main.c: 117: break;
-"117
-[e $U 1609  ]
-[; ;main.c: 118: case 0xF2:
-"118
-[e :U 1627 ]
-[; ;main.c: 120: CONTROL_RESPONSE_byte3 = cmd;
-"120
+[; ;main.c: 106: CONTROL_RESPONSE_byte3 = cmd;
+"106
 [e = _CONTROL_RESPONSE_byte3 _cmd ]
-[; ;main.c: 121: break;
-"121
+[; ;main.c: 107: break;
+"107
 [e $U 1609  ]
-[; ;main.c: 122: case 0xB2:
-"122
-[e :U 1628 ]
-[; ;main.c: 123: MAP_SMALL_MOTOR = cmd;
-"123
+[; ;main.c: 108: case 0xB2:
+"108
+[e :U 1626 ]
+[; ;main.c: 109: MAP_SMALL_MOTOR = cmd;
+"109
 [e = _MAP_SMALL_MOTOR _cmd ]
-[; ;main.c: 124: break;
-"124
+[; ;main.c: 110: break;
+"110
 [e $U 1609  ]
-"125
+"111
 }
-[; ;main.c: 125: }
+[; ;main.c: 111: }
 [e $U 1609  ]
 "68
 [e :U 1610 ]
@@ -14280,724 +14236,708 @@ Version 3.2 HI-TECH Software Intermediate Code
  , $ -> -> 194 `i `uc 1615
  , $ -> -> 34 `i `uc 1618
  , $ -> -> 98 `i `uc 1621
- , $ -> -> 50 `i `uc 1624
- , $ -> -> 242 `i `uc 1627
- , $ -> -> 178 `i `uc 1628
+ , $ -> -> 50 `i `uc 1623
+ , $ -> -> 242 `i `uc 1625
+ , $ -> -> 178 `i `uc 1626
  1609 ]
-"125
+"111
 [e :U 1609 ]
-[; ;main.c: 126: break;
-"126
+[; ;main.c: 112: break;
+"112
 [e $U 1606  ]
-[; ;main.c: 127: case 4:
-"127
-[e :U 1629 ]
-[; ;main.c: 128: switch (previousCmd) {
-"128
-[e $U 1631  ]
+[; ;main.c: 113: case 4:
+"113
+[e :U 1627 ]
+[; ;main.c: 114: switch (previousCmd) {
+"114
+[e $U 1629  ]
 {
-[; ;main.c: 129: case 0x02:
-"129
-[e :U 1632 ]
-[; ;main.c: 130: INIT_PRESSURE_SENSOR_byte4 = cmd;
-"130
-[e = _INIT_PRESSURE_SENSOR_byte4 _cmd ]
-[; ;main.c: 131: break;
-"131
-[e $U 1630  ]
-[; ;main.c: 132: case 0x42:
-"132
-[e :U 1633 ]
-[; ;main.c: 133: if(MAP_LARGE_MOTOR == 0x80 && reversebyte(cmd) >= 0x40) RD4 = 1;
-"133
-[e $ ! && == -> _MAP_LARGE_MOTOR `i -> 128 `i >= -> ( _reversebyte (1 _cmd `i -> 64 `i 1634  ]
-[e = _RD4 -> -> 1 `i `b ]
-[e $U 1635  ]
-"134
-[e :U 1634 ]
-[; ;main.c: 134: else RD4 = 0;
-[e = _RD4 -> -> 0 `i `b ]
-[e :U 1635 ]
-[; ;main.c: 135: break;
-"135
-[e $U 1630  ]
-[; ;main.c: 136: case 0x22:
-"136
-[e :U 1636 ]
-[; ;main.c: 137: if(cmd == 0xC0) MODE_LOCK = 1;
-"137
-[e $ ! == -> _cmd `i -> 192 `i 1637  ]
-[e = _MODE_LOCK -> -> 1 `i `uc ]
-[e $U 1638  ]
-"138
-[e :U 1637 ]
-[; ;main.c: 138: else MODE_LOCK = 0;
-[e = _MODE_LOCK -> -> 0 `i `uc ]
-[e :U 1638 ]
-[; ;main.c: 139: break;
-"139
-[e $U 1630  ]
-[; ;main.c: 140: case 0xF2:
-"140
-[e :U 1639 ]
-[; ;main.c: 142: CONTROL_RESPONSE_byte4 = cmd;
-"142
-[e = _CONTROL_RESPONSE_byte4 _cmd ]
-[; ;main.c: 143: break;
-"143
-[e $U 1630  ]
-[; ;main.c: 144: case 0xB2:
-"144
-[e :U 1640 ]
-[; ;main.c: 145: MAP_LARGE_MOTOR = cmd;
-"145
-[e = _MAP_LARGE_MOTOR _cmd ]
-[; ;main.c: 146: break;
-"146
-[e $U 1630  ]
-"147
-}
-[; ;main.c: 147: }
-[e $U 1630  ]
-"128
-[e :U 1631 ]
-[e [\ _previousCmd , $ -> -> 2 `i `uc 1632
- , $ -> -> 66 `i `uc 1633
- , $ -> -> 34 `i `uc 1636
- , $ -> -> 242 `i `uc 1639
- , $ -> -> 178 `i `uc 1640
- 1630 ]
-"147
+[; ;main.c: 115: case 0x02:
+"115
 [e :U 1630 ]
-[; ;main.c: 148: break;
-"148
-[e $U 1606  ]
-[; ;main.c: 149: case 5:
-"149
-[e :U 1641 ]
-[; ;main.c: 150: switch (previousCmd) {
-"150
-[e $U 1643  ]
-{
-[; ;main.c: 151: case 0xF2:
-"151
-[e :U 1644 ]
-[; ;main.c: 153: CONTROL_RESPONSE_byte5 = cmd;
-"153
-[e = _CONTROL_RESPONSE_byte5 _cmd ]
-[; ;main.c: 154: break;
-"154
-[e $U 1642  ]
-"155
+[; ;main.c: 116: INIT_PRESSURE_SENSOR_byte4 = cmd;
+"116
+[e = _INIT_PRESSURE_SENSOR_byte4 _cmd ]
+[; ;main.c: 117: break;
+"117
+[e $U 1628  ]
+[; ;main.c: 118: case 0x42:
+"118
+[e :U 1631 ]
+[; ;main.c: 119: if(MAP_LARGE_MOTOR == 0x80 && reversebyte(cmd) >= 0x40) RD7 = 1;
+"119
+[e $ ! && == -> _MAP_LARGE_MOTOR `i -> 128 `i >= -> ( _reversebyte (1 _cmd `i -> 64 `i 1632  ]
+[e = _RD7 -> -> 1 `i `b ]
+[e $U 1633  ]
+"120
+[e :U 1632 ]
+[; ;main.c: 120: else RD7 = 0;
+[e = _RD7 -> -> 0 `i `b ]
+[e :U 1633 ]
+[; ;main.c: 121: break;
+"121
+[e $U 1628  ]
+[; ;main.c: 122: case 0x22:
+"122
+[e :U 1634 ]
+[; ;main.c: 123: if(cmd == 0xC0) MODE_LOCK = 1;
+"123
+[e $ ! == -> _cmd `i -> 192 `i 1635  ]
+[e = _MODE_LOCK -> -> 1 `i `uc ]
+[e $U 1636  ]
+"124
+[e :U 1635 ]
+[; ;main.c: 124: else MODE_LOCK = 0;
+[e = _MODE_LOCK -> -> 0 `i `uc ]
+[e :U 1636 ]
+[; ;main.c: 125: break;
+"125
+[e $U 1628  ]
+[; ;main.c: 126: case 0xF2:
+"126
+[e :U 1637 ]
+[; ;main.c: 128: CONTROL_RESPONSE_byte4 = cmd;
+"128
+[e = _CONTROL_RESPONSE_byte4 _cmd ]
+[; ;main.c: 129: break;
+"129
+[e $U 1628  ]
+[; ;main.c: 130: case 0xB2:
+"130
+[e :U 1638 ]
+[; ;main.c: 131: MAP_LARGE_MOTOR = cmd;
+"131
+[e = _MAP_LARGE_MOTOR _cmd ]
+[; ;main.c: 132: break;
+"132
+[e $U 1628  ]
+"133
 }
-[; ;main.c: 155: }
-[e $U 1642  ]
-"150
-[e :U 1643 ]
-[e [\ _previousCmd , $ -> -> 242 `i `uc 1644
- 1642 ]
-"155
+[; ;main.c: 133: }
+[e $U 1628  ]
+"114
+[e :U 1629 ]
+[e [\ _previousCmd , $ -> -> 2 `i `uc 1630
+ , $ -> -> 66 `i `uc 1631
+ , $ -> -> 34 `i `uc 1634
+ , $ -> -> 242 `i `uc 1637
+ , $ -> -> 178 `i `uc 1638
+ 1628 ]
+"133
+[e :U 1628 ]
+[; ;main.c: 134: break;
+"134
+[e $U 1606  ]
+[; ;main.c: 135: case 5:
+"135
+[e :U 1639 ]
+[; ;main.c: 136: switch (previousCmd) {
+"136
+[e $U 1641  ]
+{
+[; ;main.c: 137: case 0xF2:
+"137
 [e :U 1642 ]
+[; ;main.c: 139: CONTROL_RESPONSE_byte5 = cmd;
+"139
+[e = _CONTROL_RESPONSE_byte5 _cmd ]
+[; ;main.c: 140: break;
+"140
+[e $U 1640  ]
+"141
+}
+[; ;main.c: 141: }
+[e $U 1640  ]
+"136
+[e :U 1641 ]
+[e [\ _previousCmd , $ -> -> 242 `i `uc 1642
+ 1640 ]
+"141
+[e :U 1640 ]
+[; ;main.c: 142: break;
+"142
+[e $U 1606  ]
+[; ;main.c: 143: default:
+"143
+[e :U 1643 ]
+[; ;main.c: 144: switch (cmd) {
+"144
+[e $U 1645  ]
+{
+[; ;main.c: 145: case 0x02:
+"145
+[e :U 1646 ]
+[; ;main.c: 149: response[2] = 0x00;
+"149
+[e = *U + &U _response * -> -> -> 2 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 0 `i `uc ]
+[; ;main.c: 150: response[3] = 0x00;
+"150
+[e = *U + &U _response * -> -> -> 3 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 0 `i `uc ]
+[; ;main.c: 151: response[4] = 0x40;
+"151
+[e = *U + &U _response * -> -> -> 4 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 64 `i `uc ]
+[; ;main.c: 152: response[5] = 0x00;
+"152
+[e = *U + &U _response * -> -> -> 5 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 0 `i `uc ]
+[; ;main.c: 153: response[6] = 0x00;
+"153
+[e = *U + &U _response * -> -> -> 6 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 0 `i `uc ]
+[; ;main.c: 154: response[7] = 0x5A;
+"154
+[e = *U + &U _response * -> -> -> 7 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 90 `i `uc ]
+[; ;main.c: 155: previousCmd = cmd;
+"155
+[e = _previousCmd _cmd ]
 [; ;main.c: 156: break;
 "156
-[e $U 1606  ]
-[; ;main.c: 157: default:
+[e $U 1644  ]
+[; ;main.c: 157: case 0x82:
 "157
-[e :U 1645 ]
-[; ;main.c: 158: switch (cmd) {
-"158
-[e $U 1647  ]
-{
-[; ;main.c: 159: case 0x02:
-"159
-[e :U 1648 ]
-[; ;main.c: 163: response[2] = 0x00;
+[e :U 1647 ]
+[; ;main.c: 163: if(analogMode == 0) {
 "163
-[e = *U + &U _response * -> -> -> 2 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 0 `i `uc ]
-[; ;main.c: 164: response[3] = 0x00;
+[e $ ! == -> _analogMode `i -> 0 `i 1648  ]
+{
+[; ;main.c: 164: response[2] = 0x00;
 "164
-[e = *U + &U _response * -> -> -> 3 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 0 `i `uc ]
-[; ;main.c: 165: response[4] = 0x40;
+[e = *U + &U _response * -> -> -> 2 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 0 `i `uc ]
+[; ;main.c: 165: response[3] = 0x00;
 "165
-[e = *U + &U _response * -> -> -> 4 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 64 `i `uc ]
-[; ;main.c: 166: response[5] = 0x00;
+[e = *U + &U _response * -> -> -> 3 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 0 `i `uc ]
+[; ;main.c: 166: response[4] = 0x00;
 "166
-[e = *U + &U _response * -> -> -> 5 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 0 `i `uc ]
-[; ;main.c: 167: response[6] = 0x00;
+[e = *U + &U _response * -> -> -> 4 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 0 `i `uc ]
+[; ;main.c: 167: response[7] = 0x00;
 "167
-[e = *U + &U _response * -> -> -> 6 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 0 `i `uc ]
-[; ;main.c: 168: response[7] = 0x5A;
+[e = *U + &U _response * -> -> -> 7 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 0 `i `uc ]
 "168
-[e = *U + &U _response * -> -> -> 7 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 90 `i `uc ]
-[; ;main.c: 169: previousCmd = cmd;
+}
+[e :U 1648 ]
+[; ;main.c: 168: }
+[; ;main.c: 169: if(analogMode >= 1) {
 "169
-[e = _previousCmd _cmd ]
-[; ;main.c: 170: break;
-"170
-[e $U 1646  ]
-[; ;main.c: 171: case 0x82:
-"171
-[e :U 1649 ]
-[; ;main.c: 177: if(analogMode == 0) {
-"177
-[e $ ! == -> _analogMode `i -> 0 `i 1650  ]
+[e $ ! >= -> _analogMode `i -> 1 `i 1649  ]
 {
-[; ;main.c: 178: response[2] = 0x00;
-"178
-[e = *U + &U _response * -> -> -> 2 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 0 `i `uc ]
-[; ;main.c: 179: response[3] = 0x00;
-"179
-[e = *U + &U _response * -> -> -> 3 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 0 `i `uc ]
-[; ;main.c: 180: response[4] = 0x00;
-"180
-[e = *U + &U _response * -> -> -> 4 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 0 `i `uc ]
-[; ;main.c: 181: response[7] = 0x00;
-"181
-[e = *U + &U _response * -> -> -> 7 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 0 `i `uc ]
-"182
-}
-[e :U 1650 ]
-[; ;main.c: 182: }
-[; ;main.c: 183: if(analogMode >= 1) {
-"183
-[e $ ! >= -> _analogMode `i -> 1 `i 1651  ]
-{
-[; ;main.c: 188: response[2] = 0xFF;
-"188
+[; ;main.c: 174: response[2] = 0xFF;
+"174
 [e = *U + &U _response * -> -> -> 2 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 255 `i `uc ]
-[; ;main.c: 189: response[3] = 0xFF;
-"189
+[; ;main.c: 175: response[3] = 0xFF;
+"175
 [e = *U + &U _response * -> -> -> 3 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 255 `i `uc ]
-[; ;main.c: 190: response[4] = 0xC0;
-"190
+[; ;main.c: 176: response[4] = 0xC0;
+"176
 [e = *U + &U _response * -> -> -> 4 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 192 `i `uc ]
-[; ;main.c: 191: response[7] = 0x5A;
-"191
+[; ;main.c: 177: response[7] = 0x5A;
+"177
 [e = *U + &U _response * -> -> -> 7 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 90 `i `uc ]
-"192
+"178
 }
+[e :U 1649 ]
+[; ;main.c: 178: }
+[; ;main.c: 179: response[5] = 0x00;
+"179
+[e = *U + &U _response * -> -> -> 5 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 0 `i `uc ]
+[; ;main.c: 180: response[6] = 0x00;
+"180
+[e = *U + &U _response * -> -> -> 6 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 0 `i `uc ]
+[; ;main.c: 181: break;
+"181
+[e $U 1644  ]
+[; ;main.c: 182: case 0x42:
+"182
+[e :U 1650 ]
+[; ;main.c: 187: pollController(response);
+"187
+[e ( _pollController (1 &U _response ]
+[; ;main.c: 188: previousCmd = cmd;
+"188
+[e = _previousCmd _cmd ]
+[; ;main.c: 189: break;
+"189
+[e $U 1644  ]
+[; ;main.c: 190: case 0xC2:
+"190
 [e :U 1651 ]
-[; ;main.c: 192: }
-[; ;main.c: 193: response[5] = 0x00;
-"193
-[e = *U + &U _response * -> -> -> 5 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 0 `i `uc ]
-[; ;main.c: 194: response[6] = 0x00;
-"194
-[e = *U + &U _response * -> -> -> 6 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 0 `i `uc ]
-[; ;main.c: 195: break;
-"195
-[e $U 1646  ]
-[; ;main.c: 196: case 0x42:
+[; ;main.c: 196: if(escapeMode) {
 "196
-[e :U 1652 ]
-[; ;main.c: 201: pollController(response);
+[e $ ! != -> _escapeMode `i -> -> -> 0 `i `uc `i 1652  ]
+{
+[; ;main.c: 197: response[2] = 0x00;
+"197
+[e = *U + &U _response * -> -> -> 2 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 0 `i `uc ]
+[; ;main.c: 198: response[3] = 0x00;
+"198
+[e = *U + &U _response * -> -> -> 3 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 0 `i `uc ]
+[; ;main.c: 199: response[4] = 0x00;
+"199
+[e = *U + &U _response * -> -> -> 4 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 0 `i `uc ]
+[; ;main.c: 200: response[5] = 0x00;
+"200
+[e = *U + &U _response * -> -> -> 5 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 0 `i `uc ]
+[; ;main.c: 201: response[6] = 0x00;
 "201
-[e ( _pollController (1 &U _response ]
-[; ;main.c: 202: previousCmd = cmd;
+[e = *U + &U _response * -> -> -> 6 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 0 `i `uc ]
+[; ;main.c: 202: response[7] = 0x00;
 "202
-[e = _previousCmd _cmd ]
-[; ;main.c: 203: break;
+[e = *U + &U _response * -> -> -> 7 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 0 `i `uc ]
 "203
-[e $U 1646  ]
-[; ;main.c: 204: case 0xC2:
+}
+[; ;main.c: 203: }
+[e $U 1653  ]
 "204
-[e :U 1653 ]
-[; ;main.c: 210: if(escapeMode) {
-"210
-[e $ ! != -> _escapeMode `i -> -> -> 0 `i `uc `i 1654  ]
+[e :U 1652 ]
+[; ;main.c: 204: else {
 {
-[; ;main.c: 211: response[2] = 0x00;
-"211
-[e = *U + &U _response * -> -> -> 2 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 0 `i `uc ]
-[; ;main.c: 212: response[3] = 0x00;
-"212
-[e = *U + &U _response * -> -> -> 3 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 0 `i `uc ]
-[; ;main.c: 213: response[4] = 0x00;
-"213
-[e = *U + &U _response * -> -> -> 4 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 0 `i `uc ]
-[; ;main.c: 214: response[5] = 0x00;
-"214
-[e = *U + &U _response * -> -> -> 5 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 0 `i `uc ]
-[; ;main.c: 215: response[6] = 0x00;
-"215
-[e = *U + &U _response * -> -> -> 6 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 0 `i `uc ]
-[; ;main.c: 216: response[7] = 0x00;
-"216
-[e = *U + &U _response * -> -> -> 7 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 0 `i `uc ]
-"217
-}
-[; ;main.c: 217: }
-[e $U 1655  ]
-"218
-[e :U 1654 ]
-[; ;main.c: 218: else {
-{
-[; ;main.c: 219: pollController(response);
-"219
+[; ;main.c: 205: pollController(response);
+"205
 [e ( _pollController (1 &U _response ]
-"220
+"206
 }
-[e :U 1655 ]
-[; ;main.c: 220: }
-[; ;main.c: 221: previousCmd = cmd;
+[e :U 1653 ]
+[; ;main.c: 206: }
+[; ;main.c: 207: previousCmd = cmd;
+"207
+[e = _previousCmd _cmd ]
+[; ;main.c: 208: break;
+"208
+[e $U 1644  ]
+[; ;main.c: 209: case 0x22:
+"209
+[e :U 1654 ]
+[; ;main.c: 214: response[2] = 0x00;
+"214
+[e = *U + &U _response * -> -> -> 2 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 0 `i `uc ]
+[; ;main.c: 215: response[3] = 0x00;
+"215
+[e = *U + &U _response * -> -> -> 3 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 0 `i `uc ]
+[; ;main.c: 216: response[4] = 0x00;
+"216
+[e = *U + &U _response * -> -> -> 4 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 0 `i `uc ]
+[; ;main.c: 217: response[5] = 0x00;
+"217
+[e = *U + &U _response * -> -> -> 5 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 0 `i `uc ]
+[; ;main.c: 218: response[6] = 0x00;
+"218
+[e = *U + &U _response * -> -> -> 6 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 0 `i `uc ]
+[; ;main.c: 219: response[7] = 0x00;
+"219
+[e = *U + &U _response * -> -> -> 7 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 0 `i `uc ]
+[; ;main.c: 220: previousCmd = cmd;
+"220
+[e = _previousCmd _cmd ]
+[; ;main.c: 221: break;
 "221
-[e = _previousCmd _cmd ]
-[; ;main.c: 222: break;
+[e $U 1644  ]
+[; ;main.c: 222: case 0xA2:
 "222
-[e $U 1646  ]
-[; ;main.c: 223: case 0x22:
-"223
-[e :U 1656 ]
-[; ;main.c: 228: response[2] = 0x00;
-"228
-[e = *U + &U _response * -> -> -> 2 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 0 `i `uc ]
-[; ;main.c: 229: response[3] = 0x00;
+[e :U 1655 ]
+[; ;main.c: 229: response[2] = 0xC0;
 "229
-[e = *U + &U _response * -> -> -> 3 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 0 `i `uc ]
-[; ;main.c: 230: response[4] = 0x00;
-"230
-[e = *U + &U _response * -> -> -> 4 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 0 `i `uc ]
-[; ;main.c: 231: response[5] = 0x00;
-"231
-[e = *U + &U _response * -> -> -> 5 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 0 `i `uc ]
-[; ;main.c: 232: response[6] = 0x00;
-"232
-[e = *U + &U _response * -> -> -> 6 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 0 `i `uc ]
-[; ;main.c: 233: response[7] = 0x00;
-"233
-[e = *U + &U _response * -> -> -> 7 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 0 `i `uc ]
-[; ;main.c: 234: previousCmd = cmd;
-"234
-[e = _previousCmd _cmd ]
-[; ;main.c: 235: break;
-"235
-[e $U 1646  ]
-[; ;main.c: 236: case 0xA2:
-"236
-[e :U 1657 ]
-[; ;main.c: 243: response[2] = 0xC0;
-"243
 [e = *U + &U _response * -> -> -> 2 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 192 `i `uc ]
-[; ;main.c: 244: response[3] = 0x40;
-"244
+[; ;main.c: 230: response[3] = 0x40;
+"230
 [e = *U + &U _response * -> -> -> 3 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 64 `i `uc ]
-[; ;main.c: 245: if (analogMode >= 1) response[4] = 0x80;
-"245
-[e $ ! >= -> _analogMode `i -> 1 `i 1658  ]
+[; ;main.c: 231: if (analogMode >= 1) response[4] = 0x80;
+"231
+[e $ ! >= -> _analogMode `i -> 1 `i 1656  ]
 [e = *U + &U _response * -> -> -> 4 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 128 `i `uc ]
-[e $U 1659  ]
-"246
-[e :U 1658 ]
-[; ;main.c: 246: else response[4] = 0x00;
+[e $U 1657  ]
+"232
+[e :U 1656 ]
+[; ;main.c: 232: else response[4] = 0x00;
 [e = *U + &U _response * -> -> -> 4 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 0 `i `uc ]
-[e :U 1659 ]
-[; ;main.c: 247: response[5] = 0x40;
-"247
+[e :U 1657 ]
+[; ;main.c: 233: response[5] = 0x40;
+"233
 [e = *U + &U _response * -> -> -> 5 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 64 `i `uc ]
-[; ;main.c: 248: response[6] = 0x80;
-"248
+[; ;main.c: 234: response[6] = 0x80;
+"234
 [e = *U + &U _response * -> -> -> 6 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 128 `i `uc ]
-[; ;main.c: 249: response[7] = 0x00;
-"249
+[; ;main.c: 235: response[7] = 0x00;
+"235
 [e = *U + &U _response * -> -> -> 7 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 0 `i `uc ]
-[; ;main.c: 250: break;
-"250
-[e $U 1646  ]
-[; ;main.c: 251: case 0x62:
-"251
-[e :U 1660 ]
-[; ;main.c: 257: response[2] = 0x00;
-"257
+[; ;main.c: 236: break;
+"236
+[e $U 1644  ]
+[; ;main.c: 237: case 0x62:
+"237
+[e :U 1658 ]
+[; ;main.c: 242: response[2] = 0x00;
+"242
 [e = *U + &U _response * -> -> -> 2 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 0 `i `uc ]
-[; ;main.c: 258: response[3] = 0x00;
-"258
+[; ;main.c: 243: response[3] = 0x00;
+"243
 [e = *U + &U _response * -> -> -> 3 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 0 `i `uc ]
-[; ;main.c: 259: response[4] = 0x80;
-"259
+[; ;main.c: 244: response[4] = 0x80;
+"244
 [e = *U + &U _response * -> -> -> 4 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 128 `i `uc ]
-[; ;main.c: 260: response[5] = 0x80;
-"260
-[e = *U + &U _response * -> -> -> 5 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 128 `i `uc ]
-[; ;main.c: 261: response[6] = 0x80;
-"261
-[e = *U + &U _response * -> -> -> 6 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 128 `i `uc ]
-[; ;main.c: 262: response[7] = 0x50;
-"262
-[e = *U + &U _response * -> -> -> 7 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 80 `i `uc ]
-[; ;main.c: 263: previousCmd = cmd;
-"263
-[e = _previousCmd _cmd ]
-[; ;main.c: 264: break;
-"264
-[e $U 1646  ]
-[; ;main.c: 265: case 0xE2:
-"265
-[e :U 1661 ]
-[; ;main.c: 271: response[2] = 0x00;
-"271
-[e = *U + &U _response * -> -> -> 2 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 0 `i `uc ]
-[; ;main.c: 272: response[3] = 0x00;
-"272
-[e = *U + &U _response * -> -> -> 3 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 0 `i `uc ]
-[; ;main.c: 273: response[4] = 0x40;
-"273
-[e = *U + &U _response * -> -> -> 4 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 64 `i `uc ]
-[; ;main.c: 274: response[5] = 0x00;
-"274
-[e = *U + &U _response * -> -> -> 5 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 0 `i `uc ]
-[; ;main.c: 275: response[6] = 0x80;
-"275
-[e = *U + &U _response * -> -> -> 6 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 128 `i `uc ]
-[; ;main.c: 276: response[7] = 0x00;
-"276
-[e = *U + &U _response * -> -> -> 7 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 0 `i `uc ]
-[; ;main.c: 277: break;
-"277
-[e $U 1646  ]
-[; ;main.c: 278: case 0x32:
-"278
-[e :U 1662 ]
-[; ;main.c: 284: response[2] = 0x00;
-"284
-[e = *U + &U _response * -> -> -> 2 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 0 `i `uc ]
-[; ;main.c: 285: response[3] = 0x00;
-"285
-[e = *U + &U _response * -> -> -> 3 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 0 `i `uc ]
-[; ;main.c: 286: response[4] = 0x00;
-"286
-[e = *U + &U _response * -> -> -> 4 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 0 `i `uc ]
-[; ;main.c: 287: response[5] = 0x20;
-"287
-[e = *U + &U _response * -> -> -> 5 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 32 `i `uc ]
-[; ;main.c: 288: response[6] = 0x00;
-"288
+[; ;main.c: 245: response[5] = 0x40;
+"245
+[e = *U + &U _response * -> -> -> 5 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 64 `i `uc ]
+[; ;main.c: 246: response[6] = 0x00;
+"246
 [e = *U + &U _response * -> -> -> 6 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 0 `i `uc ]
-[; ;main.c: 289: response[7] = 0x00;
-"289
+[; ;main.c: 247: response[7] = 0x50;
+"247
+[e = *U + &U _response * -> -> -> 7 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 80 `i `uc ]
+[; ;main.c: 248: previousCmd = cmd;
+"248
+[e = _previousCmd _cmd ]
+[; ;main.c: 249: break;
+"249
+[e $U 1644  ]
+[; ;main.c: 250: case 0xE2:
+"250
+[e :U 1659 ]
+[; ;main.c: 256: response[2] = 0x00;
+"256
+[e = *U + &U _response * -> -> -> 2 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 0 `i `uc ]
+[; ;main.c: 257: response[3] = 0x00;
+"257
+[e = *U + &U _response * -> -> -> 3 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 0 `i `uc ]
+[; ;main.c: 258: response[4] = 0x40;
+"258
+[e = *U + &U _response * -> -> -> 4 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 64 `i `uc ]
+[; ;main.c: 259: response[5] = 0x00;
+"259
+[e = *U + &U _response * -> -> -> 5 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 0 `i `uc ]
+[; ;main.c: 260: response[6] = 0x80;
+"260
+[e = *U + &U _response * -> -> -> 6 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 128 `i `uc ]
+[; ;main.c: 261: response[7] = 0x00;
+"261
 [e = *U + &U _response * -> -> -> 7 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 0 `i `uc ]
-[; ;main.c: 290: previousCmd = cmd;
-"290
+[; ;main.c: 262: break;
+"262
+[e $U 1644  ]
+[; ;main.c: 263: case 0x32:
+"263
+[e :U 1660 ]
+[; ;main.c: 269: response[2] = 0x00;
+"269
+[e = *U + &U _response * -> -> -> 2 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 0 `i `uc ]
+[; ;main.c: 270: response[3] = 0x00;
+"270
+[e = *U + &U _response * -> -> -> 3 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 0 `i `uc ]
+[; ;main.c: 271: response[4] = 0x00;
+"271
+[e = *U + &U _response * -> -> -> 4 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 0 `i `uc ]
+[; ;main.c: 272: response[5] = 0x20;
+"272
+[e = *U + &U _response * -> -> -> 5 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 32 `i `uc ]
+[; ;main.c: 273: response[6] = 0x00;
+"273
+[e = *U + &U _response * -> -> -> 6 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 0 `i `uc ]
+[; ;main.c: 274: response[7] = 0x00;
+"274
+[e = *U + &U _response * -> -> -> 7 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 0 `i `uc ]
+[; ;main.c: 275: previousCmd = cmd;
+"275
 [e = _previousCmd _cmd ]
-[; ;main.c: 291: break;
-"291
-[e $U 1646  ]
-[; ;main.c: 292: case 0xB2:
-"292
-[e :U 1663 ]
-[; ;main.c: 297: response[2] = MAP_SMALL_MOTOR;
-"297
+[; ;main.c: 276: break;
+"276
+[e $U 1644  ]
+[; ;main.c: 277: case 0xB2:
+"277
+[e :U 1661 ]
+[; ;main.c: 282: response[2] = MAP_SMALL_MOTOR;
+"282
 [e = *U + &U _response * -> -> -> 2 `i `ui `ux -> -> # *U &U _response `ui `ux _MAP_SMALL_MOTOR ]
-[; ;main.c: 298: response[3] = MAP_LARGE_MOTOR;
-"298
+[; ;main.c: 283: response[3] = MAP_LARGE_MOTOR;
+"283
 [e = *U + &U _response * -> -> -> 3 `i `ui `ux -> -> # *U &U _response `ui `ux _MAP_LARGE_MOTOR ]
-[; ;main.c: 299: response[4] = 0xFF;
-"299
+[; ;main.c: 284: response[4] = 0xFF;
+"284
 [e = *U + &U _response * -> -> -> 4 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 255 `i `uc ]
-[; ;main.c: 300: response[5] = 0xFF;
-"300
+[; ;main.c: 285: response[5] = 0xFF;
+"285
 [e = *U + &U _response * -> -> -> 5 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 255 `i `uc ]
-[; ;main.c: 301: response[6] = 0xFF;
-"301
+[; ;main.c: 286: response[6] = 0xFF;
+"286
 [e = *U + &U _response * -> -> -> 6 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 255 `i `uc ]
-[; ;main.c: 302: response[7] = 0xFF;
-"302
+[; ;main.c: 287: response[7] = 0xFF;
+"287
 [e = *U + &U _response * -> -> -> 7 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 255 `i `uc ]
-[; ;main.c: 303: previousCmd = cmd;
-"303
+[; ;main.c: 288: previousCmd = cmd;
+"288
 [e = _previousCmd _cmd ]
+[; ;main.c: 289: break;
+"289
+[e $U 1644  ]
+[; ;main.c: 290: case 0xF2:
+"290
+[e :U 1662 ]
+[; ;main.c: 294: response[2] = 0x00;
+"294
+[e = *U + &U _response * -> -> -> 2 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 0 `i `uc ]
+[; ;main.c: 295: response[3] = 0x00;
+"295
+[e = *U + &U _response * -> -> -> 3 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 0 `i `uc ]
+[; ;main.c: 296: response[4] = 0x00;
+"296
+[e = *U + &U _response * -> -> -> 4 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 0 `i `uc ]
+[; ;main.c: 297: response[5] = 0x00;
+"297
+[e = *U + &U _response * -> -> -> 5 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 0 `i `uc ]
+[; ;main.c: 298: response[6] = 0x00;
+"298
+[e = *U + &U _response * -> -> -> 6 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 0 `i `uc ]
+[; ;main.c: 299: response[7] = 0x5A;
+"299
+[e = *U + &U _response * -> -> -> 7 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 90 `i `uc ]
+[; ;main.c: 300: previousCmd = cmd;
+"300
+[e = _previousCmd _cmd ]
+[; ;main.c: 301: if(analogMode == 1) analogMode = 2;
+"301
+[e $ ! == -> _analogMode `i -> 1 `i 1663  ]
+[e = _analogMode -> -> 2 `i `uc ]
+[e :U 1663 ]
+[; ;main.c: 302: break;
+"302
+[e $U 1644  ]
+"303
+}
+[; ;main.c: 303: }
+[e $U 1644  ]
+"144
+[e :U 1645 ]
+[e [\ _cmd , $ -> -> 2 `i `uc 1646
+ , $ -> -> 130 `i `uc 1647
+ , $ -> -> 66 `i `uc 1650
+ , $ -> -> 194 `i `uc 1651
+ , $ -> -> 34 `i `uc 1654
+ , $ -> -> 162 `i `uc 1655
+ , $ -> -> 98 `i `uc 1658
+ , $ -> -> 226 `i `uc 1659
+ , $ -> -> 50 `i `uc 1660
+ , $ -> -> 178 `i `uc 1661
+ , $ -> -> 242 `i `uc 1662
+ 1644 ]
+"303
+[e :U 1644 ]
 [; ;main.c: 304: break;
 "304
-[e $U 1646  ]
-[; ;main.c: 305: case 0xF2:
-"305
-[e :U 1664 ]
-[; ;main.c: 309: response[2] = 0x00;
-"309
-[e = *U + &U _response * -> -> -> 2 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 0 `i `uc ]
-[; ;main.c: 310: response[3] = 0x00;
-"310
-[e = *U + &U _response * -> -> -> 3 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 0 `i `uc ]
-[; ;main.c: 311: response[4] = 0x00;
-"311
-[e = *U + &U _response * -> -> -> 4 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 0 `i `uc ]
-[; ;main.c: 312: response[5] = 0x00;
-"312
-[e = *U + &U _response * -> -> -> 5 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 0 `i `uc ]
-[; ;main.c: 313: response[6] = 0x00;
-"313
-[e = *U + &U _response * -> -> -> 6 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 0 `i `uc ]
-[; ;main.c: 314: response[7] = 0x5A;
-"314
-[e = *U + &U _response * -> -> -> 7 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 90 `i `uc ]
-[; ;main.c: 315: previousCmd = cmd;
-"315
-[e = _previousCmd _cmd ]
-[; ;main.c: 316: if(analogMode == 1) analogMode = 2;
-"316
-[e $ ! == -> _analogMode `i -> 1 `i 1665  ]
-[e = _analogMode -> -> 2 `i `uc ]
-[e :U 1665 ]
-[; ;main.c: 317: break;
-"317
-[e $U 1646  ]
-"318
-}
-[; ;main.c: 318: }
-[e $U 1646  ]
-"158
-[e :U 1647 ]
-[e [\ _cmd , $ -> -> 2 `i `uc 1648
- , $ -> -> 130 `i `uc 1649
- , $ -> -> 66 `i `uc 1652
- , $ -> -> 194 `i `uc 1653
- , $ -> -> 34 `i `uc 1656
- , $ -> -> 162 `i `uc 1657
- , $ -> -> 98 `i `uc 1660
- , $ -> -> 226 `i `uc 1661
- , $ -> -> 50 `i `uc 1662
- , $ -> -> 178 `i `uc 1663
- , $ -> -> 242 `i `uc 1664
- 1646 ]
-"318
-[e :U 1646 ]
-[; ;main.c: 319: break;
-"319
 [e $U 1606  ]
-"320
+"305
 }
-[; ;main.c: 320: }
+[; ;main.c: 305: }
 [e $U 1606  ]
 "66
 [e :U 1607 ]
 [e [\ _cmdCounter , $ -> -> 3 `i `uc 1608
- , $ -> -> 4 `i `uc 1629
- , $ -> -> 5 `i `uc 1641
- 1645 ]
-"320
+ , $ -> -> 4 `i `uc 1627
+ , $ -> -> 5 `i `uc 1639
+ 1643 ]
+"305
 [e :U 1606 ]
-[; ;main.c: 323: spiWrite(response[cmdCounter]);
-"323
+[; ;main.c: 308: spiWrite(response[cmdCounter]);
+"308
 [e ( _spiWrite (1 *U + &U _response * -> _cmdCounter `ux -> -> # *U &U _response `ui `ux ]
-[; ;main.c: 325: RA4 = 0;
-"325
+[; ;main.c: 310: RA4 = 0;
+"310
 [e = _RA4 -> -> 0 `i `b ]
-[; ;main.c: 326: _delay((unsigned long)((1)*(32000000/4000000.0)));
-"326
+[; ;main.c: 311: _delay((unsigned long)((1)*(32000000/4000000.0)));
+"311
 [e ( __delay (1 -> * -> -> 1 `i `d / -> -> 32000000 `l `d .4000000.0 `ul ]
-[; ;main.c: 327: RA4 = 1;
-"327
+[; ;main.c: 312: RA4 = 1;
+"312
 [e = _RA4 -> -> 1 `i `b ]
-[; ;main.c: 330: if (cmdCounter < responseLength) {
-"330
-[e $ ! < -> _cmdCounter `i -> _responseLength `i 1666  ]
+[; ;main.c: 315: if (cmdCounter < responseLength) {
+"315
+[e $ ! < -> _cmdCounter `i -> _responseLength `i 1664  ]
 {
-[; ;main.c: 331: cmdCounter++;
-"331
+[; ;main.c: 316: cmdCounter++;
+"316
 [e ++ _cmdCounter -> -> 1 `i `uc ]
-"332
+"317
+}
+[e :U 1664 ]
+[; ;main.c: 317: }
+[; ;main.c: 320: if (escapeMode) {
+"320
+[e $ ! != -> _escapeMode `i -> -> -> 0 `i `uc `i 1665  ]
+{
+[; ;main.c: 321: response[0] = 0xCF;
+"321
+[e = *U + &U _response * -> -> -> 0 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 207 `i `uc ]
+"322
+}
+[; ;main.c: 322: }
+[e $U 1666  ]
+"323
+[e :U 1665 ]
+[; ;main.c: 323: else {
+{
+[; ;main.c: 324: if(analogMode == 0) response[0] = 0x82;
+"324
+[e $ ! == -> _analogMode `i -> 0 `i 1667  ]
+[e = *U + &U _response * -> -> -> 0 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 130 `i `uc ]
+[e :U 1667 ]
+[; ;main.c: 325: if(analogMode == 1) response[0] = 0xCE;
+"325
+[e $ ! == -> _analogMode `i -> 1 `i 1668  ]
+[e = *U + &U _response * -> -> -> 0 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 206 `i `uc ]
+[e :U 1668 ]
+[; ;main.c: 326: if(analogMode > 1) response[0] = 0x9E;
+"326
+[e $ ! > -> _analogMode `i -> 1 `i 1669  ]
+[e = *U + &U _response * -> -> -> 0 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 158 `i `uc ]
+[e :U 1669 ]
+"327
 }
 [e :U 1666 ]
-[; ;main.c: 332: }
-[; ;main.c: 335: if (escapeMode) {
-"335
-[e $ ! != -> _escapeMode `i -> -> -> 0 `i `uc `i 1667  ]
-{
-[; ;main.c: 336: response[0] = 0xCF;
-"336
-[e = *U + &U _response * -> -> -> 0 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 207 `i `uc ]
-"337
-}
-[; ;main.c: 337: }
-[e $U 1668  ]
-"338
-[e :U 1667 ]
-[; ;main.c: 338: else {
-{
-[; ;main.c: 339: if(analogMode == 0) response[0] = 0x82;
-"339
-[e $ ! == -> _analogMode `i -> 0 `i 1669  ]
-[e = *U + &U _response * -> -> -> 0 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 130 `i `uc ]
-[e :U 1669 ]
-[; ;main.c: 340: if(analogMode == 1) response[0] = 0xCE;
-"340
-[e $ ! == -> _analogMode `i -> 1 `i 1670  ]
-[e = *U + &U _response * -> -> -> 0 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 206 `i `uc ]
-[e :U 1670 ]
-[; ;main.c: 341: if(analogMode > 1) response[0] = 0x9E;
-"341
-[e $ ! > -> _analogMode `i -> 1 `i 1671  ]
-[e = *U + &U _response * -> -> -> 0 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 158 `i `uc ]
-[e :U 1671 ]
-"342
-}
-[e :U 1668 ]
-[; ;main.c: 342: }
-[; ;main.c: 344: SSP1IF = 0;
-"344
+[; ;main.c: 327: }
+[; ;main.c: 329: SSP1IF = 0;
+"329
 [e = _SSP1IF -> -> 0 `i `b ]
-"346
+"331
 }
 [e :U 1605 ]
-[; ;main.c: 346: }
-[; ;main.c: 347: }
-"347
+[; ;main.c: 331: }
+[; ;main.c: 332: }
+"332
 [e :UE 1604 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"349
+"334
 [v _main `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 349: void main(void) {
+[; ;main.c: 334: void main(void) {
 [e :U _main ]
 [f ]
-[; ;main.c: 351: picInit();
-"351
+[; ;main.c: 336: picInit();
+"336
 [e ( _picInit ..  ]
-[; ;main.c: 352: IO_MAPPING();
-"352
+[; ;main.c: 337: IO_MAPPING();
+"337
 [e ( _IO_MAPPING ..  ]
-[; ;main.c: 353: adcInit();
-"353
+[; ;main.c: 338: adcInit();
+"338
 [e ( _adcInit ..  ]
-[; ;main.c: 354: lutInit();
-"354
+[; ;main.c: 339: lutInit();
+"339
 [e ( _lutInit ..  ]
-[; ;main.c: 356: response[1] = 0x5A;
-"356
+[; ;main.c: 341: response[1] = 0x5A;
+"341
 [e = *U + &U _response * -> -> -> 1 `i `ui `ux -> -> # *U &U _response `ui `ux -> -> 90 `i `uc ]
-"358
+"343
 [v _slaveSelect `uc ~T0 @X0 1 a ]
-"359
+"344
 [v _slaveSelectStatePrev `uc ~T0 @X0 1 a ]
-[; ;main.c: 358: char slaveSelect;
-[; ;main.c: 359: char slaveSelectStatePrev = 0;
+[; ;main.c: 343: char slaveSelect;
+[; ;main.c: 344: char slaveSelectStatePrev = 0;
 [e = _slaveSelectStatePrev -> -> 0 `i `uc ]
-"360
+"345
 [v _count `uc ~T0 @X0 1 a ]
-[; ;main.c: 360: char count = 0;
+[; ;main.c: 345: char count = 0;
 [e = _count -> -> 0 `i `uc ]
-[; ;main.c: 361: RA4 = 1;
-"361
+[; ;main.c: 346: RA4 = 1;
+"346
 [e = _RA4 -> -> 1 `i `b ]
-[; ;main.c: 363: while (1) {
-"363
-[e :U 1674 ]
+[; ;main.c: 348: while (1) {
+"348
+[e :U 1672 ]
 {
-[; ;main.c: 365: if(digitalStateFirst == 0x7F && digitalStateSecond == 0x5F){
-"365
-[e $ ! && == -> _digitalStateFirst `i -> 127 `i == -> _digitalStateSecond `i -> 95 `i 1676  ]
+[; ;main.c: 350: if(digitalStateFirst == 0x7F && digitalStateSecond == 0x5F){
+"350
+[e $ ! && == -> _digitalStateFirst `i -> 127 `i == -> _digitalStateSecond `i -> 95 `i 1674  ]
 {
-[; ;main.c: 366: configureController();
-"366
+[; ;main.c: 351: configureController();
+"351
 [e ( _configureController ..  ]
-"367
+"352
 }
-[e :U 1676 ]
-[; ;main.c: 367: }
-[; ;main.c: 369: if(analogMode >= 1) RD4 = 1;
-"369
-[e $ ! >= -> _analogMode `i -> 1 `i 1677  ]
-[e = _RD4 -> -> 1 `i `b ]
-[e $U 1678  ]
-"370
-[e :U 1677 ]
-[; ;main.c: 370: else RD4 = 0;
-[e = _RD4 -> -> 0 `i `b ]
-[e :U 1678 ]
-[; ;main.c: 373: if(!AN_btn){
-"373
-[e $ ! ! != -> _AN_btn `i -> -> -> 0 `i `uc `i 1679  ]
-{
-[; ;main.c: 374: if(!MODE_LOCK) {
-"374
-[e $ ! ! != -> _MODE_LOCK `i -> -> -> 0 `i `uc `i 1680  ]
-{
-[; ;main.c: 375: if(AN_latch) {
-"375
-[e $ ! != -> _AN_latch `i -> -> -> 0 `i `uc `i 1681  ]
-{
-[; ;main.c: 376: if(analogMode >= 1) analogMode = 0;
-"376
-[e $ ! >= -> _analogMode `i -> 1 `i 1682  ]
-[e = _analogMode -> -> 0 `i `uc ]
-[e $U 1683  ]
-"377
-[e :U 1682 ]
-[; ;main.c: 377: else analogMode = 1;
-[e = _analogMode -> -> 1 `i `uc ]
-[e :U 1683 ]
-[; ;main.c: 378: AN_latch = 0;
-"378
-[e = _AN_latch -> -> 0 `i `uc ]
-"379
-}
-[e :U 1681 ]
-"380
-}
-[e :U 1680 ]
-"381
-}
-[; ;main.c: 379: }
-[; ;main.c: 380: }
-[; ;main.c: 381: }
-[e $U 1684  ]
-"382
-[e :U 1679 ]
-[; ;main.c: 382: else AN_latch = 1;
-[e = _AN_latch -> -> 1 `i `uc ]
-[e :U 1684 ]
-[; ;main.c: 384: slaveSelect = RA5;
-"384
-[e = _slaveSelect -> -> _RA5 `i `uc ]
-[; ;main.c: 385: if (slaveSelect) if(count < 3) count++;
-"385
-[e $ ! != -> _slaveSelect `i -> -> -> 0 `i `uc `i 1685  ]
-[e $ ! < -> _count `i -> 3 `i 1686  ]
-[e ++ _count -> -> 1 `i `uc ]
-[e :U 1686 ]
-"386
-[e :U 1685 ]
-[; ;main.c: 386: if (slaveSelect ^ slaveSelectStatePrev) count = 0;
-[e $ ! != ^ -> _slaveSelect `i -> _slaveSelectStatePrev `i -> 0 `i 1687  ]
-[e = _count -> -> 0 `i `uc ]
-[e :U 1687 ]
-[; ;main.c: 387: slaveSelectStatePrev = slaveSelect;
-"387
-[e = _slaveSelectStatePrev _slaveSelect ]
-[; ;main.c: 388: if (count >= 3) {
-"388
-[e $ ! >= -> _count `i -> 3 `i 1688  ]
-{
-[; ;main.c: 389: cmdCounter = 0;
-"389
-[e = _cmdCounter -> -> 0 `i `uc ]
-[; ;main.c: 390: responseLength = 9;
-"390
-[e = _responseLength -> -> 9 `i `uc ]
-[; ;main.c: 391: SSP1BUF = 0xFF;
-"391
-[e = _SSP1BUF -> -> 255 `i `uc ]
-[; ;main.c: 392: previousCmd = 0x00;
-"392
-[e = _previousCmd -> -> 0 `i `uc ]
-"393
-}
-[e :U 1688 ]
-[; ;main.c: 393: }
-[; ;main.c: 395: readController(analogMode);
-"395
-[e ( _readController (1 _analogMode ]
-[; ;main.c: 396: readControllerAnalog();
-"396
-[e ( _readControllerAnalog ..  ]
-"397
-}
-[e :U 1673 ]
-"363
-[e $U 1674  ]
+[e :U 1674 ]
+[; ;main.c: 352: }
+[; ;main.c: 354: if(analogMode >= 1) RD5 = 1;
+"354
+[e $ ! >= -> _analogMode `i -> 1 `i 1675  ]
+[e = _RD5 -> -> 1 `i `b ]
+[e $U 1676  ]
+"355
 [e :U 1675 ]
-[; ;main.c: 397: }
-[; ;main.c: 398: }
-"398
-[e :UE 1672 ]
+[; ;main.c: 355: else RD5 = 0;
+[e = _RD5 -> -> 0 `i `b ]
+[e :U 1676 ]
+[; ;main.c: 358: if(!AN_btn && !MODE_LOCK && AN_latch){
+"358
+[e $ ! && && ! != -> _AN_btn `i -> -> -> 0 `i `uc `i ! != -> _MODE_LOCK `i -> -> -> 0 `i `uc `i != -> _AN_latch `i -> -> -> 0 `i `uc `i 1677  ]
+{
+[; ;main.c: 359: if(analogMode >= 1) analogMode = 0;
+"359
+[e $ ! >= -> _analogMode `i -> 1 `i 1678  ]
+[e = _analogMode -> -> 0 `i `uc ]
+[e $U 1679  ]
+"360
+[e :U 1678 ]
+[; ;main.c: 360: else analogMode = 1;
+[e = _analogMode -> -> 1 `i `uc ]
+[e :U 1679 ]
+[; ;main.c: 361: AN_latch = 0;
+"361
+[e = _AN_latch -> -> 0 `i `uc ]
+"362
+}
+[; ;main.c: 362: }
+[e $U 1680  ]
+"363
+[e :U 1677 ]
+[; ;main.c: 363: else AN_latch = 1;
+[e = _AN_latch -> -> 1 `i `uc ]
+[e :U 1680 ]
+[; ;main.c: 365: slaveSelect = RA5;
+"365
+[e = _slaveSelect -> -> _RA5 `i `uc ]
+[; ;main.c: 366: if (slaveSelect) if(count < 3) count++;
+"366
+[e $ ! != -> _slaveSelect `i -> -> -> 0 `i `uc `i 1681  ]
+[e $ ! < -> _count `i -> 3 `i 1682  ]
+[e ++ _count -> -> 1 `i `uc ]
+[e :U 1682 ]
+"367
+[e :U 1681 ]
+[; ;main.c: 367: if (slaveSelect ^ slaveSelectStatePrev) count = 0;
+[e $ ! != ^ -> _slaveSelect `i -> _slaveSelectStatePrev `i -> 0 `i 1683  ]
+[e = _count -> -> 0 `i `uc ]
+[e :U 1683 ]
+[; ;main.c: 368: slaveSelectStatePrev = slaveSelect;
+"368
+[e = _slaveSelectStatePrev _slaveSelect ]
+[; ;main.c: 369: if (count >= 3) {
+"369
+[e $ ! >= -> _count `i -> 3 `i 1684  ]
+{
+[; ;main.c: 370: cmdCounter = 0;
+"370
+[e = _cmdCounter -> -> 0 `i `uc ]
+[; ;main.c: 371: responseLength = 9;
+"371
+[e = _responseLength -> -> 9 `i `uc ]
+[; ;main.c: 372: SSP1BUF = 0xFF;
+"372
+[e = _SSP1BUF -> -> 255 `i `uc ]
+[; ;main.c: 373: previousCmd = 0x00;
+"373
+[e = _previousCmd -> -> 0 `i `uc ]
+"374
+}
+[e :U 1684 ]
+[; ;main.c: 374: }
+[; ;main.c: 376: readController(analogMode);
+"376
+[e ( _readController (1 _analogMode ]
+[; ;main.c: 377: readControllerAnalog();
+"377
+[e ( _readControllerAnalog ..  ]
+"378
+}
+[e :U 1671 ]
+"348
+[e $U 1672  ]
+[e :U 1673 ]
+[; ;main.c: 378: }
+[; ;main.c: 379: }
+"379
+[e :UE 1670 ]
 }
