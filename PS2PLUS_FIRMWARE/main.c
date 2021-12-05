@@ -12,16 +12,24 @@
 #include "Controller.h"
 #include "Nvm.h"
 #include "MAPPING.h"
+#include <stdint.h>
 
 char response[20] = {DIGITAL_MODE, END_HEADER};
 char responseLength = 9;
 char cmdCounter = 0;
-char analogMode = 0; //0: digital mode 1: 0x73 mode 2: 0x79 mode
+char analogMode = 0; //0: 0x41 mode 1: 0x73 mode 2: 0x79 mode
 char escapeMode = 0;
 char previousCmd;
+char MODE_LOCK = 0; //when 1, you cannot use the analog button to switch modes
+char AN_latch = 0;  //used to toggle analog mode on falling edge of analog button
 
 char INIT_PRESSURE_SENSOR_byte3 = 0;    //stores data from 0x40 command
 char INIT_PRESSURE_SENSOR_byte4 = 0;    //stores data from 0x40 command
+char MAP_SMALL_MOTOR = 0xFF;
+char MAP_LARGE_MOTOR = 0xFF;
+char CONTROL_RESPONSE_byte3 = 0;    //stores data from 0x4F command
+char CONTROL_RESPONSE_byte4 = 0;    //stores data from 0x4F command
+char CONTROL_RESPONSE_byte5 = 0;    //stores data from 0x4F command
 
 void pollController(char response[20]) {
     response[2] = digitalStateFirst;
@@ -55,14 +63,14 @@ void __interrupt() PS2Command() {
     if (SSP1IF) {
         char cmd = spiRead();
 
-        switch (cmdCounter) { //We only care about the first command, the 3rd command and the 4th.
+        switch (cmdCounter) { 
             case 3:
                 switch (previousCmd) {
                     case INIT_PRESSURE_SENSOR:                       
                         INIT_PRESSURE_SENSOR_byte3 = cmd;                    
                         break;
                     case MAIN_POLLING:                      
-                        if(cmd == 0xFF) SMALL_MOTOR = 1;
+                        if(MAP_SMALL_MOTOR == 0 && cmd == 0xFF) SMALL_MOTOR = 1;
                         else SMALL_MOTOR = 0;                   
                         break;
                     case ENTER_EXIT_ESCAPE:
@@ -109,21 +117,40 @@ void __interrupt() PS2Command() {
                         break;
                     case CONTROL_RESPONSE:
                         //Obtain which buttons we want to collect analog data from here
+                        CONTROL_RESPONSE_byte3 = cmd;
+                        break;
+                    case MAP_MOTOR:
+                        MAP_SMALL_MOTOR = cmd;
                         break;
                 }
                 break;
-
             case 4:
-                switch (previousCmd) { //Large Motor                
+                switch (previousCmd) {              
                     case INIT_PRESSURE_SENSOR:                        
                         INIT_PRESSURE_SENSOR_byte4 = cmd;                     
                         break;
                     case MAIN_POLLING:
-                        if (reversebyte(cmd) >= 0x40) LARGE_MOTOR = 1;
+                        if(MAP_LARGE_MOTOR == 0x80 && reversebyte(cmd) >= 0x40) LARGE_MOTOR = 1;
                         else LARGE_MOTOR = 0;
+                        break;
+                    case ANALOG_DIGITAL_SWITCH:
+                        if(cmd == 0xC0) MODE_LOCK = 1;
+                        else MODE_LOCK = 0;
                         break;
                     case CONTROL_RESPONSE:
                         //Obtain which buttons we want to collect analog data from here
+                        CONTROL_RESPONSE_byte4 = cmd;
+                        break;
+                    case MAP_MOTOR:
+                        MAP_LARGE_MOTOR = cmd;
+                        break;
+                }
+                break;
+            case 5:
+                switch (previousCmd) {
+                    case CONTROL_RESPONSE:
+                        //Obtain which buttons we want to collect analog data from here
+                        CONTROL_RESPONSE_byte5 = cmd;
                         break;
                 }
                 break;
@@ -131,8 +158,7 @@ void __interrupt() PS2Command() {
                 switch (cmd) {
                     case INIT_PRESSURE_SENSOR:
                         /* 
-                         * This command tells us what buttons it wants 
-                         * from analog information from.
+                         * This command initializes the pressure buttons individually
                          */
                         response[2] = 0x00;
                         response[3] = 0x00;
@@ -140,30 +166,32 @@ void __interrupt() PS2Command() {
                         response[5] = 0x00;
                         response[6] = 0x00;
                         response[7] = 0x5A;            
-                        analogMode = 2;        //if we get here, let's go into 0x79 mode for now
                         previousCmd = cmd;
                         break;
                     case BUTTON_INCLUSION:
                         /*
-                         * This command asks for which buttons and sticks are turned on. This feature
+                         * This command asks for which buttons and sticks are active. This feature
                          * is controlled by CONTROL_RESPONSE. The response is 9 bytes long with 18 total bits
                          * that represent the different button and analog stick states.
                          */
-                        if (analogMode >= 1) {
-                            response[2] = 0xFF;
-                            response[3] = 0xFF;
-                            response[4] = 0xC0; //0x03 Reversed 
-                            response[5] = 0x00;
-                            response[6] = 0x00;
-                            response[7] = 0x5A;
-                        } else {
+                        if(analogMode == 0) {
                             response[2] = 0x00;
                             response[3] = 0x00;
                             response[4] = 0x00;
-                            response[5] = 0x00;
-                            response[6] = 0x00;
                             response[7] = 0x00;
                         }
+                        if(analogMode >= 1) {
+                            //there isn't any recorded documentation of the button masking being used so we will always return all button masks
+                            //response[2] = CONTROL_RESPONSE_byte3;
+                            //response[3] = CONTROL_RESPONSE_byte4;
+                            //response[4] = CONTROL_RESPONSE_byte5; 
+                            response[2] = 0xFF;
+                            response[3] = 0xFF;
+                            response[4] = 0xC0; //0x03 Reversed 
+                            response[7] = 0x5A;
+                        }
+                        response[5] = 0x00;
+                        response[6] = 0x00;
                         break;
                     case MAIN_POLLING:
                         /*
@@ -264,23 +292,19 @@ void __interrupt() PS2Command() {
                     case MAP_MOTOR:
                         /*
                          * This command tells the controller that MAIN_POLLING will now issue commands
-                         * to control the motors. There is no need to keep track of the state since we 
-                         * have logic in place to already handle this scenario. Instead we just send
-                         * a default response.
+                         * to control the motors.
                          */
-                        response[2] = 0xFF;
-                        response[3] = 0xFF;
+                        response[2] = MAP_SMALL_MOTOR;
+                        response[3] = MAP_LARGE_MOTOR;
                         response[4] = 0xFF;
                         response[5] = 0xFF;
                         response[6] = 0xFF;
                         response[7] = 0xFF;
+                        previousCmd = cmd;
                         break;
                     case CONTROL_RESPONSE:
                         /*
-                         * Difficult command as it controls whether or not we return analog values for buttons
-                         * i.e. keeping track of more state. For now will create default response. 
-                         * Further testing across many different games is needed to see 
-                         * if this will cause problems
+                         * This command can add or remove analog values from the response packet
                          */
                         response[2] = 0x00;
                         response[3] = 0x00;
@@ -288,6 +312,8 @@ void __interrupt() PS2Command() {
                         response[5] = 0x00;
                         response[6] = 0x00;
                         response[7] = 0x5A;
+                        previousCmd = cmd;
+                        if(analogMode == 1) analogMode = 2; //there isn't any recorded documentation of the button masking being used so we will always go into 0x79 mode for now
                         break;
                 }
                 break;
@@ -340,9 +366,23 @@ void main(void) {
             configureController();
         }     
         
+        /*
         if(analogMode >= 1) LED = 1;
         else LED = 0;
         
+        //Analog button mode switch
+        if(!AN_btn){
+            if(!MODE_LOCK) {
+                if(AN_latch) {
+                    if(analogMode >= 1) analogMode = 0;
+                    else analogMode = 1;
+                    AN_latch = 0;
+                }
+            }
+        }
+        else AN_latch = 1;
+        */
+             
         slaveSelect = SLAVE_SELECT;
         if (slaveSelect) if(count < 3) count++;
         if (slaveSelect ^ slaveSelectStatePrev) count = 0;

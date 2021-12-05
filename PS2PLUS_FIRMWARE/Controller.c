@@ -9,8 +9,19 @@
 #include "Nvm.h"
 #include "MAPPING.h"
 
-void readController(char analogMode) {
+char AN_temp = 1;
+char AN_prev = 1;
+char AN_timer = 0;
 
+void readController(char analogMode) {
+    
+    //debouncing ANALOG button
+    AN_temp = ANALOG_BTN;
+    if(AN_temp ^ AN_prev) AN_timer = 0;
+    else if(AN_timer < 4) AN_timer++;
+    if(AN_timer > 3) AN_btn = AN_temp;
+    AN_prev = AN_temp;
+    
     //update array with current inputs
     DigitalControllerByte1[DDown] = DDOWN;
     DigitalControllerByte1[DUp] = DUP;
@@ -203,82 +214,53 @@ void configureController() {
     while (1) {
 
         readController(0); //Only read the digital buttons
- 
-        if (digitalStateFirst == 0x6F && digitalStateSecond == 0x3F) { //L2 R2 Start Select
-            // Set default values
-
-            lxMin = 0;
-            lxMax = 255;
-            lyMin = 0;
-            lyMax = 255;
-
-            rxMin = 0;
-            rxMax = 255;
-            ryMin = 0;
-            ryMax = 255;
-
-            break;
-        }
 
         if (digitalStateFirst == 0x7F && digitalStateSecond == 0xCF) { //L1 r1 Select
-
             break;
         }
 
         lx = readADC(LX_ADC_CHAN);
         ly = readADC(LY_ADC_CHAN);
-
         rx = readADC(RX_ADC_CHAN);
         ry = readADC(RY_ADC_CHAN);
 
         //Left Stick
-        if (ly > lyMax) {
-            lyMax = ly;
-        }
-
-        if (ly < lyMin) {
-            lyMin = ly;
-        }
-
-        if (lx > lxMax) {
-            lxMax = lx;
-        }
-
-        if (lx < lxMin) {
-            lxMin = lx;
-        }
+        if (ly > lyMax) lyMax = ly;
+        if (ly < lyMin) lyMin = ly;
+        if (lx > lxMax) lxMax = lx;
+        if (lx < lxMin) lxMin = lx;
 
         //Right Stick
-
-        if (ry > ryMax) {
-            ryMax = ry;
+        if (ry > ryMax) ryMax = ry;
+        if (ry < ryMin) ryMin = ry;
+        if (rx > rxMax) rxMax = rx;
+        if (rx < rxMin) rxMin = rx;        
+        
+        if (digitalStateFirst == 0x6F && digitalStateSecond == 0x3F) { //L2 R2 Start Select
+            // Set default values
+            lxMin = 0;
+            lxMax = 255;
+            lyMin = 0;
+            lyMax = 255;
+            rxMin = 0;
+            rxMax = 255;
+            ryMin = 0;
+            ryMax = 255;
+            break;
         }
-
-        if (ry < ryMin) {
-            ryMin = ry;
-        }
-
-        if (rx > rxMax) {
-            rxMax = rx;
-        }
-
-        if (rx < rxMin) {
-            rxMin = rx;
-        }
-
     }
 
     eepromWrite(LX_MIN_EEPROM, lxMin);
     eepromWrite(LX_MAX_EEPROM, lxMax);
     eepromWrite(LY_MIN_EEPROM, lyMin);
     eepromWrite(LY_MAX_EEPROM, lyMax);
-
     eepromWrite(RX_MIN_EEPROM, rxMin);
     eepromWrite(RX_MAX_EEPROM, rxMax);
     eepromWrite(RY_MIN_EEPROM, ryMin);
     eepromWrite(RY_MAX_EEPROM, ryMax);
+    
+    lutInit();
 
     INTCONbits.GIE = 1; //Turn interrupts back on
     INTCONbits.PEIE = 1;
-
 }

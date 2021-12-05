@@ -20993,6 +20993,8 @@ R2,
 L2
 } digitalByteSecond;
 
+extern char AN_btn = 1;
+
 extern char digitalStateFirst = 0xFF;
 extern char digitalStateSecond = 0xFF;
 
@@ -21040,7 +21042,18 @@ void nvmUnlock();
 void IO_MAPPING();
 
 # 12 "Controller.c"
+char AN_temp = 1;
+char AN_prev = 1;
+char AN_timer = 0;
+
 void readController(char analogMode) {
+
+
+AN_temp = RD4;
+if(AN_temp ^ AN_prev) AN_timer = 0;
+else if(AN_timer < 4) AN_timer++;
+if(AN_timer > 3) AN_btn = AN_temp;
+AN_prev = AN_temp;
 
 
 DigitalControllerByte1[DDown] = RA7;
@@ -21235,81 +21248,52 @@ while (1) {
 
 readController(0);
 
-if (digitalStateFirst == 0x6F && digitalStateSecond == 0x3F) {
-
-
-lxMin = 0;
-lxMax = 255;
-lyMin = 0;
-lyMax = 255;
-
-rxMin = 0;
-rxMax = 255;
-ryMin = 0;
-ryMax = 255;
-
-break;
-}
-
 if (digitalStateFirst == 0x7F && digitalStateSecond == 0xCF) {
-
 break;
 }
 
 lx = readADC(0b10001);
 ly = readADC(0b010000);
-
 rx = readADC(0b010110);
 ry = readADC(0b010111);
 
 
-if (ly > lyMax) {
-lyMax = ly;
+if (ly > lyMax) lyMax = ly;
+if (ly < lyMin) lyMin = ly;
+if (lx > lxMax) lxMax = lx;
+if (lx < lxMin) lxMin = lx;
+
+
+if (ry > ryMax) ryMax = ry;
+if (ry < ryMin) ryMin = ry;
+if (rx > rxMax) rxMax = rx;
+if (rx < rxMin) rxMin = rx;
+
+if (digitalStateFirst == 0x6F && digitalStateSecond == 0x3F) {
+
+lxMin = 0;
+lxMax = 255;
+lyMin = 0;
+lyMax = 255;
+rxMin = 0;
+rxMax = 255;
+ryMin = 0;
+ryMax = 255;
+break;
 }
-
-if (ly < lyMin) {
-lyMin = ly;
-}
-
-if (lx > lxMax) {
-lxMax = lx;
-}
-
-if (lx < lxMin) {
-lxMin = lx;
-}
-
-
-
-if (ry > ryMax) {
-ryMax = ry;
-}
-
-if (ry < ryMin) {
-ryMin = ry;
-}
-
-if (rx > rxMax) {
-rxMax = rx;
-}
-
-if (rx < rxMin) {
-rxMin = rx;
-}
-
 }
 
 eepromWrite(0x60, lxMin);
 eepromWrite(0x61, lxMax);
 eepromWrite(0x62, lyMin);
 eepromWrite(0x63, lyMax);
-
 eepromWrite(0x64, rxMin);
 eepromWrite(0x65, rxMax);
 eepromWrite(0x66, ryMin);
 eepromWrite(0x67, ryMax);
 
+lutInit();
+
 INTCONbits.GIE = 1;
 INTCONbits.PEIE = 1;
-
 }

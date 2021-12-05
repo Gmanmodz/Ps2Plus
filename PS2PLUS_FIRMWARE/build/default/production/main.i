@@ -21070,6 +21070,8 @@ R2,
 L2
 } digitalByteSecond;
 
+extern char AN_btn = 1;
+
 extern char digitalStateFirst = 0xFF;
 extern char digitalStateSecond = 0xFF;
 
@@ -21116,16 +21118,109 @@ void nvmUnlock();
 # 144 "MAPPING.h"
 void IO_MAPPING();
 
-# 16 "main.c"
+# 13 "C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c90\stdint.h"
+typedef signed char int8_t;
+
+# 20
+typedef signed int int16_t;
+
+# 28
+typedef __int24 int24_t;
+
+# 36
+typedef signed long int int32_t;
+
+# 52
+typedef unsigned char uint8_t;
+
+# 58
+typedef unsigned int uint16_t;
+
+# 65
+typedef __uint24 uint24_t;
+
+# 72
+typedef unsigned long int uint32_t;
+
+# 88
+typedef signed char int_least8_t;
+
+# 96
+typedef signed int int_least16_t;
+
+# 109
+typedef __int24 int_least24_t;
+
+# 118
+typedef signed long int int_least32_t;
+
+# 136
+typedef unsigned char uint_least8_t;
+
+# 143
+typedef unsigned int uint_least16_t;
+
+# 154
+typedef __uint24 uint_least24_t;
+
+# 162
+typedef unsigned long int uint_least32_t;
+
+# 181
+typedef signed char int_fast8_t;
+
+# 188
+typedef signed int int_fast16_t;
+
+# 200
+typedef __int24 int_fast24_t;
+
+# 208
+typedef signed long int int_fast32_t;
+
+# 224
+typedef unsigned char uint_fast8_t;
+
+# 230
+typedef unsigned int uint_fast16_t;
+
+# 240
+typedef __uint24 uint_fast24_t;
+
+# 247
+typedef unsigned long int uint_fast32_t;
+
+# 268
+typedef int32_t intmax_t;
+
+# 282
+typedef uint32_t uintmax_t;
+
+# 289
+typedef int16_t intptr_t;
+
+
+
+
+typedef uint16_t uintptr_t;
+
+# 17 "main.c"
 char response[20] = {0x82, 0x5A};
 char responseLength = 9;
 char cmdCounter = 0;
 char analogMode = 0;
 char escapeMode = 0;
 char previousCmd;
+char MODE_LOCK = 0;
+char AN_latch = 0;
 
 char INIT_PRESSURE_SENSOR_byte3 = 0;
 char INIT_PRESSURE_SENSOR_byte4 = 0;
+char MAP_SMALL_MOTOR = 0xFF;
+char MAP_LARGE_MOTOR = 0xFF;
+char CONTROL_RESPONSE_byte3 = 0;
+char CONTROL_RESPONSE_byte4 = 0;
+char CONTROL_RESPONSE_byte5 = 0;
 
 void pollController(char response[20]) {
 response[2] = digitalStateFirst;
@@ -21166,7 +21261,7 @@ case 0x02:
 INIT_PRESSURE_SENSOR_byte3 = cmd;
 break;
 case 0x42:
-if(cmd == 0xFF) RD4 = 1;
+if(MAP_SMALL_MOTOR == 0 && cmd == 0xFF) RD4 = 1;
 else RD4 = 0;
 break;
 case 0xC2:
@@ -21213,21 +21308,40 @@ response[7] = 0x00;
 break;
 case 0xF2:
 
+CONTROL_RESPONSE_byte3 = cmd;
+break;
+case 0xB2:
+MAP_SMALL_MOTOR = cmd;
 break;
 }
 break;
-
 case 4:
 switch (previousCmd) {
 case 0x02:
 INIT_PRESSURE_SENSOR_byte4 = cmd;
 break;
 case 0x42:
-if (reversebyte(cmd) >= 0x40) RD4 = 1;
+if(MAP_LARGE_MOTOR == 0x80 && reversebyte(cmd) >= 0x40) RD4 = 1;
 else RD4 = 0;
+break;
+case 0x22:
+if(cmd == 0xC0) MODE_LOCK = 1;
+else MODE_LOCK = 0;
 break;
 case 0xF2:
 
+CONTROL_RESPONSE_byte4 = cmd;
+break;
+case 0xB2:
+MAP_LARGE_MOTOR = cmd;
+break;
+}
+break;
+case 5:
+switch (previousCmd) {
+case 0xF2:
+
+CONTROL_RESPONSE_byte5 = cmd;
 break;
 }
 break;
@@ -21235,44 +21349,46 @@ default:
 switch (cmd) {
 case 0x02:
 
-# 137
+# 163
 response[2] = 0x00;
 response[3] = 0x00;
 response[4] = 0x40;
 response[5] = 0x00;
 response[6] = 0x00;
 response[7] = 0x5A;
-analogMode = 2;
 previousCmd = cmd;
 break;
 case 0x82:
 
-# 152
-if (analogMode >= 1) {
-response[2] = 0xFF;
-response[3] = 0xFF;
-response[4] = 0xC0;
-response[5] = 0x00;
-response[6] = 0x00;
-response[7] = 0x5A;
-} else {
+# 177
+if(analogMode == 0) {
 response[2] = 0x00;
 response[3] = 0x00;
 response[4] = 0x00;
-response[5] = 0x00;
-response[6] = 0x00;
 response[7] = 0x00;
 }
+if(analogMode >= 1) {
+
+
+
+
+response[2] = 0xFF;
+response[3] = 0xFF;
+response[4] = 0xC0;
+response[7] = 0x5A;
+}
+response[5] = 0x00;
+response[6] = 0x00;
 break;
 case 0x42:
 
-# 173
+# 201
 pollController(response);
 previousCmd = cmd;
 break;
 case 0xC2:
 
-# 182
+# 210
 if(escapeMode) {
 response[2] = 0x00;
 response[3] = 0x00;
@@ -21288,7 +21404,7 @@ previousCmd = cmd;
 break;
 case 0x22:
 
-# 200
+# 228
 response[2] = 0x00;
 response[3] = 0x00;
 response[4] = 0x00;
@@ -21299,7 +21415,7 @@ previousCmd = cmd;
 break;
 case 0xA2:
 
-# 215
+# 243
 response[2] = 0xC0;
 response[3] = 0x40;
 if (analogMode >= 1) response[4] = 0x80;
@@ -21310,7 +21426,7 @@ response[7] = 0x00;
 break;
 case 0x62:
 
-# 229
+# 257
 response[2] = 0x00;
 response[3] = 0x00;
 response[4] = 0x80;
@@ -21321,7 +21437,7 @@ previousCmd = cmd;
 break;
 case 0xE2:
 
-# 243
+# 271
 response[2] = 0x00;
 response[3] = 0x00;
 response[4] = 0x40;
@@ -21331,7 +21447,7 @@ response[7] = 0x00;
 break;
 case 0x32:
 
-# 256
+# 284
 response[2] = 0x00;
 response[3] = 0x00;
 response[4] = 0x00;
@@ -21342,23 +21458,26 @@ previousCmd = cmd;
 break;
 case 0xB2:
 
-# 271
-response[2] = 0xFF;
-response[3] = 0xFF;
+# 297
+response[2] = MAP_SMALL_MOTOR;
+response[3] = MAP_LARGE_MOTOR;
 response[4] = 0xFF;
 response[5] = 0xFF;
 response[6] = 0xFF;
 response[7] = 0xFF;
+previousCmd = cmd;
 break;
 case 0xF2:
 
-# 285
+# 309
 response[2] = 0x00;
 response[3] = 0x00;
 response[4] = 0x00;
 response[5] = 0x00;
 response[6] = 0x00;
 response[7] = 0x5A;
+previousCmd = cmd;
+if(analogMode == 1) analogMode = 2;
 break;
 }
 break;
@@ -21411,9 +21530,7 @@ if(digitalStateFirst == 0x7F && digitalStateSecond == 0x5F){
 configureController();
 }
 
-if(analogMode >= 1) RD4 = 1;
-else RD4 = 0;
-
+# 386
 slaveSelect = RA5;
 if (slaveSelect) if(count < 3) count++;
 if (slaveSelect ^ slaveSelectStatePrev) count = 0;

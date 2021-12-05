@@ -42,6 +42,8 @@ typedef enum {
     L2
 } digitalByteSecond;
 
+extern char AN_btn = 1;
+
 extern char digitalStateFirst = 0xFF;
 extern char digitalStateSecond = 0xFF;
 
