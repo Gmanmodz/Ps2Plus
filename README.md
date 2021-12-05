@@ -21,6 +21,8 @@ To set the analog sticks back to the default values:
 
 ## **Hardware**
 
+A new pcb with new pin mapping will be uploaded soon. 
+
 ## **Acknowledgements**
 
 This project has only moved forward due to these individuals and sites (in no particular order):
