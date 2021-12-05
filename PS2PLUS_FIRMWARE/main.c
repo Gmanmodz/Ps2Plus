@@ -366,7 +366,6 @@ void main(void) {
             configureController();
         }     
         
-        /*
         if(analogMode >= 1) LED = 1;
         else LED = 0;
         
@@ -381,7 +380,6 @@ void main(void) {
             }
         }
         else AN_latch = 1;
-        */
              
         slaveSelect = SLAVE_SELECT;
         if (slaveSelect) if(count < 3) count++;

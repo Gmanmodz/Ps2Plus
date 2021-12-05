@@ -21530,7 +21530,21 @@ if(digitalStateFirst == 0x7F && digitalStateSecond == 0x5F){
 configureController();
 }
 
-# 386
+if(analogMode >= 1) RD4 = 1;
+else RD4 = 0;
+
+
+if(!AN_btn){
+if(!MODE_LOCK) {
+if(AN_latch) {
+if(analogMode >= 1) analogMode = 0;
+else analogMode = 1;
+AN_latch = 0;
+}
+}
+}
+else AN_latch = 1;
+
 slaveSelect = RA5;
 if (slaveSelect) if(count < 3) count++;
 if (slaveSelect ^ slaveSelectStatePrev) count = 0;

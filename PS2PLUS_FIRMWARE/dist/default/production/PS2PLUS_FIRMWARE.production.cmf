@@ -13,47 +13,47 @@
 %PSECTS
 $dist/default/production\PS2PLUS_FIRMWARE.production.o
 cinit CODE 0 240 240 50 2
-text1 CODE 0 F96 F96 6A 2
-text2 CODE 0 E9B E9B 37 2
-text3 CODE 0 D83 D83 14 2
-text4 CODE 0 D6F D6F 14 2
+text1 CODE 0 F0D F0D 6A 2
+text2 CODE 0 E76 E76 37 2
+text3 CODE 0 D5E D5E 14 2
+text4 CODE 0 D4A D4A 14 2
 text5 CODE 0 5EB 5EB 162 2
 text6 CODE 0 481 481 16A 2
-text7 CODE 0 E3A E3A 2B 2
+text7 CODE 0 E15 E15 2B 2
 text8 CODE 0 290 290 1F1 2
-text9 CODE 0 D5D D5D 12 2
-text10 CODE 0 DCB DCB 22 2
-text11 CODE 0 DAB DAB 20 2
-text12 CODE 0 ED2 ED2 60 2
-text13 CODE 0 DED DED 25 2
-text14 CODE 0 D2C D2C 7 2
-text15 CODE 0 D3B D3B A 2
-text16 CODE 0 E12 E12 28 2
-text17 CODE 0 D25 D25 7 2
-text18 CODE 0 D33 D33 8 2
-text20 CODE 0 E65 E65 36 2
-text21 CODE 0 D14 D14 5 2
-text22 CODE 0 D1F D1F 6 2
-text23 CODE 0 D19 D19 6 2
+text9 CODE 0 D38 D38 12 2
+text10 CODE 0 DA6 DA6 22 2
+text11 CODE 0 D86 D86 20 2
+text12 CODE 0 EAD EAD 60 2
+text13 CODE 0 DC8 DC8 25 2
+text14 CODE 0 D07 D07 7 2
+text15 CODE 0 D16 D16 A 2
+text16 CODE 0 DED DED 28 2
+text17 CODE 0 D00 D00 7 2
+text18 CODE 0 D0E D0E 8 2
+text20 CODE 0 E40 E40 36 2
+text21 CODE 0 CEF CEF 5 2
+text22 CODE 0 CFA CFA 6 2
+text23 CODE 0 CF4 CF4 6 2
 text24 CODE 0 74D 74D A3 2
 idataCOMMON CODE 0 7FC 7FC 1 2
-maintext CODE 0 F32 F32 64 2
+maintext CODE 0 F77 F77 89 2
 cstackCOMMON COMMON 1 70 70 6 1
 cstackBANK0 BANK0 1 20 20 3A 1
 cstackBANK1 BANK1 1 EC EC 3 1
-inittext CODE 0 D51 D51 C 2
+inittext CODE 0 D2C D2C C 2
 intentry CODE 0 4 4 23A 2
 bssBANK0 BANK0 1 66 66 8 1
 bssBANK1 BANK1 1 A0 A0 38 1
 bssBANK2 BANK2 1 120 120 8 1
 idataBANK0 CODE 0 7F0 7F0 C 2
-idataBANK1 CODE 0 D97 D97 14 2
+idataBANK1 CODE 0 D72 D72 14 2
 dataBANK0 BANK0 1 5A 5A C 1
 dataBANK1 BANK1 1 D8 D8 14 1
 dataCOMMON COMMON 1 7B 7B 1 1
-clrtext CODE 0 D45 D45 C 2
+clrtext CODE 0 D20 D20 C 2
 bssCOMMON COMMON 1 76 76 5 1
-$C:\Users\Gunnar\AppData\Local\Temp\s8ek.o
+$C:\Users\Gunnar\AppData\Local\Temp\sb24.o
 reset_vec CODE 0 0 0 2 2
 end_init CODE 0 23E 23E 2 2
 config CONFIG 0 8007 8007 5 2
@@ -87,10 +87,10 @@ BANK7 3A0-3EF 1
 BANK8 420-46F 1
 BANK9 4A0-4EF 1
 CONST 2-3 2
-CONST 7FD-D13 2
+CONST 7FD-CEE 2
 CONST 1000-3FFF 2
 ENTRY 2-3 2
-ENTRY 7FD-D13 2
+ENTRY 7FD-CEE 2
 ENTRY 1000-3FFF 2
 IDLOC 8000-8003 2
 SFR10 500-51F 1
@@ -117,7 +117,7 @@ SFR30 F00-F6F 1
 SFR31 F80-FEF 1
 STACK 20A8-23EF 1
 CODE 2-3 2
-CODE 7FD-D13 2
+CODE 7FD-CEE 2
 CODE 1000-3FFF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
@@ -136,10 +136,10 @@ BIGRAM 2000-27EF 1
 COMMON 7C-7D 1
 EEDATA F000-F0FF 2
 STRCODE 2-3 2
-STRCODE 7FD-D13 2
+STRCODE 7FD-CEE 2
 STRCODE 1000-3FFF 2
 STRING 2-3 2
-STRING 7FD-D13 2
+STRING 7FD-CEE 2
 STRING 1000-3FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
@@ -155,78 +155,78 @@ STRING 1000-3FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\PS2PLUS_FIRMWARE.production.o
-240 cinit CODE >8066:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-240 cinit CODE >8069:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-240 cinit CODE >8260:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-243 cinit CODE >8261:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-244 cinit CODE >8265:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-245 cinit CODE >8266:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-246 cinit CODE >8267:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-247 cinit CODE >8268:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-248 cinit CODE >8269:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-249 cinit CODE >8270:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-24A cinit CODE >8271:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-24B cinit CODE >8272:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-24C cinit CODE >8273:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-24D cinit CODE >8274:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-24E cinit CODE >8275:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-24F cinit CODE >8276:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-252 cinit CODE >8280:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-253 cinit CODE >8281:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-254 cinit CODE >8282:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-255 cinit CODE >8283:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-256 cinit CODE >8284:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-257 cinit CODE >8285:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-258 cinit CODE >8286:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-259 cinit CODE >8287:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-25A cinit CODE >8288:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-25B cinit CODE >8289:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-25C cinit CODE >8290:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-25D cinit CODE >8291:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-260 cinit CODE >8314:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-261 cinit CODE >8315:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-262 cinit CODE >8316:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-263 cinit CODE >8317:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-264 cinit CODE >8318:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-265 cinit CODE >8319:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-266 cinit CODE >8320:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-267 cinit CODE >8321:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-268 cinit CODE >8322:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-26B cinit CODE >8326:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-26C cinit CODE >8327:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-26D cinit CODE >8328:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-26E cinit CODE >8329:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-26F cinit CODE >8330:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-270 cinit CODE >8334:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-271 cinit CODE >8335:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-272 cinit CODE >8336:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-273 cinit CODE >8337:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-274 cinit CODE >8338:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-275 cinit CODE >8339:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-276 cinit CODE >8340:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-277 cinit CODE >8341:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-278 cinit CODE >8345:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-279 cinit CODE >8346:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-27A cinit CODE >8347:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-27B cinit CODE >8348:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-27C cinit CODE >8349:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-27D cinit CODE >8350:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-27E cinit CODE >8351:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-27F cinit CODE >8352:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-280 cinit CODE >8353:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-283 cinit CODE >8357:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-284 cinit CODE >8358:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-285 cinit CODE >8359:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-286 cinit CODE >8360:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-287 cinit CODE >8361:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-288 cinit CODE >8362:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-289 cinit CODE >8363:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-28A cinit CODE >8364:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-28B cinit CODE >8365:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-28C cinit CODE >8371:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-28C cinit CODE >8373:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-28D cinit CODE >8374:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-28E cinit CODE >8375:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
+240 cinit CODE >8067:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+240 cinit CODE >8070:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+240 cinit CODE >8261:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+243 cinit CODE >8262:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+244 cinit CODE >8266:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+245 cinit CODE >8267:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+246 cinit CODE >8268:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+247 cinit CODE >8269:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+248 cinit CODE >8270:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+249 cinit CODE >8271:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+24A cinit CODE >8272:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+24B cinit CODE >8273:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+24C cinit CODE >8274:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+24D cinit CODE >8275:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+24E cinit CODE >8276:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+24F cinit CODE >8277:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+252 cinit CODE >8281:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+253 cinit CODE >8282:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+254 cinit CODE >8283:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+255 cinit CODE >8284:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+256 cinit CODE >8285:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+257 cinit CODE >8286:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+258 cinit CODE >8287:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+259 cinit CODE >8288:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+25A cinit CODE >8289:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+25B cinit CODE >8290:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+25C cinit CODE >8291:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+25D cinit CODE >8292:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+260 cinit CODE >8315:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+261 cinit CODE >8316:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+262 cinit CODE >8317:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+263 cinit CODE >8318:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+264 cinit CODE >8319:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+265 cinit CODE >8320:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+266 cinit CODE >8321:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+267 cinit CODE >8322:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+268 cinit CODE >8323:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+26B cinit CODE >8327:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+26C cinit CODE >8328:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+26D cinit CODE >8329:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+26E cinit CODE >8330:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+26F cinit CODE >8331:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+270 cinit CODE >8335:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+271 cinit CODE >8336:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+272 cinit CODE >8337:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+273 cinit CODE >8338:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+274 cinit CODE >8339:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+275 cinit CODE >8340:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+276 cinit CODE >8341:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+277 cinit CODE >8342:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+278 cinit CODE >8346:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+279 cinit CODE >8347:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+27A cinit CODE >8348:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+27B cinit CODE >8349:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+27C cinit CODE >8350:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+27D cinit CODE >8351:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+27E cinit CODE >8352:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+27F cinit CODE >8353:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+280 cinit CODE >8354:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+283 cinit CODE >8358:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+284 cinit CODE >8359:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+285 cinit CODE >8360:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+286 cinit CODE >8361:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+287 cinit CODE >8362:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+288 cinit CODE >8363:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+289 cinit CODE >8364:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+28A cinit CODE >8365:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+28B cinit CODE >8366:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+28C cinit CODE >8372:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+28C cinit CODE >8374:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+28D cinit CODE >8375:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+28E cinit CODE >8376:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
 4 intentry CODE >61:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\main.c
 6 intentry CODE >63:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\main.c
 B intentry CODE >64:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\main.c
@@ -396,125 +396,125 @@ FF intentry CODE >166:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\main.c
 7EA text24 CODE >55:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\main.c
 7EB text24 CODE >57:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\main.c
 7EF text24 CODE >59:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\main.c
-D19 text23 CODE >27:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Spi.c
-D19 text23 CODE >29:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Spi.c
-D1E text23 CODE >30:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Spi.c
-D1F text22 CODE >37:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Spi.c
-D1F text22 CODE >39:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Spi.c
-D22 text22 CODE >40:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Spi.c
-D24 text22 CODE >41:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Spi.c
-D14 text21 CODE >32:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Spi.c
-D15 text21 CODE >34:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Spi.c
-D18 text21 CODE >35:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Spi.c
-E65 text20 CODE >176:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Controller.c
-E66 text20 CODE >177:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Controller.c
-E79 text20 CODE >178:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Controller.c
-E8C text20 CODE >179:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Controller.c
-E99 text20 CODE >181:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Controller.c
-E9A text20 CODE >182:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Controller.c
-D33 text18 CODE >15:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\PicConfig.c
-D33 text18 CODE >16:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\PicConfig.c
-D36 text18 CODE >17:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\PicConfig.c
-D38 text18 CODE >18:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\PicConfig.c
-D3A text18 CODE >19:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\PicConfig.c
-D25 text17 CODE >9:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\PicConfig.c
-D25 text17 CODE >10:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\PicConfig.c
-D28 text17 CODE >11:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\PicConfig.c
-D2A text17 CODE >12:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\PicConfig.c
-D2B text17 CODE >13:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\PicConfig.c
-E12 text16 CODE >88:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\MAPPING.c
-E12 text16 CODE >90:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\MAPPING.c
-E15 text16 CODE >91:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\MAPPING.c
-E17 text16 CODE >92:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\MAPPING.c
-E19 text16 CODE >93:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\MAPPING.c
-E1B text16 CODE >94:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\MAPPING.c
-E1D text16 CODE >97:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\MAPPING.c
-E1F text16 CODE >98:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\MAPPING.c
-E20 text16 CODE >99:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\MAPPING.c
-E22 text16 CODE >100:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\MAPPING.c
-E23 text16 CODE >101:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\MAPPING.c
-E24 text16 CODE >104:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\MAPPING.c
-E26 text16 CODE >105:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\MAPPING.c
-E28 text16 CODE >106:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\MAPPING.c
-E2A text16 CODE >107:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\MAPPING.c
-E2C text16 CODE >108:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\MAPPING.c
-E2D text16 CODE >110:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\MAPPING.c
-E2F text16 CODE >111:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\MAPPING.c
-E30 text16 CODE >112:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\MAPPING.c
-E33 text16 CODE >113:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\MAPPING.c
-E36 text16 CODE >114:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\MAPPING.c
-E39 text16 CODE >115:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\MAPPING.c
-D3B text15 CODE >21:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\PicConfig.c
-D3B text15 CODE >22:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\PicConfig.c
-D3E text15 CODE >23:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\PicConfig.c
-D3F text15 CODE >24:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\PicConfig.c
-D40 text15 CODE >25:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\PicConfig.c
-D41 text15 CODE >26:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\PicConfig.c
-D43 text15 CODE >27:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\PicConfig.c
-D44 text15 CODE >28:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\PicConfig.c
-D2C text14 CODE >45:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Nvm.c
-D2C text14 CODE >47:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Nvm.c
-D2F text14 CODE >48:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Nvm.c
-D31 text14 CODE >49:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Nvm.c
-D32 text14 CODE >50:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Nvm.c
-DED text13 CODE >8:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Nvm.c
-DEF text13 CODE >10:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Nvm.c
-DF3 text13 CODE >12:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Nvm.c
-DF4 text13 CODE >14:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Nvm.c
-DF6 text13 CODE >15:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Nvm.c
-DF7 text13 CODE >17:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Nvm.c
-DF9 text13 CODE >18:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Nvm.c
-DFD text13 CODE >20:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Nvm.c
-E01 text13 CODE >22:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Nvm.c
-E04 text13 CODE >24:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Nvm.c
-E09 text13 CODE >26:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Nvm.c
-E0A text13 CODE >28:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Nvm.c
-E11 text13 CODE >29:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Nvm.c
-ED2 text12 CODE >5:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
-ED2 text12 CODE >13:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
-ED4 text12 CODE >14:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
-ED8 text12 CODE >15:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
-EDD text12 CODE >16:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
-EDF text12 CODE >18:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
-EE3 text12 CODE >19:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
-EE8 text12 CODE >20:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
-EEC text12 CODE >22:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
-EEE text12 CODE >23:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
-EF4 text12 CODE >24:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
-EF6 text12 CODE >25:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
-EF7 text12 CODE >26:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
-EFC text12 CODE >27:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
-F00 text12 CODE >25:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
-F04 text12 CODE >30:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
-F09 text12 CODE >31:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
-F13 text12 CODE >32:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
-F17 text12 CODE >33:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
-F18 text12 CODE >35:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
-F1D text12 CODE >36:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
-F23 text12 CODE >38:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
-F28 text12 CODE >39:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
-F2D text12 CODE >40:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
-F31 text12 CODE >41:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
-DAB text11 CODE >15:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul16.c
-DAB text11 CODE >43:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul16.c
-DAE text11 CODE >45:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul16.c
-DB2 text11 CODE >46:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul16.c
-DB6 text11 CODE >47:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul16.c
-DBB text11 CODE >48:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul16.c
-DC0 text11 CODE >49:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul16.c
-DC6 text11 CODE >52:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul16.c
-DCA text11 CODE >53:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul16.c
-DCB text10 CODE >102:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Controller.c
-DCB text10 CODE >104:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Controller.c
-DEC text10 CODE >105:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Controller.c
-D5D text9 CODE >31:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Nvm.c
-D5F text9 CODE >35:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Nvm.c
-D61 text9 CODE >36:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Nvm.c
-D63 text9 CODE >37:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Nvm.c
-D67 text9 CODE >38:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Nvm.c
-D68 text9 CODE >40:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Nvm.c
-D6D text9 CODE >42:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Nvm.c
-D6E text9 CODE >43:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Nvm.c
+CF4 text23 CODE >27:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Spi.c
+CF4 text23 CODE >29:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Spi.c
+CF9 text23 CODE >30:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Spi.c
+CFA text22 CODE >37:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Spi.c
+CFA text22 CODE >39:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Spi.c
+CFD text22 CODE >40:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Spi.c
+CFF text22 CODE >41:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Spi.c
+CEF text21 CODE >32:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Spi.c
+CF0 text21 CODE >34:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Spi.c
+CF3 text21 CODE >35:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Spi.c
+E40 text20 CODE >176:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Controller.c
+E41 text20 CODE >177:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Controller.c
+E54 text20 CODE >178:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Controller.c
+E67 text20 CODE >179:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Controller.c
+E74 text20 CODE >181:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Controller.c
+E75 text20 CODE >182:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Controller.c
+D0E text18 CODE >15:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\PicConfig.c
+D0E text18 CODE >16:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\PicConfig.c
+D11 text18 CODE >17:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\PicConfig.c
+D13 text18 CODE >18:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\PicConfig.c
+D15 text18 CODE >19:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\PicConfig.c
+D00 text17 CODE >9:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\PicConfig.c
+D00 text17 CODE >10:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\PicConfig.c
+D03 text17 CODE >11:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\PicConfig.c
+D05 text17 CODE >12:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\PicConfig.c
+D06 text17 CODE >13:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\PicConfig.c
+DED text16 CODE >88:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\MAPPING.c
+DED text16 CODE >90:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\MAPPING.c
+DF0 text16 CODE >91:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\MAPPING.c
+DF2 text16 CODE >92:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\MAPPING.c
+DF4 text16 CODE >93:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\MAPPING.c
+DF6 text16 CODE >94:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\MAPPING.c
+DF8 text16 CODE >97:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\MAPPING.c
+DFA text16 CODE >98:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\MAPPING.c
+DFB text16 CODE >99:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\MAPPING.c
+DFD text16 CODE >100:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\MAPPING.c
+DFE text16 CODE >101:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\MAPPING.c
+DFF text16 CODE >104:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\MAPPING.c
+E01 text16 CODE >105:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\MAPPING.c
+E03 text16 CODE >106:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\MAPPING.c
+E05 text16 CODE >107:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\MAPPING.c
+E07 text16 CODE >108:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\MAPPING.c
+E08 text16 CODE >110:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\MAPPING.c
+E0A text16 CODE >111:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\MAPPING.c
+E0B text16 CODE >112:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\MAPPING.c
+E0E text16 CODE >113:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\MAPPING.c
+E11 text16 CODE >114:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\MAPPING.c
+E14 text16 CODE >115:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\MAPPING.c
+D16 text15 CODE >21:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\PicConfig.c
+D16 text15 CODE >22:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\PicConfig.c
+D19 text15 CODE >23:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\PicConfig.c
+D1A text15 CODE >24:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\PicConfig.c
+D1B text15 CODE >25:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\PicConfig.c
+D1C text15 CODE >26:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\PicConfig.c
+D1E text15 CODE >27:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\PicConfig.c
+D1F text15 CODE >28:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\PicConfig.c
+D07 text14 CODE >45:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Nvm.c
+D07 text14 CODE >47:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Nvm.c
+D0A text14 CODE >48:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Nvm.c
+D0C text14 CODE >49:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Nvm.c
+D0D text14 CODE >50:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Nvm.c
+DC8 text13 CODE >8:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Nvm.c
+DCA text13 CODE >10:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Nvm.c
+DCE text13 CODE >12:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Nvm.c
+DCF text13 CODE >14:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Nvm.c
+DD1 text13 CODE >15:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Nvm.c
+DD2 text13 CODE >17:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Nvm.c
+DD4 text13 CODE >18:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Nvm.c
+DD8 text13 CODE >20:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Nvm.c
+DDC text13 CODE >22:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Nvm.c
+DDF text13 CODE >24:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Nvm.c
+DE4 text13 CODE >26:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Nvm.c
+DE5 text13 CODE >28:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Nvm.c
+DEC text13 CODE >29:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Nvm.c
+EAD text12 CODE >5:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
+EAD text12 CODE >13:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
+EAF text12 CODE >14:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
+EB3 text12 CODE >15:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
+EB8 text12 CODE >16:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
+EBA text12 CODE >18:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
+EBE text12 CODE >19:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
+EC3 text12 CODE >20:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
+EC7 text12 CODE >22:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
+EC9 text12 CODE >23:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
+ECF text12 CODE >24:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
+ED1 text12 CODE >25:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
+ED2 text12 CODE >26:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
+ED7 text12 CODE >27:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
+EDB text12 CODE >25:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
+EDF text12 CODE >30:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
+EE4 text12 CODE >31:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
+EEE text12 CODE >32:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
+EF2 text12 CODE >33:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
+EF3 text12 CODE >35:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
+EF8 text12 CODE >36:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
+EFE text12 CODE >38:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
+F03 text12 CODE >39:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
+F08 text12 CODE >40:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
+F0C text12 CODE >41:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
+D86 text11 CODE >15:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul16.c
+D86 text11 CODE >43:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul16.c
+D89 text11 CODE >45:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul16.c
+D8D text11 CODE >46:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul16.c
+D91 text11 CODE >47:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul16.c
+D96 text11 CODE >48:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul16.c
+D9B text11 CODE >49:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul16.c
+DA1 text11 CODE >52:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul16.c
+DA5 text11 CODE >53:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul16.c
+DA6 text10 CODE >102:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Controller.c
+DA6 text10 CODE >104:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Controller.c
+DC7 text10 CODE >105:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Controller.c
+D38 text9 CODE >31:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Nvm.c
+D3A text9 CODE >35:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Nvm.c
+D3C text9 CODE >36:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Nvm.c
+D3E text9 CODE >37:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Nvm.c
+D42 text9 CODE >38:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Nvm.c
+D43 text9 CODE >40:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Nvm.c
+D48 text9 CODE >42:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Nvm.c
+D49 text9 CODE >43:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Nvm.c
 290 text8 CODE >107:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Controller.c
 290 text8 CODE >109:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Controller.c
 298 text8 CODE >110:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Controller.c
@@ -551,14 +551,14 @@ D6E text9 CODE >43:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Nvm.c
 440 text8 CODE >159:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Controller.c
 46F text8 CODE >119:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Controller.c
 480 text8 CODE >163:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Controller.c
-E3A text7 CODE >165:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Controller.c
-E3A text7 CODE >166:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Controller.c
-E3E text7 CODE >167:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Controller.c
-E3F text7 CODE >168:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Controller.c
-E41 text7 CODE >170:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Controller.c
-E42 text7 CODE >171:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Controller.c
-E46 text7 CODE >173:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Controller.c
-E64 text7 CODE >174:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Controller.c
+E15 text7 CODE >165:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Controller.c
+E15 text7 CODE >166:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Controller.c
+E19 text7 CODE >167:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Controller.c
+E1A text7 CODE >168:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Controller.c
+E1C text7 CODE >170:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Controller.c
+E1D text7 CODE >171:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Controller.c
+E21 text7 CODE >173:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Controller.c
+E3F text7 CODE >174:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Controller.c
 481 text6 CODE >16:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Controller.c
 483 text6 CODE >19:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Controller.c
 487 text6 CODE >20:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Controller.c
@@ -659,83 +659,92 @@ E64 text7 CODE >174:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Controller.
 74A text5 CODE >264:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Controller.c
 74B text5 CODE >265:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Controller.c
 74C text5 CODE >266:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Controller.c
-D6F text4 CODE >10:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Spi.c
-D71 text4 CODE >13:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Spi.c
-D75 text4 CODE >15:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Spi.c
-D78 text4 CODE >17:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Spi.c
-D79 text4 CODE >20:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Spi.c
-D7D text4 CODE >22:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Spi.c
-D7D text4 CODE >24:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Spi.c
-D82 text4 CODE >25:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Spi.c
-D83 text3 CODE >30:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\PicConfig.c
-D83 text3 CODE >32:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\PicConfig.c
-D91 text3 CODE >35:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\PicConfig.c
-D92 text3 CODE >36:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\PicConfig.c
-D93 text3 CODE >37:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\PicConfig.c
-D95 text3 CODE >38:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\PicConfig.c
-D96 text3 CODE >39:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\PicConfig.c
-E9B text2 CODE >176:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Controller.c
-E9D text2 CODE >177:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Controller.c
-EB0 text2 CODE >178:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Controller.c
-EC3 text2 CODE >179:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Controller.c
-ED0 text2 CODE >181:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Controller.c
-ED1 text2 CODE >182:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Controller.c
-F96 text1 CODE >184:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Controller.c
-F96 text1 CODE >186:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Controller.c
-FB1 text1 CODE >187:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Controller.c
-FCB text1 CODE >189:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Controller.c
-FE5 text1 CODE >190:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Controller.c
-FFF text1 CODE >191:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Controller.c
-F32 maintext CODE >349:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\main.c
-F32 maintext CODE >351:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\main.c
-F35 maintext CODE >352:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\main.c
-F38 maintext CODE >353:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\main.c
-F3B maintext CODE >354:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\main.c
-F3E maintext CODE >356:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\main.c
-F44 maintext CODE >359:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\main.c
-F45 maintext CODE >360:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\main.c
-F46 maintext CODE >361:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\main.c
-F48 maintext CODE >365:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\main.c
-F55 maintext CODE >366:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\main.c
-F58 maintext CODE >386:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\main.c
-F5E maintext CODE >387:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\main.c
-F6F maintext CODE >388:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\main.c
-F76 maintext CODE >389:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\main.c
-F7C maintext CODE >390:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\main.c
-F82 maintext CODE >391:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\main.c
-F83 maintext CODE >392:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\main.c
-F88 maintext CODE >393:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\main.c
-F8B maintext CODE >394:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\main.c
-F8C maintext CODE >397:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\main.c
-F90 maintext CODE >398:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\main.c
-D45 clrtext CODE >8297:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-D45 clrtext CODE >8298:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-D46 clrtext CODE >8299:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-D46 clrtext CODE >8300:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-D47 clrtext CODE >8301:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-D48 clrtext CODE >8302:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-D49 clrtext CODE >8303:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-D4A clrtext CODE >8304:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-D4B clrtext CODE >8305:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-D4C clrtext CODE >8306:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-D4D clrtext CODE >8307:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-D4E clrtext CODE >8308:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-D4F clrtext CODE >8309:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-D50 clrtext CODE >8310:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-D51 inittext CODE >8243:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-D51 inittext CODE >8244:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-D52 inittext CODE >8245:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-D52 inittext CODE >8246:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-D53 inittext CODE >8247:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-D54 inittext CODE >8248:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-D55 inittext CODE >8249:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-D56 inittext CODE >8250:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-D57 inittext CODE >8251:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-D58 inittext CODE >8252:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-D59 inittext CODE >8253:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-D5A inittext CODE >8254:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-D5B inittext CODE >8255:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
-D5C inittext CODE >8256:C:\Users\Gunnar\AppData\Local\Temp\s8ek.s
+D4A text4 CODE >10:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Spi.c
+D4C text4 CODE >13:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Spi.c
+D50 text4 CODE >15:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Spi.c
+D53 text4 CODE >17:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Spi.c
+D54 text4 CODE >20:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Spi.c
+D58 text4 CODE >22:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Spi.c
+D58 text4 CODE >24:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Spi.c
+D5D text4 CODE >25:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Spi.c
+D5E text3 CODE >30:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\PicConfig.c
+D5E text3 CODE >32:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\PicConfig.c
+D6C text3 CODE >35:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\PicConfig.c
+D6D text3 CODE >36:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\PicConfig.c
+D6E text3 CODE >37:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\PicConfig.c
+D70 text3 CODE >38:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\PicConfig.c
+D71 text3 CODE >39:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\PicConfig.c
+E76 text2 CODE >176:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Controller.c
+E78 text2 CODE >177:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Controller.c
+E8B text2 CODE >178:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Controller.c
+E9E text2 CODE >179:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Controller.c
+EAB text2 CODE >181:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Controller.c
+EAC text2 CODE >182:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Controller.c
+F0D text1 CODE >184:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Controller.c
+F0D text1 CODE >186:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Controller.c
+F28 text1 CODE >187:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Controller.c
+F42 text1 CODE >189:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Controller.c
+F5C text1 CODE >190:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Controller.c
+F76 text1 CODE >191:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Controller.c
+F77 maintext CODE >349:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\main.c
+F77 maintext CODE >351:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\main.c
+F7A maintext CODE >352:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\main.c
+F7D maintext CODE >353:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\main.c
+F80 maintext CODE >354:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\main.c
+F83 maintext CODE >356:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\main.c
+F89 maintext CODE >359:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\main.c
+F8A maintext CODE >360:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\main.c
+F8B maintext CODE >361:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\main.c
+F8D maintext CODE >365:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\main.c
+F9A maintext CODE >366:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\main.c
+F9D maintext CODE >369:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\main.c
+FA5 maintext CODE >370:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\main.c
+FA7 maintext CODE >373:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\main.c
+FAC maintext CODE >374:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\main.c
+FB1 maintext CODE >375:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\main.c
+FB6 maintext CODE >376:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\main.c
+FBD maintext CODE >377:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\main.c
+FBF maintext CODE >378:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\main.c
+FC1 maintext CODE >382:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\main.c
+FC3 maintext CODE >384:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\main.c
+FC8 maintext CODE >385:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\main.c
+FD9 maintext CODE >386:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\main.c
+FE0 maintext CODE >387:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\main.c
+FE6 maintext CODE >388:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\main.c
+FEC maintext CODE >389:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\main.c
+FED maintext CODE >390:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\main.c
+FF2 maintext CODE >391:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\main.c
+FF5 maintext CODE >392:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\main.c
+FF6 maintext CODE >395:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\main.c
+FFA maintext CODE >396:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\main.c
+D20 clrtext CODE >8298:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+D20 clrtext CODE >8299:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+D21 clrtext CODE >8300:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+D21 clrtext CODE >8301:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+D22 clrtext CODE >8302:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+D23 clrtext CODE >8303:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+D24 clrtext CODE >8304:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+D25 clrtext CODE >8305:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+D26 clrtext CODE >8306:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+D27 clrtext CODE >8307:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+D28 clrtext CODE >8308:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+D29 clrtext CODE >8309:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+D2A clrtext CODE >8310:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+D2B clrtext CODE >8311:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+D2C inittext CODE >8244:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+D2C inittext CODE >8245:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+D2D inittext CODE >8246:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+D2D inittext CODE >8247:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+D2E inittext CODE >8248:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+D2F inittext CODE >8249:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+D30 inittext CODE >8250:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+D31 inittext CODE >8251:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+D32 inittext CODE >8252:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+D33 inittext CODE >8253:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+D34 inittext CODE >8254:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+D35 inittext CODE >8255:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+D36 inittext CODE >8256:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
+D37 inittext CODE >8257:C:\Users\Gunnar\AppData\Local\Temp\sb24.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -760,7 +769,7 @@ __Hspace_3 0 0 ABS 0 - -
 __HidataBANK0 0 0 ABS 0 idataBANK0 -
 __HidataBANK1 0 0 ABS 0 idataBANK1 -
 spiInit@sTransmitEdge 22 0 BANK0 1 cstackBANK0 dist/default/production\PS2PLUS_FIRMWARE.production.o
-__end_of_readADC 1CCA 0 CODE 0 text7 dist/default/production\PS2PLUS_FIRMWARE.production.o
+__end_of_readADC 1C80 0 CODE 0 text7 dist/default/production\PS2PLUS_FIRMWARE.production.o
 _SSP1STATbits 18F 0 ABS 0 - dist/default/production\PS2PLUS_FIRMWARE.production.o
 __size_of_pollController 0 0 ABS 0 - dist/default/production\PS2PLUS_FIRMWARE.production.o
 _analogMode 78 0 COMMON 1 bssCOMMON dist/default/production\PS2PLUS_FIRMWARE.production.o
@@ -775,17 +784,17 @@ _WPUB F44 0 ABS 0 - dist/default/production\PS2PLUS_FIRMWARE.production.o
 _WPUC F4F 0 ABS 0 - dist/default/production\PS2PLUS_FIRMWARE.production.o
 _WPUD F5A 0 ABS 0 - dist/default/production\PS2PLUS_FIRMWARE.production.o
 _WPUE F65 0 ABS 0 - dist/default/production\PS2PLUS_FIRMWARE.production.o
-___sp 0 0 STACK 2 stack C:\Users\Gunnar\AppData\Local\Temp\s8ek.o
-_main 1E64 0 CODE 0 maintext dist/default/production\PS2PLUS_FIRMWARE.production.o
+___sp 0 0 STACK 2 stack C:\Users\Gunnar\AppData\Local\Temp\sb24.o
+_main 1EEE 0 CODE 0 maintext dist/default/production\PS2PLUS_FIRMWARE.production.o
 btemp 7E 0 ABS 0 - dist/default/production\PS2PLUS_FIRMWARE.production.o
-start 47C 0 CODE 0 init C:\Users\Gunnar\AppData\Local\Temp\s8ek.o
+start 47C 0 CODE 0 init C:\Users\Gunnar\AppData\Local\Temp\sb24.o
 __size_of___awdiv 0 0 ABS 0 - dist/default/production\PS2PLUS_FIRMWARE.production.o
 __size_of_main 0 0 ABS 0 - dist/default/production\PS2PLUS_FIRMWARE.production.o
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
 __CFG_SCANE$available 0 0 ABS 0 - dist/default/production\PS2PLUS_FIRMWARE.production.o
 eepromRead@data 22 0 BANK0 1 cstackBANK0 dist/default/production\PS2PLUS_FIRMWARE.production.o
 ?___wmul 20 0 BANK0 1 cstackBANK0 dist/default/production\PS2PLUS_FIRMWARE.production.o
-__end_of_IO_MAPPING 1C74 0 CODE 0 text16 dist/default/production\PS2PLUS_FIRMWARE.production.o
+__end_of_IO_MAPPING 1C2A 0 CODE 0 text16 dist/default/production\PS2PLUS_FIRMWARE.production.o
 __size_of_eepromRead 0 0 ABS 0 - dist/default/production\PS2PLUS_FIRMWARE.production.o
 __LidataBANK0 0 0 ABS 0 idataBANK0 -
 __LidataBANK1 0 0 ABS 0 idataBANK1 -
@@ -794,22 +803,22 @@ readADC@channel 20 0 BANK0 1 cstackBANK0 dist/default/production\PS2PLUS_FIRMWAR
 __size_of_readController 0 0 ABS 0 - dist/default/production\PS2PLUS_FIRMWARE.production.o
 __HdataCOMMON 0 0 ABS 0 dataCOMMON -
 _previousCmd 76 0 COMMON 1 bssCOMMON dist/default/production\PS2PLUS_FIRMWARE.production.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\Gunnar\AppData\Local\Temp\s8ek.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\Gunnar\AppData\Local\Temp\s8ek.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\Gunnar\AppData\Local\Temp\s8ek.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\Gunnar\AppData\Local\Temp\s8ek.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\Gunnar\AppData\Local\Temp\s8ek.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\Gunnar\AppData\Local\Temp\s8ek.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\Gunnar\AppData\Local\Temp\sb24.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\Gunnar\AppData\Local\Temp\sb24.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\Gunnar\AppData\Local\Temp\sb24.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\Gunnar\AppData\Local\Temp\sb24.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\Gunnar\AppData\Local\Temp\sb24.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\Gunnar\AppData\Local\Temp\sb24.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 wtemp0 7E 0 ABS 0 - dist/default/production\PS2PLUS_FIRMWARE.production.o
 __size_ofi1_reversebyte 0 0 ABS 0 - dist/default/production\PS2PLUS_FIRMWARE.production.o
-__end_of_reversebyte 1DA4 0 CODE 0 text2 dist/default/production\PS2PLUS_FIRMWARE.production.o
+__end_of_reversebyte 1D5A 0 CODE 0 text2 dist/default/production\PS2PLUS_FIRMWARE.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
 ___awdiv@sign 2C 0 BANK0 1 cstackBANK0 dist/default/production\PS2PLUS_FIRMWARE.production.o
 __Hclrtext 0 0 ABS 0 clrtext -
 __pidataCOMMON FF8 0 CODE 0 idataCOMMON dist/default/production\PS2PLUS_FIRMWARE.production.o
 __size_of_lutInit 0 0 ABS 0 - dist/default/production\PS2PLUS_FIRMWARE.production.o
-__end_of_nvmUnlock 1A66 0 CODE 0 text14 dist/default/production\PS2PLUS_FIRMWARE.production.o
+__end_of_nvmUnlock 1A1C 0 CODE 0 text14 dist/default/production\PS2PLUS_FIRMWARE.production.o
 ___wmul@multiplicand 22 0 BANK0 1 cstackBANK0 dist/default/production\PS2PLUS_FIRMWARE.production.o
 _ADCON0 93 0 ABS 0 - dist/default/production\PS2PLUS_FIRMWARE.production.o
 _ADCON1 94 0 ABS 0 - dist/default/production\PS2PLUS_FIRMWARE.production.o
@@ -829,25 +838,25 @@ Map@outMax 37 0 BANK0 1 cstackBANK0 dist/default/production\PS2PLUS_FIRMWARE.pro
 Map@outMin 35 0 BANK0 1 cstackBANK0 dist/default/production\PS2PLUS_FIRMWARE.production.o
 __size_of_PS2Command 0 0 ABS 0 - dist/default/production\PS2PLUS_FIRMWARE.production.o
 eepromWrite@data 20 0 BANK0 1 cstackBANK0 dist/default/production\PS2PLUS_FIRMWARE.production.o
-__end_of___wmul 1B96 0 CODE 0 text11 dist/default/production\PS2PLUS_FIRMWARE.production.o
-__end_ofi1_reversebyte 1D36 0 CODE 0 text20 dist/default/production\PS2PLUS_FIRMWARE.production.o
+__end_of___wmul 1B4C 0 CODE 0 text11 dist/default/production\PS2PLUS_FIRMWARE.production.o
+__end_ofi1_reversebyte 1CEC 0 CODE 0 text20 dist/default/production\PS2PLUS_FIRMWARE.production.o
 __size_of_spiInit 0 0 ABS 0 - dist/default/production\PS2PLUS_FIRMWARE.production.o
 __size_of_spiRead 0 0 ABS 0 - dist/default/production\PS2PLUS_FIRMWARE.production.o
 __Lmaintext 0 0 ABS 0 maintext -
 __size_of_readControllerAnalog 0 0 ABS 0 - dist/default/production\PS2PLUS_FIRMWARE.production.o
-_nvmUnlock 1A58 0 CODE 0 text14 dist/default/production\PS2PLUS_FIRMWARE.production.o
+_nvmUnlock 1A0E 0 CODE 0 text14 dist/default/production\PS2PLUS_FIRMWARE.production.o
 ___awdiv@divisor 26 0 BANK0 1 cstackBANK0 dist/default/production\PS2PLUS_FIRMWARE.production.o
 _responseLength 5D 0 BANK0 1 dataBANK0 dist/default/production\PS2PLUS_FIRMWARE.production.o
-__end_of___awdiv 1E64 0 CODE 0 text12 dist/default/production\PS2PLUS_FIRMWARE.production.o
+__end_of___awdiv 1E1A 0 CODE 0 text12 dist/default/production\PS2PLUS_FIRMWARE.production.o
 __CFG_FEXTOSC$OFF 0 0 ABS 0 - dist/default/production\PS2PLUS_FIRMWARE.production.o
 main@slaveSelect EE 0 BANK1 1 cstackBANK1 dist/default/production\PS2PLUS_FIRMWARE.production.o
-_adcInit 1A76 0 CODE 0 text15 dist/default/production\PS2PLUS_FIRMWARE.production.o
+_adcInit 1A2C 0 CODE 0 text15 dist/default/production\PS2PLUS_FIRMWARE.production.o
 __size_of_picInit 0 0 ABS 0 - dist/default/production\PS2PLUS_FIRMWARE.production.o
-___stackhi 23EF 0 ABS 0 - C:\Users\Gunnar\AppData\Local\Temp\s8ek.o
-___stacklo 20A8 0 ABS 0 - C:\Users\Gunnar\AppData\Local\Temp\s8ek.o
+___stackhi 23EF 0 ABS 0 - C:\Users\Gunnar\AppData\Local\Temp\sb24.o
+___stacklo 20A8 0 ABS 0 - C:\Users\Gunnar\AppData\Local\Temp\sb24.o
 eepromRead@address 21 0 BANK0 1 cstackBANK0 dist/default/production\PS2PLUS_FIRMWARE.production.o
-__end_of_readControllerAnalog 2000 0 CODE 0 text1 dist/default/production\PS2PLUS_FIRMWARE.production.o
-_eepromWrite 1BDA 0 CODE 0 text13 dist/default/production\PS2PLUS_FIRMWARE.production.o
+__end_of_readControllerAnalog 1EEE 0 CODE 0 text1 dist/default/production\PS2PLUS_FIRMWARE.production.o
+_eepromWrite 1B90 0 CODE 0 text13 dist/default/production\PS2PLUS_FIRMWARE.production.o
 __LidataCOMMON 0 0 ABS 0 idataCOMMON -
 _digitalStateFirst 64 0 BANK0 1 dataBANK0 dist/default/production\PS2PLUS_FIRMWARE.production.o
 _MAP_SMALL_MOTOR 5C 0 BANK0 1 dataBANK0 dist/default/production\PS2PLUS_FIRMWARE.production.o
@@ -872,17 +881,17 @@ _TRISAbits 11 0 ABS 0 - dist/default/production\PS2PLUS_FIRMWARE.production.o
 _TRISCbits 13 0 ABS 0 - dist/default/production\PS2PLUS_FIRMWARE.production.o
 __size_of_ppsLock 0 0 ABS 0 - dist/default/production\PS2PLUS_FIRMWARE.production.o
 _RC5PPS F25 0 ABS 0 - dist/default/production\PS2PLUS_FIRMWARE.production.o
-clear_ram0 1A8A 0 CODE 0 clrtext dist/default/production\PS2PLUS_FIRMWARE.production.o
+clear_ram0 1A40 0 CODE 0 clrtext dist/default/production\PS2PLUS_FIRMWARE.production.o
 __pcstackBANK0 20 0 BANK0 1 cstackBANK0 dist/default/production\PS2PLUS_FIRMWARE.production.o
 __pcstackBANK1 EC 0 BANK1 1 cstackBANK1 dist/default/production\PS2PLUS_FIRMWARE.production.o
 _SSP1IE 38C8 0 ABS 0 - dist/default/production\PS2PLUS_FIRMWARE.production.o
 _SSP1IF 3878 0 ABS 0 - dist/default/production\PS2PLUS_FIRMWARE.production.o
-__end_of_ppsUnlock 1A58 0 CODE 0 text17 dist/default/production\PS2PLUS_FIRMWARE.production.o
+__end_of_ppsUnlock 1A0E 0 CODE 0 text17 dist/default/production\PS2PLUS_FIRMWARE.production.o
 __end_of_lutInit 902 0 CODE 0 text8 dist/default/production\PS2PLUS_FIRMWARE.production.o
 __size_of_ppsUnlock 0 0 ABS 0 - dist/default/production\PS2PLUS_FIRMWARE.production.o
-_readADC 1C74 0 CODE 0 text7 dist/default/production\PS2PLUS_FIRMWARE.production.o
+_readADC 1C2A 0 CODE 0 text7 dist/default/production\PS2PLUS_FIRMWARE.production.o
 __size_of_IO_MAPPING 0 0 ABS 0 - dist/default/production\PS2PLUS_FIRMWARE.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\Gunnar\AppData\Local\Temp\s8ek.o
+___int_sp 0 0 STACK 2 stack C:\Users\Gunnar\AppData\Local\Temp\sb24.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -947,11 +956,11 @@ __Hbank30 0 0 BANK30 1 bank30 -
 __Hbank31 0 0 BANK31 1 bank31 -
 __Hbigram 0 0 ABS 0 bigram -
 __Hmaintext 0 0 ABS 0 maintext -
-_ppsUnlock 1A4A 0 CODE 0 text17 dist/default/production\PS2PLUS_FIRMWARE.production.o
+_ppsUnlock 1A00 0 CODE 0 text17 dist/default/production\PS2PLUS_FIRMWARE.production.o
 __size_of_configureController 0 0 ABS 0 - dist/default/production\PS2PLUS_FIRMWARE.production.o
 __size_of_reversebyte 0 0 ABS 0 - dist/default/production\PS2PLUS_FIRMWARE.production.o
-__end_of_spiInit 1B06 0 CODE 0 text4 dist/default/production\PS2PLUS_FIRMWARE.production.o
-__end_of_spiRead 1A4A 0 CODE 0 text22 dist/default/production\PS2PLUS_FIRMWARE.production.o
+__end_of_spiInit 1ABC 0 CODE 0 text4 dist/default/production\PS2PLUS_FIRMWARE.production.o
+__end_of_spiRead 1A00 0 CODE 0 text22 dist/default/production\PS2PLUS_FIRMWARE.production.o
 __Hcommon 0 0 ABS 0 common -
 __Hconfig 10018 0 CONFIG 0 config -
 _CONTROL_RESPONSE_byte3 69 0 BANK0 1 bssBANK0 dist/default/production\PS2PLUS_FIRMWARE.production.o
@@ -994,8 +1003,8 @@ __Lsfr29 0 0 ABS 0 sfr29 -
 __Lsfr30 0 0 ABS 0 sfr30 -
 __Lsfr31 0 0 ABS 0 sfr31 -
 __Lstack 0 0 STACK 2 stack -
-init_ram 1AA2 0 CODE 0 inittext dist/default/production\PS2PLUS_FIRMWARE.production.o
-__end_of_picInit 1B2E 0 CODE 0 text3 dist/default/production\PS2PLUS_FIRMWARE.production.o
+init_ram 1A58 0 CODE 0 inittext dist/default/production\PS2PLUS_FIRMWARE.production.o
+__end_of_picInit 1AE4 0 CODE 0 text3 dist/default/production\PS2PLUS_FIRMWARE.production.o
 __Linittext 0 0 ABS 0 inittext -
 _INTCONbits B 0 ABS 0 - dist/default/production\PS2PLUS_FIRMWARE.production.o
 __Habs1 0 0 ABS 0 abs1 -
@@ -1029,14 +1038,14 @@ __Ltext 0 0 ABS 0 text -
 _SSP1CON1 190 0 ABS 0 - dist/default/production\PS2PLUS_FIRMWARE.production.o
 _SSP1STAT 18F 0 ABS 0 - dist/default/production\PS2PLUS_FIRMWARE.production.o
 _pollController E9A 0 CODE 0 text24 dist/default/production\PS2PLUS_FIRMWARE.production.o
-___wmul 1B56 0 CODE 0 text11 dist/default/production\PS2PLUS_FIRMWARE.production.o
+___wmul 1B0C 0 CODE 0 text11 dist/default/production\PS2PLUS_FIRMWARE.production.o
 __CFG_WDTCWS$WDTCWS_7 0 0 ABS 0 - dist/default/production\PS2PLUS_FIRMWARE.production.o
 __LcstackBANK0 0 0 ABS 0 cstackBANK0 -
 __LcstackBANK1 0 0 ABS 0 cstackBANK1 -
 int$flags 7E 0 ABS 0 - dist/default/production\PS2PLUS_FIRMWARE.production.o
 __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 _MAP_LARGE_MOTOR 5B 0 BANK0 1 dataBANK0 dist/default/production\PS2PLUS_FIRMWARE.production.o
-_Map 1B96 0 CODE 0 text10 dist/default/production\PS2PLUS_FIRMWARE.production.o
+_Map 1B4C 0 CODE 0 text10 dist/default/production\PS2PLUS_FIRMWARE.production.o
 _RA0 60 0 ABS 0 - dist/default/production\PS2PLUS_FIRMWARE.production.o
 _RA1 61 0 ABS 0 - dist/default/production\PS2PLUS_FIRMWARE.production.o
 _RA2 62 0 ABS 0 - dist/default/production\PS2PLUS_FIRMWARE.production.o
@@ -1063,17 +1072,18 @@ __S3 0 0 ABS 0 - -
 _PreviousDigitalByte1 B0 0 BANK1 1 bssBANK1 dist/default/production\PS2PLUS_FIRMWARE.production.o
 _PreviousDigitalByte2 120 0 BANK2 1 bssBANK2 dist/default/production\PS2PLUS_FIRMWARE.production.o
 lutInit@position 4A 0 BANK0 1 cstackBANK0 dist/default/production\PS2PLUS_FIRMWARE.production.o
+_AN_latch 6C 0 BANK0 1 bssBANK0 dist/default/production\PS2PLUS_FIRMWARE.production.o
 ?_readADC 20 0 BANK0 1 cstackBANK0 dist/default/production\PS2PLUS_FIRMWARE.production.o
 _AN_timer 66 0 BANK0 1 bssBANK0 dist/default/production\PS2PLUS_FIRMWARE.production.o
-__end_of_ppsLock 1A76 0 CODE 0 text18 dist/default/production\PS2PLUS_FIRMWARE.production.o
+__end_of_ppsLock 1A2C 0 CODE 0 text18 dist/default/production\PS2PLUS_FIRMWARE.production.o
 __HidataCOMMON 0 0 ABS 0 idataCOMMON -
 _configureController BD6 0 CODE 0 text5 dist/default/production\PS2PLUS_FIRMWARE.production.o
 _IndexDigitalByte1 A8 0 BANK1 1 bssBANK1 dist/default/production\PS2PLUS_FIRMWARE.production.o
 _IndexDigitalByte2 A0 0 BANK1 1 bssBANK1 dist/default/production\PS2PLUS_FIRMWARE.production.o
-__end_of_Map 1BDA 0 CODE 0 text10 dist/default/production\PS2PLUS_FIRMWARE.production.o
+__end_of_Map 1B90 0 CODE 0 text10 dist/default/production\PS2PLUS_FIRMWARE.production.o
 __CFG_BOREN$ON 0 0 ABS 0 - dist/default/production\PS2PLUS_FIRMWARE.production.o
 __Lintentry 8 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\Gunnar\AppData\Local\Temp\s8ek.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\Gunnar\AppData\Local\Temp\sb24.o
 _readController 902 0 CODE 0 text6 dist/default/production\PS2PLUS_FIRMWARE.production.o
 __pdataBANK0 5A 0 BANK0 1 dataBANK0 dist/default/production\PS2PLUS_FIRMWARE.production.o
 __pdataBANK1 D8 0 BANK1 1 dataBANK1 dist/default/production\PS2PLUS_FIRMWARE.production.o
@@ -1086,21 +1096,21 @@ __end_of_pollController FE0 0 CODE 0 text24 dist/default/production\PS2PLUS_FIRM
 _lxData 60 0 BANK0 1 dataBANK0 dist/default/production\PS2PLUS_FIRMWARE.production.o
 _lyData 5F 0 BANK0 1 dataBANK0 dist/default/production\PS2PLUS_FIRMWARE.production.o
 reversebyte@byte 23 0 BANK0 1 cstackBANK0 dist/default/production\PS2PLUS_FIRMWARE.production.o
-__ptext10 1B96 0 CODE 0 text10 dist/default/production\PS2PLUS_FIRMWARE.production.o
-__ptext11 1B56 0 CODE 0 text11 dist/default/production\PS2PLUS_FIRMWARE.production.o
-__ptext12 1DA4 0 CODE 0 text12 dist/default/production\PS2PLUS_FIRMWARE.production.o
-__ptext13 1BDA 0 CODE 0 text13 dist/default/production\PS2PLUS_FIRMWARE.production.o
-__ptext14 1A58 0 CODE 0 text14 dist/default/production\PS2PLUS_FIRMWARE.production.o
-__ptext15 1A76 0 CODE 0 text15 dist/default/production\PS2PLUS_FIRMWARE.production.o
-__ptext16 1C24 0 CODE 0 text16 dist/default/production\PS2PLUS_FIRMWARE.production.o
-__ptext17 1A4A 0 CODE 0 text17 dist/default/production\PS2PLUS_FIRMWARE.production.o
-__ptext18 1A66 0 CODE 0 text18 dist/default/production\PS2PLUS_FIRMWARE.production.o
-__ptext20 1CCA 0 CODE 0 text20 dist/default/production\PS2PLUS_FIRMWARE.production.o
-__ptext21 1A28 0 CODE 0 text21 dist/default/production\PS2PLUS_FIRMWARE.production.o
-__ptext22 1A3E 0 CODE 0 text22 dist/default/production\PS2PLUS_FIRMWARE.production.o
-__ptext23 1A32 0 CODE 0 text23 dist/default/production\PS2PLUS_FIRMWARE.production.o
+__ptext10 1B4C 0 CODE 0 text10 dist/default/production\PS2PLUS_FIRMWARE.production.o
+__ptext11 1B0C 0 CODE 0 text11 dist/default/production\PS2PLUS_FIRMWARE.production.o
+__ptext12 1D5A 0 CODE 0 text12 dist/default/production\PS2PLUS_FIRMWARE.production.o
+__ptext13 1B90 0 CODE 0 text13 dist/default/production\PS2PLUS_FIRMWARE.production.o
+__ptext14 1A0E 0 CODE 0 text14 dist/default/production\PS2PLUS_FIRMWARE.production.o
+__ptext15 1A2C 0 CODE 0 text15 dist/default/production\PS2PLUS_FIRMWARE.production.o
+__ptext16 1BDA 0 CODE 0 text16 dist/default/production\PS2PLUS_FIRMWARE.production.o
+__ptext17 1A00 0 CODE 0 text17 dist/default/production\PS2PLUS_FIRMWARE.production.o
+__ptext18 1A1C 0 CODE 0 text18 dist/default/production\PS2PLUS_FIRMWARE.production.o
+__ptext20 1C80 0 CODE 0 text20 dist/default/production\PS2PLUS_FIRMWARE.production.o
+__ptext21 19DE 0 CODE 0 text21 dist/default/production\PS2PLUS_FIRMWARE.production.o
+__ptext22 19F4 0 CODE 0 text22 dist/default/production\PS2PLUS_FIRMWARE.production.o
+__ptext23 19E8 0 CODE 0 text23 dist/default/production\PS2PLUS_FIRMWARE.production.o
 __ptext24 E9A 0 CODE 0 text24 dist/default/production\PS2PLUS_FIRMWARE.production.o
-___awdiv 1DA4 0 CODE 0 text12 dist/default/production\PS2PLUS_FIRMWARE.production.o
+___awdiv 1D5A 0 CODE 0 text12 dist/default/production\PS2PLUS_FIRMWARE.production.o
 __Lbank10 0 0 ABS 0 bank10 -
 __Lbank11 0 0 ABS 0 bank11 -
 __Lbank12 0 0 ABS 0 bank12 -
@@ -1123,7 +1133,7 @@ __Lbank28 0 0 BANK28 1 bank28 -
 __Lbank29 0 0 BANK29 1 bank29 -
 __Lbank30 0 0 BANK30 1 bank30 -
 __Lbank31 0 0 BANK31 1 bank31 -
-__pmaintext 1E64 0 CODE 0 maintext dist/default/production\PS2PLUS_FIRMWARE.production.o
+__pmaintext 1EEE 0 CODE 0 maintext dist/default/production\PS2PLUS_FIRMWARE.production.o
 __Lbigram 0 0 ABS 0 bigram -
 __CFG_BORV$LO 0 0 ABS 0 - dist/default/production\PS2PLUS_FIRMWARE.production.o
 __Lcommon 0 0 ABS 0 common -
@@ -1134,12 +1144,12 @@ _DigitalControllerByte2 B8 0 BANK1 1 bssBANK1 dist/default/production\PS2PLUS_FI
 __CFG_WDTE$OFF 0 0 ABS 0 - dist/default/production\PS2PLUS_FIRMWARE.production.o
 __Hinittext 0 0 ABS 0 inittext -
 ___wmul@multiplier 20 0 BANK0 1 cstackBANK0 dist/default/production\PS2PLUS_FIRMWARE.production.o
-_eepromRead 1ABA 0 CODE 0 text9 dist/default/production\PS2PLUS_FIRMWARE.production.o
+_eepromRead 1A70 0 CODE 0 text9 dist/default/production\PS2PLUS_FIRMWARE.production.o
 _rxData 62 0 BANK0 1 dataBANK0 dist/default/production\PS2PLUS_FIRMWARE.production.o
 _ryData 61 0 BANK0 1 dataBANK0 dist/default/production\PS2PLUS_FIRMWARE.production.o
 main@count ED 0 BANK1 1 cstackBANK1 dist/default/production\PS2PLUS_FIRMWARE.production.o
 __end_of_readController BD6 0 CODE 0 text6 dist/default/production\PS2PLUS_FIRMWARE.production.o
-__end_of_eepromWrite 1C24 0 CODE 0 text13 dist/default/production\PS2PLUS_FIRMWARE.production.o
+__end_of_eepromWrite 1BDA 0 CODE 0 text13 dist/default/production\PS2PLUS_FIRMWARE.production.o
 _ADCON0bits 93 0 ABS 0 - dist/default/production\PS2PLUS_FIRMWARE.production.o
 __CFG_LVP$OFF 0 0 ABS 0 - dist/default/production\PS2PLUS_FIRMWARE.production.o
 __pbssBIGRAM 23F0 0 ABS 0 - dist/default/production\PS2PLUS_FIRMWARE.production.o
@@ -1152,7 +1162,7 @@ __CFG_LPBOREN$OFF 0 0 ABS 0 - dist/default/production\PS2PLUS_FIRMWARE.productio
 pollController@response 71 0 COMMON 1 cstackCOMMON dist/default/production\PS2PLUS_FIRMWARE.production.o
 __HcstackBANK0 0 0 ABS 0 cstackBANK0 -
 __HcstackBANK1 0 0 ABS 0 cstackBANK1 -
-_readControllerAnalog 1F2C 0 CODE 0 text1 dist/default/production\PS2PLUS_FIRMWARE.production.o
+_readControllerAnalog 1E1A 0 CODE 0 text1 dist/default/production\PS2PLUS_FIRMWARE.production.o
 __size_of_adcInit 0 0 ABS 0 - dist/default/production\PS2PLUS_FIRMWARE.production.o
 __Lend_init 47C 0 CODE 0 end_init -
 __CFG_CSWEN$ON 0 0 ABS 0 - dist/default/production\PS2PLUS_FIRMWARE.production.o
@@ -1169,25 +1179,25 @@ __CFG_RSTOSC$HFINT32 0 0 ABS 0 - dist/default/production\PS2PLUS_FIRMWARE.produc
 __Lstrings 0 0 ABS 0 strings -
 ___awdiv@quotient 2D 0 BANK0 1 cstackBANK0 dist/default/production\PS2PLUS_FIRMWARE.production.o
 ?___awdiv 26 0 BANK0 1 cstackBANK0 dist/default/production\PS2PLUS_FIRMWARE.production.o
-_reversebyte 1D36 0 CODE 0 text2 dist/default/production\PS2PLUS_FIRMWARE.production.o
+_reversebyte 1CEC 0 CODE 0 text2 dist/default/production\PS2PLUS_FIRMWARE.production.o
 __Hreset_vec 4 0 CODE 0 reset_vec -
 _MODE_LOCK 6D 0 BANK0 1 bssBANK0 dist/default/production\PS2PLUS_FIRMWARE.production.o
 __HbssBANK0 0 0 ABS 0 bssBANK0 -
 __HbssBANK1 0 0 ABS 0 bssBANK1 -
 __HbssBANK2 0 0 ABS 0 bssBANK2 -
 _PS2Command 8 0 CODE 0 intentry dist/default/production\PS2PLUS_FIRMWARE.production.o
-__ptext1 1F2C 0 CODE 0 text1 dist/default/production\PS2PLUS_FIRMWARE.production.o
-__ptext2 1D36 0 CODE 0 text2 dist/default/production\PS2PLUS_FIRMWARE.production.o
-__ptext3 1B06 0 CODE 0 text3 dist/default/production\PS2PLUS_FIRMWARE.production.o
-__ptext4 1ADE 0 CODE 0 text4 dist/default/production\PS2PLUS_FIRMWARE.production.o
+__ptext1 1E1A 0 CODE 0 text1 dist/default/production\PS2PLUS_FIRMWARE.production.o
+__ptext2 1CEC 0 CODE 0 text2 dist/default/production\PS2PLUS_FIRMWARE.production.o
+__ptext3 1ABC 0 CODE 0 text3 dist/default/production\PS2PLUS_FIRMWARE.production.o
+__ptext4 1A94 0 CODE 0 text4 dist/default/production\PS2PLUS_FIRMWARE.production.o
 __ptext5 BD6 0 CODE 0 text5 dist/default/production\PS2PLUS_FIRMWARE.production.o
 __ptext6 902 0 CODE 0 text6 dist/default/production\PS2PLUS_FIRMWARE.production.o
-__ptext7 1C74 0 CODE 0 text7 dist/default/production\PS2PLUS_FIRMWARE.production.o
+__ptext7 1C2A 0 CODE 0 text7 dist/default/production\PS2PLUS_FIRMWARE.production.o
 __ptext8 520 0 CODE 0 text8 dist/default/production\PS2PLUS_FIRMWARE.production.o
-__ptext9 1ABA 0 CODE 0 text9 dist/default/production\PS2PLUS_FIRMWARE.production.o
-__end_of_eepromRead 1ADE 0 CODE 0 text9 dist/default/production\PS2PLUS_FIRMWARE.production.o
-_spiInit 1ADE 0 CODE 0 text4 dist/default/production\PS2PLUS_FIRMWARE.production.o
-_spiRead 1A3E 0 CODE 0 text22 dist/default/production\PS2PLUS_FIRMWARE.production.o
+__ptext9 1A70 0 CODE 0 text9 dist/default/production\PS2PLUS_FIRMWARE.production.o
+__end_of_eepromRead 1A94 0 CODE 0 text9 dist/default/production\PS2PLUS_FIRMWARE.production.o
+_spiInit 1A94 0 CODE 0 text4 dist/default/production\PS2PLUS_FIRMWARE.production.o
+_spiRead 19F4 0 CODE 0 text22 dist/default/production\PS2PLUS_FIRMWARE.production.o
 Map@inMax 33 0 BANK0 1 cstackBANK0 dist/default/production\PS2PLUS_FIRMWARE.production.o
 Map@inMin 31 0 BANK0 1 cstackBANK0 dist/default/production\PS2PLUS_FIRMWARE.production.o
 spiWrite@dat 70 0 COMMON 1 cstackCOMMON dist/default/production\PS2PLUS_FIRMWARE.production.o
@@ -1195,7 +1205,7 @@ __Lpowerup 0 0 CODE 0 powerup -
 spiInit@sType 23 0 BANK0 1 cstackBANK0 dist/default/production\PS2PLUS_FIRMWARE.production.o
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
 __Lreset_vec 0 0 CODE 0 reset_vec -
-_picInit 1B06 0 CODE 0 text3 dist/default/production\PS2PLUS_FIRMWARE.production.o
+_picInit 1ABC 0 CODE 0 text3 dist/default/production\PS2PLUS_FIRMWARE.production.o
 _response D8 0 BANK1 1 dataBANK1 dist/default/production\PS2PLUS_FIRMWARE.production.o
 __CFG_CLKOUTEN$OFF 0 0 ABS 0 - dist/default/production\PS2PLUS_FIRMWARE.production.o
 __size_of_readADC 0 0 ABS 0 - dist/default/production\PS2PLUS_FIRMWARE.production.o
@@ -1204,17 +1214,17 @@ __size_of_spiWrite 0 0 ABS 0 - dist/default/production\PS2PLUS_FIRMWARE.producti
 __Lfunctab 0 0 ENTRY 0 functab -
 _NVMCON1bits 81E 0 ABS 0 - dist/default/production\PS2PLUS_FIRMWARE.production.o
 __pidataBANK0 FE0 0 CODE 0 idataBANK0 dist/default/production\PS2PLUS_FIRMWARE.production.o
-__pidataBANK1 1B2E 0 CODE 0 idataBANK1 dist/default/production\PS2PLUS_FIRMWARE.production.o
-_spiReceiveWait 1A32 0 CODE 0 text23 dist/default/production\PS2PLUS_FIRMWARE.production.o
+__pidataBANK1 1AE4 0 CODE 0 idataBANK1 dist/default/production\PS2PLUS_FIRMWARE.production.o
+_spiReceiveWait 19E8 0 CODE 0 text23 dist/default/production\PS2PLUS_FIRMWARE.production.o
 __Lclrtext 0 0 ABS 0 clrtext -
 __pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production\PS2PLUS_FIRMWARE.production.o
-_ppsLock 1A66 0 CODE 0 text18 dist/default/production\PS2PLUS_FIRMWARE.production.o
+_ppsLock 1A1C 0 CODE 0 text18 dist/default/production\PS2PLUS_FIRMWARE.production.o
 _SSP1BUF 18C 0 ABS 0 - dist/default/production\PS2PLUS_FIRMWARE.production.o
 __Hend_init 480 0 CODE 0 end_init -
-__end_of_adcInit 1A8A 0 CODE 0 text15 dist/default/production\PS2PLUS_FIRMWARE.production.o
+__end_of_adcInit 1A40 0 CODE 0 text15 dist/default/production\PS2PLUS_FIRMWARE.production.o
 PS2Command@cmd 75 0 COMMON 1 cstackCOMMON dist/default/production\PS2PLUS_FIRMWARE.production.o
 __end_of_PS2Command 47C 0 CODE 0 intentry dist/default/production\PS2PLUS_FIRMWARE.production.o
-__end_of_main 1F2C 0 CODE 0 maintext dist/default/production\PS2PLUS_FIRMWARE.production.o
+__end_of_main 2000 0 CODE 0 maintext dist/default/production\PS2PLUS_FIRMWARE.production.o
 _escapeMode 77 0 COMMON 1 bssCOMMON dist/default/production\PS2PLUS_FIRMWARE.production.o
 configureController@lxMax 4E 0 BANK0 1 cstackBANK0 dist/default/production\PS2PLUS_FIRMWARE.production.o
 configureController@lxMin 4D 0 BANK0 1 cstackBANK0 dist/default/production\PS2PLUS_FIRMWARE.production.o
@@ -1250,8 +1260,8 @@ __HdataBANK0 0 0 ABS 0 dataBANK0 -
 __HdataBANK1 0 0 ABS 0 dataBANK1 -
 _INIT_PRESSURE_SENSOR_byte3 6B 0 BANK0 1 bssBANK0 dist/default/production\PS2PLUS_FIRMWARE.production.o
 _INIT_PRESSURE_SENSOR_byte4 6A 0 BANK0 1 bssBANK0 dist/default/production\PS2PLUS_FIRMWARE.production.o
-i1_reversebyte 1CCA 0 CODE 0 text20 dist/default/production\PS2PLUS_FIRMWARE.production.o
-_IO_MAPPING 1C24 0 CODE 0 text16 dist/default/production\PS2PLUS_FIRMWARE.production.o
+i1_reversebyte 1C80 0 CODE 0 text20 dist/default/production\PS2PLUS_FIRMWARE.production.o
+_IO_MAPPING 1BDA 0 CODE 0 text16 dist/default/production\PS2PLUS_FIRMWARE.production.o
 spiInit@sClockIdle 21 0 BANK0 1 cstackBANK0 dist/default/production\PS2PLUS_FIRMWARE.production.o
 __initialization 480 0 CODE 0 cinit dist/default/production\PS2PLUS_FIRMWARE.production.o
 __CFG_PWRTE$OFF 0 0 ABS 0 - dist/default/production\PS2PLUS_FIRMWARE.production.o
@@ -1260,12 +1270,12 @@ __pbssBANK0 66 0 BANK0 1 bssBANK0 dist/default/production\PS2PLUS_FIRMWARE.produ
 __pbssBANK1 A0 0 BANK1 1 bssBANK1 dist/default/production\PS2PLUS_FIRMWARE.production.o
 __pbssBANK2 120 0 BANK2 1 bssBANK2 dist/default/production\PS2PLUS_FIRMWARE.production.o
 __pdataCOMMON 7B 0 COMMON 1 dataCOMMON dist/default/production\PS2PLUS_FIRMWARE.production.o
-_spiWrite 1A28 0 CODE 0 text21 dist/default/production\PS2PLUS_FIRMWARE.production.o
+_spiWrite 19DE 0 CODE 0 text21 dist/default/production\PS2PLUS_FIRMWARE.production.o
 _PPSLOCK E8F 0 ABS 0 - dist/default/production\PS2PLUS_FIRMWARE.production.o
 __CFG_WRT$OFF 0 0 ABS 0 - dist/default/production\PS2PLUS_FIRMWARE.production.o
 ___wmul@product 24 0 BANK0 1 cstackBANK0 dist/default/production\PS2PLUS_FIRMWARE.production.o
-__end_of_spiReceiveWait 1A3E 0 CODE 0 text23 dist/default/production\PS2PLUS_FIRMWARE.production.o
-__end_of_spiWrite 1A32 0 CODE 0 text21 dist/default/production\PS2PLUS_FIRMWARE.production.o
+__end_of_spiReceiveWait 19F4 0 CODE 0 text23 dist/default/production\PS2PLUS_FIRMWARE.production.o
+__end_of_spiWrite 19E8 0 CODE 0 text21 dist/default/production\PS2PLUS_FIRMWARE.production.o
 i1reversebyte@byte 73 0 COMMON 1 cstackCOMMON dist/default/production\PS2PLUS_FIRMWARE.production.o
 _analogStateFirst D0 0 BANK1 1 bssBANK1 dist/default/production\PS2PLUS_FIRMWARE.production.o
 # %SPLITSTAB Section
@@ -1313,35 +1323,35 @@ _lutRY 1 23F0 0
 # and size are in units of delta. The file address is in units of bytes.
 # All other numeric quantities are in decimal.
 %SEGMENTS
-text1 0 F96 1F2C 6A 2
-text2 0 E9B 1D36 37 2
-text3 0 D83 1B06 14 2
-text4 0 D6F 1ADE 14 2
-text7 0 E3A 1C74 2B 2
-text9 0 D5D 1ABA 12 2
-text10 0 DCB 1B96 22 2
-text11 0 DAB 1B56 20 2
-text12 0 ED2 1DA4 60 2
-text13 0 DED 1BDA 25 2
-text14 0 D2C 1A58 7 2
-text15 0 D3B 1A76 A 2
-text16 0 E12 1C24 28 2
-text17 0 D25 1A4A 7 2
-text18 0 D33 1A66 8 2
-text20 0 E65 1CCA 36 2
-text21 0 D14 1A28 5 2
-text22 0 D1F 1A3E 6 2
-text23 0 D19 1A32 6 2
-maintext 0 F32 1E64 64 2
+text1 0 F0D 1E1A 6A 2
+text2 0 E76 1CEC 37 2
+text3 0 D5E 1ABC 14 2
+text4 0 D4A 1A94 14 2
+text7 0 E15 1C2A 2B 2
+text9 0 D38 1A70 12 2
+text10 0 DA6 1B4C 22 2
+text11 0 D86 1B0C 20 2
+text12 0 EAD 1D5A 60 2
+text13 0 DC8 1B90 25 2
+text14 0 D07 1A0E 7 2
+text15 0 D16 1A2C A 2
+text16 0 DED 1BDA 28 2
+text17 0 D00 1A00 7 2
+text18 0 D0E 1A1C 8 2
+text20 0 E40 1C80 36 2
+text21 0 CEF 19DE 5 2
+text22 0 CFA 19F4 6 2
+text23 0 CF4 19E8 6 2
+maintext 0 F77 1EEE 89 2
 cstackCOMMON 1 70 70 C 1
 cstackBANK0 1 20 20 4E 1
-inittext 0 D51 1AA2 C 2
+inittext 0 D2C 1A58 C 2
 intentry 0 4 8 7F9 2
 reset_vec 0 0 0 2 2
 bssBANK1 1 A0 A0 4F 1
 bssBANK2 1 120 120 8 1
-idataBANK1 0 D97 1B2E 14 2
-clrtext 0 D45 1A8A C 2
+idataBANK1 0 D72 1AE4 14 2
+clrtext 0 D20 1A40 C 2
 config 0 8007 1000E 5 2
 # OTES Section
 # This section contains data of all the note-psects.  The beginning of the section

@@ -14894,58 +14894,110 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 [e :U 1676 ]
 [; ;main.c: 367: }
-[; ;main.c: 386: slaveSelect = RA5;
-"386
-[e = _slaveSelect -> -> _RA5 `i `uc ]
-[; ;main.c: 387: if (slaveSelect) if(count < 3) count++;
-"387
-[e $ ! != -> _slaveSelect `i -> -> -> 0 `i `uc `i 1677  ]
-[e $ ! < -> _count `i -> 3 `i 1678  ]
-[e ++ _count -> -> 1 `i `uc ]
-[e :U 1678 ]
-"388
+[; ;main.c: 369: if(analogMode >= 1) RD4 = 1;
+"369
+[e $ ! >= -> _analogMode `i -> 1 `i 1677  ]
+[e = _RD4 -> -> 1 `i `b ]
+[e $U 1678  ]
+"370
 [e :U 1677 ]
-[; ;main.c: 388: if (slaveSelect ^ slaveSelectStatePrev) count = 0;
-[e $ ! != ^ -> _slaveSelect `i -> _slaveSelectStatePrev `i -> 0 `i 1679  ]
-[e = _count -> -> 0 `i `uc ]
-[e :U 1679 ]
-[; ;main.c: 389: slaveSelectStatePrev = slaveSelect;
-"389
-[e = _slaveSelectStatePrev _slaveSelect ]
-[; ;main.c: 390: if (count >= 3) {
-"390
-[e $ ! >= -> _count `i -> 3 `i 1680  ]
+[; ;main.c: 370: else RD4 = 0;
+[e = _RD4 -> -> 0 `i `b ]
+[e :U 1678 ]
+[; ;main.c: 373: if(!AN_btn){
+"373
+[e $ ! ! != -> _AN_btn `i -> -> -> 0 `i `uc `i 1679  ]
 {
-[; ;main.c: 391: cmdCounter = 0;
-"391
-[e = _cmdCounter -> -> 0 `i `uc ]
-[; ;main.c: 392: responseLength = 9;
-"392
-[e = _responseLength -> -> 9 `i `uc ]
-[; ;main.c: 393: SSP1BUF = 0xFF;
-"393
-[e = _SSP1BUF -> -> 255 `i `uc ]
-[; ;main.c: 394: previousCmd = 0x00;
-"394
-[e = _previousCmd -> -> 0 `i `uc ]
-"395
+[; ;main.c: 374: if(!MODE_LOCK) {
+"374
+[e $ ! ! != -> _MODE_LOCK `i -> -> -> 0 `i `uc `i 1680  ]
+{
+[; ;main.c: 375: if(AN_latch) {
+"375
+[e $ ! != -> _AN_latch `i -> -> -> 0 `i `uc `i 1681  ]
+{
+[; ;main.c: 376: if(analogMode >= 1) analogMode = 0;
+"376
+[e $ ! >= -> _analogMode `i -> 1 `i 1682  ]
+[e = _analogMode -> -> 0 `i `uc ]
+[e $U 1683  ]
+"377
+[e :U 1682 ]
+[; ;main.c: 377: else analogMode = 1;
+[e = _analogMode -> -> 1 `i `uc ]
+[e :U 1683 ]
+[; ;main.c: 378: AN_latch = 0;
+"378
+[e = _AN_latch -> -> 0 `i `uc ]
+"379
+}
+[e :U 1681 ]
+"380
 }
 [e :U 1680 ]
-[; ;main.c: 395: }
-[; ;main.c: 397: readController(analogMode);
-"397
+"381
+}
+[; ;main.c: 379: }
+[; ;main.c: 380: }
+[; ;main.c: 381: }
+[e $U 1684  ]
+"382
+[e :U 1679 ]
+[; ;main.c: 382: else AN_latch = 1;
+[e = _AN_latch -> -> 1 `i `uc ]
+[e :U 1684 ]
+[; ;main.c: 384: slaveSelect = RA5;
+"384
+[e = _slaveSelect -> -> _RA5 `i `uc ]
+[; ;main.c: 385: if (slaveSelect) if(count < 3) count++;
+"385
+[e $ ! != -> _slaveSelect `i -> -> -> 0 `i `uc `i 1685  ]
+[e $ ! < -> _count `i -> 3 `i 1686  ]
+[e ++ _count -> -> 1 `i `uc ]
+[e :U 1686 ]
+"386
+[e :U 1685 ]
+[; ;main.c: 386: if (slaveSelect ^ slaveSelectStatePrev) count = 0;
+[e $ ! != ^ -> _slaveSelect `i -> _slaveSelectStatePrev `i -> 0 `i 1687  ]
+[e = _count -> -> 0 `i `uc ]
+[e :U 1687 ]
+[; ;main.c: 387: slaveSelectStatePrev = slaveSelect;
+"387
+[e = _slaveSelectStatePrev _slaveSelect ]
+[; ;main.c: 388: if (count >= 3) {
+"388
+[e $ ! >= -> _count `i -> 3 `i 1688  ]
+{
+[; ;main.c: 389: cmdCounter = 0;
+"389
+[e = _cmdCounter -> -> 0 `i `uc ]
+[; ;main.c: 390: responseLength = 9;
+"390
+[e = _responseLength -> -> 9 `i `uc ]
+[; ;main.c: 391: SSP1BUF = 0xFF;
+"391
+[e = _SSP1BUF -> -> 255 `i `uc ]
+[; ;main.c: 392: previousCmd = 0x00;
+"392
+[e = _previousCmd -> -> 0 `i `uc ]
+"393
+}
+[e :U 1688 ]
+[; ;main.c: 393: }
+[; ;main.c: 395: readController(analogMode);
+"395
 [e ( _readController (1 _analogMode ]
-[; ;main.c: 398: readControllerAnalog();
-"398
+[; ;main.c: 396: readControllerAnalog();
+"396
 [e ( _readControllerAnalog ..  ]
-"399
+"397
 }
 [e :U 1673 ]
 "363
 [e $U 1674  ]
 [e :U 1675 ]
-[; ;main.c: 399: }
-[; ;main.c: 400: }
-"400
+[; ;main.c: 397: }
+[; ;main.c: 398: }
+"398
 [e :UE 1672 ]
 }

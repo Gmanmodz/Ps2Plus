@@ -455,6 +455,8 @@ SPI_ACTIVE_2_IDLE 64
 [v _previousCmd previousCmd `uc  1 e 1 0 ]
 "23
 [v _MODE_LOCK MODE_LOCK `uc  1 e 1 0 ]
+"24
+[v _AN_latch AN_latch `uc  1 e 1 0 ]
 "26
 [v _INIT_PRESSURE_SENSOR_byte3 INIT_PRESSURE_SENSOR_byte3 `uc  1 e 1 0 ]
 "27
@@ -478,7 +480,7 @@ SPI_ACTIVE_2_IDLE 64
 [v main@count count `uc  1 a 1 1 ]
 "359
 [v main@slaveSelectStatePrev slaveSelectStatePrev `uc  1 a 1 0 ]
-"400
+"398
 } 0
 "184 C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\Controller.c
 [v _readControllerAnalog readControllerAnalog `(v  1 e 1 0 ]
