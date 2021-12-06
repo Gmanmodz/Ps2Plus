@@ -21216,8 +21216,8 @@ return byte;
 
 void readControllerAnalog() {
 
-lxData = reversebyte(lutLX[readADC(0b10001)]);
-lyData = reversebyte(lutLY[readADC(0b010000)]);
+lxData = reversebyte(lutLX[readADC(0b010000)]);
+lyData = reversebyte(lutLY[readADC(0b10001)]);
 
 rxData = reversebyte(lutRX[readADC(0b010110)]);
 ryData = reversebyte(lutRY[readADC(0b010111)]);
@@ -21228,10 +21228,10 @@ void configureController() {
 INTCONbits.GIE = 0;
 INTCONbits.PEIE = 0;
 
-char lxMin = readADC(0b10001);
-char lxMax = readADC(0b10001);
-char lyMin = readADC(0b010000);
-char lyMax = readADC(0b010000);
+char lxMin = readADC(0b010000);
+char lxMax = readADC(0b010000);
+char lyMin = readADC(0b10001);
+char lyMax = readADC(0b10001);
 
 char rxMin = readADC(0b010110);
 char rxMax = readADC(0b010110);
@@ -21252,8 +21252,8 @@ if (digitalStateFirst == 0x7F && digitalStateSecond == 0xCF) {
 break;
 }
 
-lx = readADC(0b10001);
-ly = readADC(0b010000);
+lx = readADC(0b010000);
+ly = readADC(0b10001);
 rx = readADC(0b010110);
 ry = readADC(0b010111);
 

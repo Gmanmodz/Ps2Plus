@@ -14322,12 +14322,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;Controller.c: 184: void readControllerAnalog() {
 [e :U _readControllerAnalog ]
 [f ]
-[; ;Controller.c: 186: lxData = reversebyte(lutLX[readADC(0b10001)]);
+[; ;Controller.c: 186: lxData = reversebyte(lutLX[readADC(0b010000)]);
 "186
-[e = _lxData ( _reversebyte (1 *U + &U _lutLX * -> ( _readADC (1 -> 17 `i `ux -> -> # *U &U _lutLX `ui `ux ]
-[; ;Controller.c: 187: lyData = reversebyte(lutLY[readADC(0b010000)]);
+[e = _lxData ( _reversebyte (1 *U + &U _lutLX * -> ( _readADC (1 -> 16 `i `ux -> -> # *U &U _lutLX `ui `ux ]
+[; ;Controller.c: 187: lyData = reversebyte(lutLY[readADC(0b10001)]);
 "187
-[e = _lyData ( _reversebyte (1 *U + &U _lutLY * -> ( _readADC (1 -> 16 `i `ux -> -> # *U &U _lutLY `ui `ux ]
+[e = _lyData ( _reversebyte (1 *U + &U _lutLY * -> ( _readADC (1 -> 17 `i `ux -> -> # *U &U _lutLY `ui `ux ]
 [; ;Controller.c: 189: rxData = reversebyte(lutRX[readADC(0b010110)]);
 "189
 [e = _rxData ( _reversebyte (1 *U + &U _lutRX * -> ( _readADC (1 -> 22 `i `ux -> -> # *U &U _lutRX `ui `ux ]
@@ -14352,20 +14352,20 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
 "198
 [v _lxMin `uc ~T0 @X0 1 a ]
-[; ;Controller.c: 198: char lxMin = readADC(0b10001);
-[e = _lxMin -> ( _readADC (1 -> 17 `i `uc ]
+[; ;Controller.c: 198: char lxMin = readADC(0b010000);
+[e = _lxMin -> ( _readADC (1 -> 16 `i `uc ]
 "199
 [v _lxMax `uc ~T0 @X0 1 a ]
-[; ;Controller.c: 199: char lxMax = readADC(0b10001);
-[e = _lxMax -> ( _readADC (1 -> 17 `i `uc ]
+[; ;Controller.c: 199: char lxMax = readADC(0b010000);
+[e = _lxMax -> ( _readADC (1 -> 16 `i `uc ]
 "200
 [v _lyMin `uc ~T0 @X0 1 a ]
-[; ;Controller.c: 200: char lyMin = readADC(0b010000);
-[e = _lyMin -> ( _readADC (1 -> 16 `i `uc ]
+[; ;Controller.c: 200: char lyMin = readADC(0b10001);
+[e = _lyMin -> ( _readADC (1 -> 17 `i `uc ]
 "201
 [v _lyMax `uc ~T0 @X0 1 a ]
-[; ;Controller.c: 201: char lyMax = readADC(0b010000);
-[e = _lyMax -> ( _readADC (1 -> 16 `i `uc ]
+[; ;Controller.c: 201: char lyMax = readADC(0b10001);
+[e = _lyMax -> ( _readADC (1 -> 17 `i `uc ]
 "203
 [v _rxMin `uc ~T0 @X0 1 a ]
 [; ;Controller.c: 203: char rxMin = readADC(0b010110);
@@ -14412,12 +14412,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 [e :U 1648 ]
 [; ;Controller.c: 220: }
-[; ;Controller.c: 222: lx = readADC(0b10001);
+[; ;Controller.c: 222: lx = readADC(0b010000);
 "222
-[e = _lx -> ( _readADC (1 -> 17 `i `uc ]
-[; ;Controller.c: 223: ly = readADC(0b010000);
+[e = _lx -> ( _readADC (1 -> 16 `i `uc ]
+[; ;Controller.c: 223: ly = readADC(0b10001);
 "223
-[e = _ly -> ( _readADC (1 -> 16 `i `uc ]
+[e = _ly -> ( _readADC (1 -> 17 `i `uc ]
 [; ;Controller.c: 224: rx = readADC(0b010110);
 "224
 [e = _rx -> ( _readADC (1 -> 22 `i `uc ]

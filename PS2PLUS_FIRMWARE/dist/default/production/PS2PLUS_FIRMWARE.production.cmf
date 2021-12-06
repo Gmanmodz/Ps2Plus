@@ -53,7 +53,7 @@ dataBANK1 BANK1 1 D8 D8 14 1
 dataCOMMON COMMON 1 7B 7B 1 1
 clrtext CODE 0 D35 D35 C 2
 bssCOMMON COMMON 1 76 76 5 1
-$C:\Users\Gunnar\AppData\Local\Temp\s42o.o
+$C:\Users\Gunnar\AppData\Local\Temp\sb9c.o
 reset_vec CODE 0 0 0 2 2
 end_init CODE 0 224 224 2 2
 config CONFIG 0 8007 8007 5 2
@@ -155,78 +155,78 @@ STRING 1000-3FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\PS2PLUS_FIRMWARE.production.o
-226 cinit CODE >8077:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-226 cinit CODE >8080:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-226 cinit CODE >8271:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-229 cinit CODE >8272:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-22A cinit CODE >8276:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-22B cinit CODE >8277:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-22C cinit CODE >8278:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-22D cinit CODE >8279:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-22E cinit CODE >8280:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-22F cinit CODE >8281:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-230 cinit CODE >8282:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-231 cinit CODE >8283:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-232 cinit CODE >8284:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-233 cinit CODE >8285:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-234 cinit CODE >8286:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-235 cinit CODE >8287:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-238 cinit CODE >8291:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-239 cinit CODE >8292:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-23A cinit CODE >8293:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-23B cinit CODE >8294:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-23C cinit CODE >8295:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-23D cinit CODE >8296:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-23E cinit CODE >8297:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-23F cinit CODE >8298:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-240 cinit CODE >8299:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-241 cinit CODE >8300:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-242 cinit CODE >8301:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-243 cinit CODE >8302:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-246 cinit CODE >8325:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-247 cinit CODE >8326:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-248 cinit CODE >8327:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-249 cinit CODE >8328:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-24A cinit CODE >8329:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-24B cinit CODE >8330:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-24C cinit CODE >8331:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-24D cinit CODE >8332:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-24E cinit CODE >8333:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-251 cinit CODE >8337:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-252 cinit CODE >8338:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-253 cinit CODE >8339:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-254 cinit CODE >8340:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-255 cinit CODE >8341:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-256 cinit CODE >8345:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-257 cinit CODE >8346:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-258 cinit CODE >8347:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-259 cinit CODE >8348:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-25A cinit CODE >8349:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-25B cinit CODE >8350:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-25C cinit CODE >8351:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-25D cinit CODE >8352:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-25E cinit CODE >8356:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-25F cinit CODE >8357:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-260 cinit CODE >8358:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-261 cinit CODE >8359:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-262 cinit CODE >8360:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-263 cinit CODE >8361:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-264 cinit CODE >8362:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-265 cinit CODE >8363:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-266 cinit CODE >8364:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-269 cinit CODE >8368:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-26A cinit CODE >8369:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-26B cinit CODE >8370:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-26C cinit CODE >8371:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-26D cinit CODE >8372:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-26E cinit CODE >8373:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-26F cinit CODE >8374:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-270 cinit CODE >8375:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-271 cinit CODE >8376:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-272 cinit CODE >8382:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-272 cinit CODE >8384:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-273 cinit CODE >8385:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-274 cinit CODE >8386:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
+226 cinit CODE >8077:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+226 cinit CODE >8080:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+226 cinit CODE >8271:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+229 cinit CODE >8272:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+22A cinit CODE >8276:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+22B cinit CODE >8277:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+22C cinit CODE >8278:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+22D cinit CODE >8279:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+22E cinit CODE >8280:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+22F cinit CODE >8281:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+230 cinit CODE >8282:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+231 cinit CODE >8283:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+232 cinit CODE >8284:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+233 cinit CODE >8285:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+234 cinit CODE >8286:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+235 cinit CODE >8287:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+238 cinit CODE >8291:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+239 cinit CODE >8292:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+23A cinit CODE >8293:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+23B cinit CODE >8294:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+23C cinit CODE >8295:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+23D cinit CODE >8296:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+23E cinit CODE >8297:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+23F cinit CODE >8298:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+240 cinit CODE >8299:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+241 cinit CODE >8300:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+242 cinit CODE >8301:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+243 cinit CODE >8302:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+246 cinit CODE >8325:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+247 cinit CODE >8326:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+248 cinit CODE >8327:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+249 cinit CODE >8328:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+24A cinit CODE >8329:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+24B cinit CODE >8330:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+24C cinit CODE >8331:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+24D cinit CODE >8332:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+24E cinit CODE >8333:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+251 cinit CODE >8337:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+252 cinit CODE >8338:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+253 cinit CODE >8339:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+254 cinit CODE >8340:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+255 cinit CODE >8341:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+256 cinit CODE >8345:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+257 cinit CODE >8346:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+258 cinit CODE >8347:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+259 cinit CODE >8348:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+25A cinit CODE >8349:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+25B cinit CODE >8350:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+25C cinit CODE >8351:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+25D cinit CODE >8352:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+25E cinit CODE >8356:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+25F cinit CODE >8357:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+260 cinit CODE >8358:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+261 cinit CODE >8359:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+262 cinit CODE >8360:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+263 cinit CODE >8361:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+264 cinit CODE >8362:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+265 cinit CODE >8363:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+266 cinit CODE >8364:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+269 cinit CODE >8368:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+26A cinit CODE >8369:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+26B cinit CODE >8370:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+26C cinit CODE >8371:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+26D cinit CODE >8372:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+26E cinit CODE >8373:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+26F cinit CODE >8374:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+270 cinit CODE >8375:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+271 cinit CODE >8376:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+272 cinit CODE >8382:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+272 cinit CODE >8384:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+273 cinit CODE >8385:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+274 cinit CODE >8386:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
 4 intentry CODE >61:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\main.c
 6 intentry CODE >63:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\main.c
 B intentry CODE >64:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\main.c
@@ -707,34 +707,34 @@ FF2 maintext CODE >372:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\main.c
 FF5 maintext CODE >373:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\main.c
 FF6 maintext CODE >376:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\main.c
 FFA maintext CODE >377:C:\Users\Gunnar\Desktop\Ps2Plus\PS2PLUS_FIRMWARE\main.c
-D35 clrtext CODE >8308:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-D35 clrtext CODE >8309:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-D36 clrtext CODE >8310:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-D36 clrtext CODE >8311:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-D37 clrtext CODE >8312:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-D38 clrtext CODE >8313:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-D39 clrtext CODE >8314:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-D3A clrtext CODE >8315:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-D3B clrtext CODE >8316:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-D3C clrtext CODE >8317:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-D3D clrtext CODE >8318:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-D3E clrtext CODE >8319:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-D3F clrtext CODE >8320:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-D40 clrtext CODE >8321:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-D41 inittext CODE >8254:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-D41 inittext CODE >8255:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-D42 inittext CODE >8256:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-D42 inittext CODE >8257:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-D43 inittext CODE >8258:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-D44 inittext CODE >8259:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-D45 inittext CODE >8260:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-D46 inittext CODE >8261:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-D47 inittext CODE >8262:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-D48 inittext CODE >8263:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-D49 inittext CODE >8264:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-D4A inittext CODE >8265:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-D4B inittext CODE >8266:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
-D4C inittext CODE >8267:C:\Users\Gunnar\AppData\Local\Temp\s42o.s
+D35 clrtext CODE >8308:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+D35 clrtext CODE >8309:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+D36 clrtext CODE >8310:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+D36 clrtext CODE >8311:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+D37 clrtext CODE >8312:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+D38 clrtext CODE >8313:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+D39 clrtext CODE >8314:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+D3A clrtext CODE >8315:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+D3B clrtext CODE >8316:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+D3C clrtext CODE >8317:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+D3D clrtext CODE >8318:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+D3E clrtext CODE >8319:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+D3F clrtext CODE >8320:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+D40 clrtext CODE >8321:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+D41 inittext CODE >8254:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+D41 inittext CODE >8255:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+D42 inittext CODE >8256:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+D42 inittext CODE >8257:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+D43 inittext CODE >8258:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+D44 inittext CODE >8259:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+D45 inittext CODE >8260:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+D46 inittext CODE >8261:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+D47 inittext CODE >8262:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+D48 inittext CODE >8263:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+D49 inittext CODE >8264:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+D4A inittext CODE >8265:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+D4B inittext CODE >8266:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
+D4C inittext CODE >8267:C:\Users\Gunnar\AppData\Local\Temp\sb9c.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -774,10 +774,10 @@ _WPUB F44 0 ABS 0 - dist/default/production\PS2PLUS_FIRMWARE.production.o
 _WPUC F4F 0 ABS 0 - dist/default/production\PS2PLUS_FIRMWARE.production.o
 _WPUD F5A 0 ABS 0 - dist/default/production\PS2PLUS_FIRMWARE.production.o
 _WPUE F65 0 ABS 0 - dist/default/production\PS2PLUS_FIRMWARE.production.o
-___sp 0 0 STACK 2 stack C:\Users\Gunnar\AppData\Local\Temp\s42o.o
+___sp 0 0 STACK 2 stack C:\Users\Gunnar\AppData\Local\Temp\sb9c.o
 _main 1EEE 0 CODE 0 maintext dist/default/production\PS2PLUS_FIRMWARE.production.o
 btemp 7E 0 ABS 0 - dist/default/production\PS2PLUS_FIRMWARE.production.o
-start 448 0 CODE 0 init C:\Users\Gunnar\AppData\Local\Temp\s42o.o
+start 448 0 CODE 0 init C:\Users\Gunnar\AppData\Local\Temp\sb9c.o
 __size_of___awdiv 0 0 ABS 0 - dist/default/production\PS2PLUS_FIRMWARE.production.o
 __size_of_main 0 0 ABS 0 - dist/default/production\PS2PLUS_FIRMWARE.production.o
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
@@ -793,12 +793,12 @@ readADC@channel 20 0 BANK0 1 cstackBANK0 dist/default/production\PS2PLUS_FIRMWAR
 __size_of_readController 0 0 ABS 0 - dist/default/production\PS2PLUS_FIRMWARE.production.o
 __HdataCOMMON 0 0 ABS 0 dataCOMMON -
 _previousCmd 76 0 COMMON 1 bssCOMMON dist/default/production\PS2PLUS_FIRMWARE.production.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\Gunnar\AppData\Local\Temp\s42o.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\Gunnar\AppData\Local\Temp\s42o.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\Gunnar\AppData\Local\Temp\s42o.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\Gunnar\AppData\Local\Temp\s42o.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\Gunnar\AppData\Local\Temp\s42o.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\Gunnar\AppData\Local\Temp\s42o.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\Gunnar\AppData\Local\Temp\sb9c.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\Gunnar\AppData\Local\Temp\sb9c.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\Gunnar\AppData\Local\Temp\sb9c.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\Gunnar\AppData\Local\Temp\sb9c.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\Gunnar\AppData\Local\Temp\sb9c.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\Gunnar\AppData\Local\Temp\sb9c.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 wtemp0 7E 0 ABS 0 - dist/default/production\PS2PLUS_FIRMWARE.production.o
 __size_ofi1_reversebyte 0 0 ABS 0 - dist/default/production\PS2PLUS_FIRMWARE.production.o
@@ -842,8 +842,8 @@ __CFG_FEXTOSC$OFF 0 0 ABS 0 - dist/default/production\PS2PLUS_FIRMWARE.productio
 main@slaveSelect EE 0 BANK1 1 cstackBANK1 dist/default/production\PS2PLUS_FIRMWARE.production.o
 _adcInit 1A56 0 CODE 0 text15 dist/default/production\PS2PLUS_FIRMWARE.production.o
 __size_of_picInit 0 0 ABS 0 - dist/default/production\PS2PLUS_FIRMWARE.production.o
-___stackhi 23EF 0 ABS 0 - C:\Users\Gunnar\AppData\Local\Temp\s42o.o
-___stacklo 20A8 0 ABS 0 - C:\Users\Gunnar\AppData\Local\Temp\s42o.o
+___stackhi 23EF 0 ABS 0 - C:\Users\Gunnar\AppData\Local\Temp\sb9c.o
+___stacklo 20A8 0 ABS 0 - C:\Users\Gunnar\AppData\Local\Temp\sb9c.o
 eepromRead@address 21 0 BANK0 1 cstackBANK0 dist/default/production\PS2PLUS_FIRMWARE.production.o
 __end_of_readControllerAnalog 1EEE 0 CODE 0 text1 dist/default/production\PS2PLUS_FIRMWARE.production.o
 _eepromWrite FAC 0 CODE 0 text13 dist/default/production\PS2PLUS_FIRMWARE.production.o
@@ -883,7 +883,7 @@ __end_of_lutInit 8CE 0 CODE 0 text8 dist/default/production\PS2PLUS_FIRMWARE.pro
 __size_of_ppsUnlock 0 0 ABS 0 - dist/default/production\PS2PLUS_FIRMWARE.production.o
 _readADC 1BD2 0 CODE 0 text7 dist/default/production\PS2PLUS_FIRMWARE.production.o
 __size_of_IO_MAPPING 0 0 ABS 0 - dist/default/production\PS2PLUS_FIRMWARE.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\Gunnar\AppData\Local\Temp\s42o.o
+___int_sp 0 0 STACK 2 stack C:\Users\Gunnar\AppData\Local\Temp\sb9c.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -1078,7 +1078,7 @@ _IndexDigitalByte2 A0 0 BANK1 1 bssBANK1 dist/default/production\PS2PLUS_FIRMWAR
 __end_of_Map 1BD2 0 CODE 0 text10 dist/default/production\PS2PLUS_FIRMWARE.production.o
 __CFG_BOREN$ON 0 0 ABS 0 - dist/default/production\PS2PLUS_FIRMWARE.production.o
 __Lintentry 8 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\Gunnar\AppData\Local\Temp\s42o.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\Gunnar\AppData\Local\Temp\sb9c.o
 _readController 8CE 0 CODE 0 text6 dist/default/production\PS2PLUS_FIRMWARE.production.o
 __pdataBANK0 5A 0 BANK0 1 dataBANK0 dist/default/production\PS2PLUS_FIRMWARE.production.o
 __pdataBANK1 D8 0 BANK1 1 dataBANK1 dist/default/production\PS2PLUS_FIRMWARE.production.o

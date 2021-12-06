@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.10 build 88905656 
-                                                                                               Sun Dec 05 12:43:29 2021
+                                                                                               Mon Dec 06 10:22:49 2021
 
 Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1 
      1                           	processor	16F18876
@@ -4988,8 +4988,8 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
   4964                           ; Regs used in _readControllerAnalog: [wreg+fsr1l+fsr1h+status,2+status,0+pclath+cstack]
   4965                           
   4966                           
-  4967                           ;Controller.c: 186: lxData = reversebyte(lutLX[readADC(0b10001)]);
-  4968  0F0D  3011               	movlw	17
+  4967                           ;Controller.c: 186: lxData = reversebyte(lutLX[readADC(0b010000)]);
+  4968  0F0D  3010               	movlw	16
   4969  0F0E  0020               	movlb	0	; select bank0
   4970  0F0F  00A0               	movwf	readADC@channel
   4971  0F10  3000               	movlw	0
@@ -5013,8 +5013,8 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
   4989  0F26  082B               	movf	??_readControllerAnalog+2,w
   4990  0F27  00E0               	movwf	_lxData
   4991                           
-  4992                           ;Controller.c: 187: lyData = reversebyte(lutLY[readADC(0b010000)]);
-  4993  0F28  3010               	movlw	16
+  4992                           ;Controller.c: 187: lyData = reversebyte(lutLY[readADC(0b10001)]);
+  4993  0F28  3011               	movlw	17
   4994  0F29  00A0               	movwf	readADC@channel
   4995  0F2A  3000               	movlw	0
   4996  0F2B  00A1               	movwf	readADC@channel+1
@@ -5437,8 +5437,8 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
   5392  05D2  130B               	bcf	11,6	;volatile
   5393  05D3                     l2833:	
   5394                           
-  5395                           ;Controller.c: 198: char lxMin = readADC(0b10001);
-  5396  05D3  3011               	movlw	17
+  5395                           ;Controller.c: 198: char lxMin = readADC(0b010000);
+  5396  05D3  3010               	movlw	16
   5397  05D4  0020               	movlb	0	; select bank0
   5398  05D5  00A0               	movwf	readADC@channel
   5399  05D6  3000               	movlw	0
@@ -5450,8 +5450,8 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
   5405  05DE  084C               	movf	??_configureController,w
   5406  05DF  00CD               	movwf	configureController@lxMin
   5407                           
-  5408                           ;Controller.c: 199: char lxMax = readADC(0b10001);
-  5409  05E0  3011               	movlw	17
+  5408                           ;Controller.c: 199: char lxMax = readADC(0b010000);
+  5409  05E0  3010               	movlw	16
   5410  05E1  00A0               	movwf	readADC@channel
   5411  05E2  3000               	movlw	0
   5412  05E3  00A1               	movwf	readADC@channel+1
@@ -5462,8 +5462,8 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
   5417  05EA  084C               	movf	??_configureController,w
   5418  05EB  00CE               	movwf	configureController@lxMax
   5419                           
-  5420                           ;Controller.c: 200: char lyMin = readADC(0b010000);
-  5421  05EC  3010               	movlw	16
+  5420                           ;Controller.c: 200: char lyMin = readADC(0b10001);
+  5421  05EC  3011               	movlw	17
   5422  05ED  00A0               	movwf	readADC@channel
   5423  05EE  3000               	movlw	0
   5424  05EF  00A1               	movwf	readADC@channel+1
@@ -5474,8 +5474,8 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
   5429  05F6  084C               	movf	??_configureController,w
   5430  05F7  00CF               	movwf	configureController@lyMin
   5431                           
-  5432                           ;Controller.c: 201: char lyMax = readADC(0b010000);
-  5433  05F8  3010               	movlw	16
+  5432                           ;Controller.c: 201: char lyMax = readADC(0b10001);
+  5433  05F8  3011               	movlw	17
   5434  05F9  00A0               	movwf	readADC@channel
   5435  05FA  3000               	movlw	0
   5436  05FB  00A1               	movwf	readADC@channel+1
@@ -5562,8 +5562,8 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
   5517  0645  2EE6               	goto	l2879
   5518  0646                     l2843:	
   5519                           
-  5520                           ;Controller.c: 220: };Controller.c: 222: lx = readADC(0b10001);
-  5521  0646  3011               	movlw	17
+  5520                           ;Controller.c: 220: };Controller.c: 222: lx = readADC(0b010000);
+  5521  0646  3010               	movlw	16
   5522  0647  00A0               	movwf	readADC@channel
   5523  0648  3000               	movlw	0
   5524  0649  00A1               	movwf	readADC@channel+1
@@ -5574,8 +5574,8 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
   5529  0650  084C               	movf	??_configureController,w
   5530  0651  00D5               	movwf	configureController@lx
   5531                           
-  5532                           ;Controller.c: 223: ly = readADC(0b010000);
-  5533  0652  3010               	movlw	16
+  5532                           ;Controller.c: 223: ly = readADC(0b10001);
+  5533  0652  3011               	movlw	17
   5534  0653  00A0               	movwf	readADC@channel
   5535  0654  3000               	movlw	0
   5536  0655  00A1               	movwf	readADC@channel+1
@@ -10313,7 +10313,7 @@ BANK25               0      0       0      57        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.10 build 88905656 
-Symbol Table                                                                                   Sun Dec 05 12:43:29 2021
+Symbol Table                                                                                   Mon Dec 06 10:22:49 2021
 
                   __CFG_CP$OFF 0000                   ___awdiv@sign 002C            ___wmul@multiplicand 0022  
         __end_ofi1_reversebyte 0E76                            l310 0505                            l400 0D2A  
