@@ -1,7 +1,7 @@
 Version 3.2 HI-TECH Software Intermediate Code
 "41821 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18876.h
 [v _RD4 `Vb ~T0 @X0 0 e@124 ]
-"26 Controller.c
+"30 Controller.c
 [c E11980 0 1 2 3 4 5 6 7 .. ]
 [n E11980 . DLeft DDown DRight DUp Start R3 L3 Select  ]
 "41353 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18876.h
@@ -20,7 +20,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _RB6 `Vb ~T0 @X0 0 e@110 ]
 "41521
 [v _RB7 `Vb ~T0 @X0 0 e@111 ]
-"35 Controller.c
+"39 Controller.c
 [c E11990 0 1 2 3 4 5 6 7 .. ]
 [n E11990 . Square X Circle Triangle R1 L1 R2 L2  ]
 "41206 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f18876.h
@@ -13679,142 +13679,142 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic.h: 137: extern __bank0 unsigned char __resetbits;
 [; ;pic.h: 138: extern __bank0 __bit __powerdown;
 [; ;pic.h: 139: extern __bank0 __bit __timeout;
-[; ;Controller.h: 21: typedef enum {
-[; ;Controller.h: 23: DLeft,
-[; ;Controller.h: 24: DDown,
-[; ;Controller.h: 25: DRight,
-[; ;Controller.h: 26: DUp,
-[; ;Controller.h: 27: Start,
-[; ;Controller.h: 28: R3,
-[; ;Controller.h: 29: L3,
-[; ;Controller.h: 30: Select
-[; ;Controller.h: 31: } digitalByteFirst;
-[; ;Controller.h: 33: typedef enum {
-[; ;Controller.h: 35: Square,
-[; ;Controller.h: 36: X,
-[; ;Controller.h: 37: Circle,
-[; ;Controller.h: 38: Triangle,
-[; ;Controller.h: 39: R1,
-[; ;Controller.h: 40: L1,
-[; ;Controller.h: 41: R2,
-[; ;Controller.h: 42: L2
-[; ;Controller.h: 43: } digitalByteSecond;
-"45 Controller.h
+[; ;Controller.h: 23: typedef enum {
+[; ;Controller.h: 25: DLeft,
+[; ;Controller.h: 26: DDown,
+[; ;Controller.h: 27: DRight,
+[; ;Controller.h: 28: DUp,
+[; ;Controller.h: 29: Start,
+[; ;Controller.h: 30: R3,
+[; ;Controller.h: 31: L3,
+[; ;Controller.h: 32: Select
+[; ;Controller.h: 33: } digitalByteFirst;
+[; ;Controller.h: 35: typedef enum {
+[; ;Controller.h: 37: Square,
+[; ;Controller.h: 38: X,
+[; ;Controller.h: 39: Circle,
+[; ;Controller.h: 40: Triangle,
+[; ;Controller.h: 41: R1,
+[; ;Controller.h: 42: L1,
+[; ;Controller.h: 43: R2,
+[; ;Controller.h: 44: L2
+[; ;Controller.h: 45: } digitalByteSecond;
+"47 Controller.h
 [v _AN_btn `uc ~T0 @X0 1 e ]
 [i _AN_btn
 -> -> 1 `i `uc
 ]
-[; ;Controller.h: 45: extern char AN_btn = 1;
-"47
+[; ;Controller.h: 47: extern char AN_btn = 1;
+"49
 [v _digitalStateFirst `uc ~T0 @X0 1 e ]
 [i _digitalStateFirst
 -> -> 255 `i `uc
 ]
-[; ;Controller.h: 47: extern char digitalStateFirst = 0xFF;
-"48
+[; ;Controller.h: 49: extern char digitalStateFirst = 0xFF;
+"50
 [v _digitalStateSecond `uc ~T0 @X0 1 e ]
 [i _digitalStateSecond
 -> -> 255 `i `uc
 ]
-[; ;Controller.h: 48: extern char digitalStateSecond = 0xFF;
-"50
+[; ;Controller.h: 50: extern char digitalStateSecond = 0xFF;
+"52
 [v _analogStateFirst `uc ~T0 @X0 -> 8 `i e ]
 [i _analogStateFirst
 :U ..
 -> -> 0 `i `uc
 ..
 ]
-[; ;Controller.h: 50: extern char analogStateFirst[8] = {0};
-"51
+[; ;Controller.h: 52: extern char analogStateFirst[8] = {0};
+"53
 [v _analogStateSecond `uc ~T0 @X0 -> 8 `i e ]
 [i _analogStateSecond
 :U ..
 -> -> 0 `i `uc
 ..
 ]
-[; ;Controller.h: 51: extern char analogStateSecond[8] = {0};
-"54
+[; ;Controller.h: 53: extern char analogStateSecond[8] = {0};
+"56
 [v _rxData `uc ~T0 @X0 1 e ]
 [i _rxData
 -> -> 247 `i `uc
 ]
-[; ;Controller.h: 54: extern char rxData = 0xF7;
-"55
+[; ;Controller.h: 56: extern char rxData = 0xF7;
+"57
 [v _ryData `uc ~T0 @X0 1 e ]
 [i _ryData
 -> -> 247 `i `uc
 ]
-[; ;Controller.h: 55: extern char ryData = 0xF7;
-"56
+[; ;Controller.h: 57: extern char ryData = 0xF7;
+"58
 [v _lxData `uc ~T0 @X0 1 e ]
 [i _lxData
 -> -> 247 `i `uc
 ]
-[; ;Controller.h: 56: extern char lxData = 0xF7;
-"57
+[; ;Controller.h: 58: extern char lxData = 0xF7;
+"59
 [v _lyData `uc ~T0 @X0 1 e ]
 [i _lyData
 -> -> 247 `i `uc
 ]
-[; ;Controller.h: 57: extern char lyData = 0xF7;
-"59
-[v _lutLX `uc ~T0 @X0 -> 256 `i e ]
-[; ;Controller.h: 59: char lutLX[256];
-"60
-[v _lutLY `uc ~T0 @X0 -> 256 `i e ]
-[; ;Controller.h: 60: char lutLY[256];
+[; ;Controller.h: 59: extern char lyData = 0xF7;
 "61
-[v _lutRX `uc ~T0 @X0 -> 256 `i e ]
-[; ;Controller.h: 61: char lutRX[256];
+[v _lutLX `uc ~T0 @X0 -> 256 `i e ]
+[; ;Controller.h: 61: char lutLX[256];
 "62
-[v _lutRY `uc ~T0 @X0 -> 256 `i e ]
-[; ;Controller.h: 62: char lutRY[256];
+[v _lutLY `uc ~T0 @X0 -> 256 `i e ]
+[; ;Controller.h: 62: char lutLY[256];
+"63
+[v _lutRX `uc ~T0 @X0 -> 256 `i e ]
+[; ;Controller.h: 63: char lutRX[256];
 "64
+[v _lutRY `uc ~T0 @X0 -> 256 `i e ]
+[; ;Controller.h: 64: char lutRY[256];
+"66
 [v _debounceLoops `uc ~T0 @X0 1 e ]
 [i _debounceLoops
 -> -> 3 `i `uc
 ]
-[; ;Controller.h: 64: unsigned char debounceLoops = 3;
-"66
-[v _DigitalControllerByte1 `uc ~T0 @X0 -> 8 `i e ]
-[; ;Controller.h: 66: unsigned char DigitalControllerByte1[8];
-"67
-[v _DigitalControllerByte2 `uc ~T0 @X0 -> 8 `i e ]
-[; ;Controller.h: 67: unsigned char DigitalControllerByte2[8];
+[; ;Controller.h: 66: unsigned char debounceLoops = 3;
 "68
-[v _PreviousDigitalByte1 `uc ~T0 @X0 -> 8 `i e ]
-[; ;Controller.h: 68: unsigned char PreviousDigitalByte1[8];
+[v _DigitalControllerByte1 `uc ~T0 @X0 -> 8 `i e ]
+[; ;Controller.h: 68: unsigned char DigitalControllerByte1[8];
 "69
-[v _PreviousDigitalByte2 `uc ~T0 @X0 -> 8 `i e ]
-[; ;Controller.h: 69: unsigned char PreviousDigitalByte2[8];
+[v _DigitalControllerByte2 `uc ~T0 @X0 -> 8 `i e ]
+[; ;Controller.h: 69: unsigned char DigitalControllerByte2[8];
+"70
+[v _PreviousDigitalByte1 `uc ~T0 @X0 -> 8 `i e ]
+[; ;Controller.h: 70: unsigned char PreviousDigitalByte1[8];
 "71
+[v _PreviousDigitalByte2 `uc ~T0 @X0 -> 8 `i e ]
+[; ;Controller.h: 71: unsigned char PreviousDigitalByte2[8];
+"73
 [v _IndexDigitalByte1 `uc ~T0 @X0 -> 8 `i e ]
 [i _IndexDigitalByte1
 :U ..
 -> -> 0 `i `uc
 ..
 ]
-[; ;Controller.h: 71: unsigned char IndexDigitalByte1[8] = {0};
-"72
+[; ;Controller.h: 73: unsigned char IndexDigitalByte1[8] = {0};
+"74
 [v _IndexDigitalByte2 `uc ~T0 @X0 -> 8 `i e ]
 [i _IndexDigitalByte2
 :U ..
 -> -> 0 `i `uc
 ..
 ]
-[; ;Controller.h: 72: unsigned char IndexDigitalByte2[8] = {0};
-"74
+[; ;Controller.h: 74: unsigned char IndexDigitalByte2[8] = {0};
+"76
 [v _index `uc ~T0 @X0 1 e ]
 [i _index
 -> -> 0 `i `uc
 ]
-[; ;Controller.h: 74: unsigned char index = 0;
-[; ;Controller.h: 76: unsigned int readADC(int channel);
-[; ;Controller.h: 77: char reversebyte(char byte);
-[; ;Controller.h: 79: void readController(char analogMode);
-[; ;Controller.h: 80: void readControllerAnalog();
-[; ;Controller.h: 81: void lutInit();
-[; ;Controller.h: 82: void configureController();
+[; ;Controller.h: 76: unsigned char index = 0;
+[; ;Controller.h: 78: unsigned int readADC(int channel);
+[; ;Controller.h: 79: char reversebyte(char byte);
+[; ;Controller.h: 81: void readController(char analogMode);
+[; ;Controller.h: 82: void readControllerAnalog();
+[; ;Controller.h: 83: void lutInit();
+[; ;Controller.h: 84: void configureController();
 [; ;Nvm.h: 17: char eepromRead(unsigned char address);
 [; ;Nvm.h: 19: void eepromWrite(unsigned char address, char data);
 [; ;Nvm.h: 20: void nvmUnlock();
@@ -13847,218 +13847,188 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;Controller.c: 19: AN_temp = RD4;
 "19
 [e = _AN_temp -> -> _RD4 `i `uc ]
-[; ;Controller.c: 20: if(AN_temp ^ AN_prev) AN_timer = 0;
+[; ;Controller.c: 20: if(AN_temp ^ AN_prev) {
 "20
 [e $ ! != ^ -> _AN_temp `i -> _AN_prev `i -> 0 `i 1602  ]
-[e = _AN_timer -> -> 0 `i `uc ]
-[e $U 1603  ]
+{
+[; ;Controller.c: 21: AN_timer = 0;
 "21
-[e :U 1602 ]
-[; ;Controller.c: 21: else if(AN_timer < 4) AN_timer++;
-[e $ ! < -> _AN_timer `i -> 4 `i 1604  ]
-[e ++ _AN_timer -> -> 1 `i `uc ]
-[e :U 1604 ]
+[e = _AN_timer -> -> 0 `i `uc ]
 "22
+}
+[; ;Controller.c: 22: }
+[e $U 1603  ]
+"23
+[e :U 1602 ]
+[; ;Controller.c: 23: else if(AN_timer < 4) {
+[e $ ! < -> _AN_timer `i -> 4 `i 1604  ]
+{
+[; ;Controller.c: 24: AN_timer++;
+"24
+[e ++ _AN_timer -> -> 1 `i `uc ]
+"25
+}
+[e :U 1604 ]
+"26
 [e :U 1603 ]
-[; ;Controller.c: 22: if(AN_timer > 3) AN_btn = AN_temp;
+[; ;Controller.c: 25: }
+[; ;Controller.c: 26: if(AN_timer > 3) AN_btn = AN_temp;
 [e $ ! > -> _AN_timer `i -> 3 `i 1605  ]
 [e = _AN_btn _AN_temp ]
 [e :U 1605 ]
-[; ;Controller.c: 23: AN_prev = AN_temp;
-"23
-[e = _AN_prev _AN_temp ]
-[; ;Controller.c: 26: DigitalControllerByte1[DDown] = RA7;
-"26
-[e = *U + &U _DigitalControllerByte1 * -> . `E11980 1 `ux -> -> # *U &U _DigitalControllerByte1 `ui `ux -> -> _RA7 `i `uc ]
-[; ;Controller.c: 27: DigitalControllerByte1[DUp] = RA6;
+[; ;Controller.c: 27: AN_prev = AN_temp;
 "27
-[e = *U + &U _DigitalControllerByte1 * -> . `E11980 3 `ux -> -> # *U &U _DigitalControllerByte1 `ui `ux -> -> _RA6 `i `uc ]
-[; ;Controller.c: 28: DigitalControllerByte1[DLeft] = RB0;
-"28
-[e = *U + &U _DigitalControllerByte1 * -> . `E11980 0 `ux -> -> # *U &U _DigitalControllerByte1 `ui `ux -> -> _RB0 `i `uc ]
-[; ;Controller.c: 29: DigitalControllerByte1[DRight] = RB1;
-"29
-[e = *U + &U _DigitalControllerByte1 * -> . `E11980 2 `ux -> -> # *U &U _DigitalControllerByte1 `ui `ux -> -> _RB1 `i `uc ]
-[; ;Controller.c: 30: DigitalControllerByte1[R3] = RD0;
+[e = _AN_prev _AN_temp ]
+[; ;Controller.c: 30: DigitalControllerByte1[DDown] = RA7;
 "30
-[e = *U + &U _DigitalControllerByte1 * -> . `E11980 5 `ux -> -> # *U &U _DigitalControllerByte1 `ui `ux -> -> _RD0 `i `uc ]
-[; ;Controller.c: 31: DigitalControllerByte1[L3] = RC2;
+[e = *U + &U _DigitalControllerByte1 * -> . `E11980 1 `ux -> -> # *U &U _DigitalControllerByte1 `ui `ux -> -> _RA7 `i `uc ]
+[; ;Controller.c: 31: DigitalControllerByte1[DUp] = RA6;
 "31
-[e = *U + &U _DigitalControllerByte1 * -> . `E11980 6 `ux -> -> # *U &U _DigitalControllerByte1 `ui `ux -> -> _RC2 `i `uc ]
-[; ;Controller.c: 32: DigitalControllerByte1[Start] = RB6;
+[e = *U + &U _DigitalControllerByte1 * -> . `E11980 3 `ux -> -> # *U &U _DigitalControllerByte1 `ui `ux -> -> _RA6 `i `uc ]
+[; ;Controller.c: 32: DigitalControllerByte1[DLeft] = RB0;
 "32
-[e = *U + &U _DigitalControllerByte1 * -> . `E11980 4 `ux -> -> # *U &U _DigitalControllerByte1 `ui `ux -> -> _RB6 `i `uc ]
-[; ;Controller.c: 33: DigitalControllerByte1[Select] = RB7;
+[e = *U + &U _DigitalControllerByte1 * -> . `E11980 0 `ux -> -> # *U &U _DigitalControllerByte1 `ui `ux -> -> _RB0 `i `uc ]
+[; ;Controller.c: 33: DigitalControllerByte1[DRight] = RB1;
 "33
-[e = *U + &U _DigitalControllerByte1 * -> . `E11980 7 `ux -> -> # *U &U _DigitalControllerByte1 `ui `ux -> -> _RB7 `i `uc ]
-[; ;Controller.c: 35: DigitalControllerByte2[Square] = RA0;
+[e = *U + &U _DigitalControllerByte1 * -> . `E11980 2 `ux -> -> # *U &U _DigitalControllerByte1 `ui `ux -> -> _RB1 `i `uc ]
+[; ;Controller.c: 34: DigitalControllerByte1[R3] = RD0;
+"34
+[e = *U + &U _DigitalControllerByte1 * -> . `E11980 5 `ux -> -> # *U &U _DigitalControllerByte1 `ui `ux -> -> _RD0 `i `uc ]
+[; ;Controller.c: 35: DigitalControllerByte1[L3] = RC2;
 "35
-[e = *U + &U _DigitalControllerByte2 * -> . `E11990 0 `ux -> -> # *U &U _DigitalControllerByte2 `ui `ux -> -> _RA0 `i `uc ]
-[; ;Controller.c: 36: DigitalControllerByte2[Circle] = RA3;
+[e = *U + &U _DigitalControllerByte1 * -> . `E11980 6 `ux -> -> # *U &U _DigitalControllerByte1 `ui `ux -> -> _RC2 `i `uc ]
+[; ;Controller.c: 36: DigitalControllerByte1[Start] = RB6;
 "36
-[e = *U + &U _DigitalControllerByte2 * -> . `E11990 2 `ux -> -> # *U &U _DigitalControllerByte2 `ui `ux -> -> _RA3 `i `uc ]
-[; ;Controller.c: 37: DigitalControllerByte2[X] = RA2;
+[e = *U + &U _DigitalControllerByte1 * -> . `E11980 4 `ux -> -> # *U &U _DigitalControllerByte1 `ui `ux -> -> _RB6 `i `uc ]
+[; ;Controller.c: 37: DigitalControllerByte1[Select] = RB7;
 "37
-[e = *U + &U _DigitalControllerByte2 * -> . `E11990 1 `ux -> -> # *U &U _DigitalControllerByte2 `ui `ux -> -> _RA2 `i `uc ]
-[; ;Controller.c: 38: DigitalControllerByte2[Triangle] = RA1;
-"38
-[e = *U + &U _DigitalControllerByte2 * -> . `E11990 3 `ux -> -> # *U &U _DigitalControllerByte2 `ui `ux -> -> _RA1 `i `uc ]
-[; ;Controller.c: 39: DigitalControllerByte2[R1] = RB4;
+[e = *U + &U _DigitalControllerByte1 * -> . `E11980 7 `ux -> -> # *U &U _DigitalControllerByte1 `ui `ux -> -> _RB7 `i `uc ]
+[; ;Controller.c: 39: DigitalControllerByte2[Square] = RA0;
 "39
-[e = *U + &U _DigitalControllerByte2 * -> . `E11990 4 `ux -> -> # *U &U _DigitalControllerByte2 `ui `ux -> -> _RB4 `i `uc ]
-[; ;Controller.c: 40: DigitalControllerByte2[R2] = RB5;
+[e = *U + &U _DigitalControllerByte2 * -> . `E11990 0 `ux -> -> # *U &U _DigitalControllerByte2 `ui `ux -> -> _RA0 `i `uc ]
+[; ;Controller.c: 40: DigitalControllerByte2[Circle] = RA3;
 "40
-[e = *U + &U _DigitalControllerByte2 * -> . `E11990 6 `ux -> -> # *U &U _DigitalControllerByte2 `ui `ux -> -> _RB5 `i `uc ]
-[; ;Controller.c: 41: DigitalControllerByte2[L1] = RB2;
+[e = *U + &U _DigitalControllerByte2 * -> . `E11990 2 `ux -> -> # *U &U _DigitalControllerByte2 `ui `ux -> -> _RA3 `i `uc ]
+[; ;Controller.c: 41: DigitalControllerByte2[X] = RA2;
 "41
-[e = *U + &U _DigitalControllerByte2 * -> . `E11990 5 `ux -> -> # *U &U _DigitalControllerByte2 `ui `ux -> -> _RB2 `i `uc ]
-[; ;Controller.c: 42: DigitalControllerByte2[L2] = RB3;
+[e = *U + &U _DigitalControllerByte2 * -> . `E11990 1 `ux -> -> # *U &U _DigitalControllerByte2 `ui `ux -> -> _RA2 `i `uc ]
+[; ;Controller.c: 42: DigitalControllerByte2[Triangle] = RA1;
 "42
-[e = *U + &U _DigitalControllerByte2 * -> . `E11990 7 `ux -> -> # *U &U _DigitalControllerByte2 `ui `ux -> -> _RB3 `i `uc ]
-[; ;Controller.c: 45: if (index > Select) {
+[e = *U + &U _DigitalControllerByte2 * -> . `E11990 3 `ux -> -> # *U &U _DigitalControllerByte2 `ui `ux -> -> _RA1 `i `uc ]
+[; ;Controller.c: 43: DigitalControllerByte2[R1] = RB4;
+"43
+[e = *U + &U _DigitalControllerByte2 * -> . `E11990 4 `ux -> -> # *U &U _DigitalControllerByte2 `ui `ux -> -> _RB4 `i `uc ]
+[; ;Controller.c: 44: DigitalControllerByte2[R2] = RB5;
+"44
+[e = *U + &U _DigitalControllerByte2 * -> . `E11990 6 `ux -> -> # *U &U _DigitalControllerByte2 `ui `ux -> -> _RB5 `i `uc ]
+[; ;Controller.c: 45: DigitalControllerByte2[L1] = RB2;
 "45
-[e $ ! > -> _index `i -> . `E11980 7 `i 1606  ]
-{
-[; ;Controller.c: 46: index = 0;
+[e = *U + &U _DigitalControllerByte2 * -> . `E11990 5 `ux -> -> # *U &U _DigitalControllerByte2 `ui `ux -> -> _RB2 `i `uc ]
+[; ;Controller.c: 46: DigitalControllerByte2[L2] = RB3;
 "46
+[e = *U + &U _DigitalControllerByte2 * -> . `E11990 7 `ux -> -> # *U &U _DigitalControllerByte2 `ui `ux -> -> _RB3 `i `uc ]
+[; ;Controller.c: 49: if (index > Select) index = 0;
+"49
+[e $ ! > -> _index `i -> . `E11980 7 `i 1606  ]
 [e = _index -> -> 0 `i `uc ]
-"47
-}
 [e :U 1606 ]
-[; ;Controller.c: 47: }
-[; ;Controller.c: 50: if (!DigitalControllerByte1[index]) {
-"50
-[e $ ! ! != -> *U + &U _DigitalControllerByte1 * -> _index `ux -> -> # *U &U _DigitalControllerByte1 `ui `ux `i -> -> -> 0 `i `uc `i 1607  ]
-{
-[; ;Controller.c: 51: IndexDigitalByte1[index]++;
-"51
-[e ++ *U + &U _IndexDigitalByte1 * -> _index `ux -> -> # *U &U _IndexDigitalByte1 `ui `ux -> -> 1 `i `uc ]
+[; ;Controller.c: 52: if (!DigitalControllerByte1[index]) IndexDigitalByte1[index]++;
 "52
-}
+[e $ ! ! != -> *U + &U _DigitalControllerByte1 * -> _index `ux -> -> # *U &U _DigitalControllerByte1 `ui `ux `i -> -> -> 0 `i `uc `i 1607  ]
+[e ++ *U + &U _IndexDigitalByte1 * -> _index `ux -> -> # *U &U _IndexDigitalByte1 `ui `ux -> -> 1 `i `uc ]
 [e :U 1607 ]
-[; ;Controller.c: 52: }
-[; ;Controller.c: 53: if (!DigitalControllerByte2[index]) {
+[; ;Controller.c: 53: if (!DigitalControllerByte2[index]) IndexDigitalByte2[index]++;
 "53
 [e $ ! ! != -> *U + &U _DigitalControllerByte2 * -> _index `ux -> -> # *U &U _DigitalControllerByte2 `ui `ux `i -> -> -> 0 `i `uc `i 1608  ]
-{
-[; ;Controller.c: 54: IndexDigitalByte2[index]++;
-"54
 [e ++ *U + &U _IndexDigitalByte2 * -> _index `ux -> -> # *U &U _IndexDigitalByte2 `ui `ux -> -> 1 `i `uc ]
-"55
-}
 [e :U 1608 ]
-[; ;Controller.c: 55: }
-[; ;Controller.c: 58: if (DigitalControllerByte1[index] ^ PreviousDigitalByte1[index]) {
-"58
+[; ;Controller.c: 56: if (DigitalControllerByte1[index] ^ PreviousDigitalByte1[index]) {
+"56
 [e $ ! != ^ -> *U + &U _DigitalControllerByte1 * -> _index `ux -> -> # *U &U _DigitalControllerByte1 `ui `ux `i -> *U + &U _PreviousDigitalByte1 * -> _index `ux -> -> # *U &U _PreviousDigitalByte1 `ui `ux `i -> 0 `i 1609  ]
 {
-[; ;Controller.c: 59: IndexDigitalByte1[index] = 0;
-"59
+[; ;Controller.c: 57: IndexDigitalByte1[index] = 0;
+"57
 [e = *U + &U _IndexDigitalByte1 * -> _index `ux -> -> # *U &U _IndexDigitalByte1 `ui `ux -> -> 0 `i `uc ]
-[; ;Controller.c: 60: digitalStateFirst |= 1 << index;
-"60
+[; ;Controller.c: 58: digitalStateFirst |= 1 << index;
+"58
 [e =| _digitalStateFirst -> << -> 1 `i _index `uc ]
-[; ;Controller.c: 62: if (analogMode >= 1) {
-"62
+[; ;Controller.c: 59: if (analogMode >= 1) analogStateFirst[index] = 0x00;
+"59
 [e $ ! >= -> _analogMode `i -> 1 `i 1610  ]
-{
-[; ;Controller.c: 63: analogStateFirst[index] = 0x00;
-"63
 [e = *U + &U _analogStateFirst * -> _index `ux -> -> # *U &U _analogStateFirst `ui `ux -> -> 0 `i `uc ]
-"64
-}
 [e :U 1610 ]
-"66
+"60
 }
 [e :U 1609 ]
-[; ;Controller.c: 64: }
-[; ;Controller.c: 66: }
-[; ;Controller.c: 67: if (DigitalControllerByte2[index] ^ PreviousDigitalByte2[index]) {
-"67
+[; ;Controller.c: 60: }
+[; ;Controller.c: 61: if (DigitalControllerByte2[index] ^ PreviousDigitalByte2[index]) {
+"61
 [e $ ! != ^ -> *U + &U _DigitalControllerByte2 * -> _index `ux -> -> # *U &U _DigitalControllerByte2 `ui `ux `i -> *U + &U _PreviousDigitalByte2 * -> _index `ux -> -> # *U &U _PreviousDigitalByte2 `ui `ux `i -> 0 `i 1611  ]
 {
-[; ;Controller.c: 68: IndexDigitalByte2[index] = 0;
-"68
+[; ;Controller.c: 62: IndexDigitalByte2[index] = 0;
+"62
 [e = *U + &U _IndexDigitalByte2 * -> _index `ux -> -> # *U &U _IndexDigitalByte2 `ui `ux -> -> 0 `i `uc ]
-[; ;Controller.c: 69: digitalStateSecond |= 1 << index;
-"69
+[; ;Controller.c: 63: digitalStateSecond |= 1 << index;
+"63
 [e =| _digitalStateSecond -> << -> 1 `i _index `uc ]
-[; ;Controller.c: 71: if (analogMode >= 1) {
-"71
+[; ;Controller.c: 64: if (analogMode >= 1) analogStateSecond[index] = 0x00;
+"64
 [e $ ! >= -> _analogMode `i -> 1 `i 1612  ]
-{
-[; ;Controller.c: 72: analogStateSecond[index] = 0x00;
-"72
 [e = *U + &U _analogStateSecond * -> _index `ux -> -> # *U &U _analogStateSecond `ui `ux -> -> 0 `i `uc ]
-"73
-}
 [e :U 1612 ]
-"75
+"65
 }
 [e :U 1611 ]
-[; ;Controller.c: 73: }
-[; ;Controller.c: 75: }
-[; ;Controller.c: 78: if (IndexDigitalByte1[index] >= debounceLoops) {
-"78
+[; ;Controller.c: 65: }
+[; ;Controller.c: 68: if (IndexDigitalByte1[index] >= debounceLoops) {
+"68
 [e $ ! >= -> *U + &U _IndexDigitalByte1 * -> _index `ux -> -> # *U &U _IndexDigitalByte1 `ui `ux `i -> _debounceLoops `i 1613  ]
 {
-[; ;Controller.c: 79: digitalStateFirst &= ~(1 << index);
-"79
+[; ;Controller.c: 69: digitalStateFirst &= ~(1 << index);
+"69
 [e =& _digitalStateFirst -> ~ << -> 1 `i _index `uc ]
-[; ;Controller.c: 81: if (analogMode >= 1) {
-"81
+[; ;Controller.c: 70: if (analogMode >= 1) analogStateFirst[index] = 0xFF;
+"70
 [e $ ! >= -> _analogMode `i -> 1 `i 1614  ]
-{
-[; ;Controller.c: 82: analogStateFirst[index] = 0xFF;
-"82
 [e = *U + &U _analogStateFirst * -> _index `ux -> -> # *U &U _analogStateFirst `ui `ux -> -> 255 `i `uc ]
-"83
-}
 [e :U 1614 ]
-"85
+"71
 }
 [e :U 1613 ]
-[; ;Controller.c: 83: }
-[; ;Controller.c: 85: }
-[; ;Controller.c: 86: if (IndexDigitalByte2[index] >= debounceLoops) {
-"86
+[; ;Controller.c: 71: }
+[; ;Controller.c: 72: if (IndexDigitalByte2[index] >= debounceLoops) {
+"72
 [e $ ! >= -> *U + &U _IndexDigitalByte2 * -> _index `ux -> -> # *U &U _IndexDigitalByte2 `ui `ux `i -> _debounceLoops `i 1615  ]
 {
-[; ;Controller.c: 87: digitalStateSecond &= ~(1 << index);
-"87
+[; ;Controller.c: 73: digitalStateSecond &= ~(1 << index);
+"73
 [e =& _digitalStateSecond -> ~ << -> 1 `i _index `uc ]
-[; ;Controller.c: 89: if (analogMode >= 1) {
-"89
+[; ;Controller.c: 74: if (analogMode >= 1) analogStateSecond[index] = 0xFF;
+"74
 [e $ ! >= -> _analogMode `i -> 1 `i 1616  ]
-{
-[; ;Controller.c: 90: analogStateSecond[index] = 0xFF;
-"90
 [e = *U + &U _analogStateSecond * -> _index `ux -> -> # *U &U _analogStateSecond `ui `ux -> -> 255 `i `uc ]
-"91
-}
 [e :U 1616 ]
-"93
+"75
 }
 [e :U 1615 ]
-[; ;Controller.c: 91: }
-[; ;Controller.c: 93: }
-[; ;Controller.c: 96: PreviousDigitalByte1[index] = DigitalControllerByte1[index];
-"96
+[; ;Controller.c: 75: }
+[; ;Controller.c: 78: PreviousDigitalByte1[index] = DigitalControllerByte1[index];
+"78
 [e = *U + &U _PreviousDigitalByte1 * -> _index `ux -> -> # *U &U _PreviousDigitalByte1 `ui `ux *U + &U _DigitalControllerByte1 * -> _index `ux -> -> # *U &U _DigitalControllerByte1 `ui `ux ]
-[; ;Controller.c: 97: PreviousDigitalByte2[index] = DigitalControllerByte2[index];
-"97
+[; ;Controller.c: 79: PreviousDigitalByte2[index] = DigitalControllerByte2[index];
+"79
 [e = *U + &U _PreviousDigitalByte2 * -> _index `ux -> -> # *U &U _PreviousDigitalByte2 `ui `ux *U + &U _DigitalControllerByte2 * -> _index `ux -> -> # *U &U _DigitalControllerByte2 `ui `ux ]
-[; ;Controller.c: 99: index++;
-"99
+[; ;Controller.c: 81: index++;
+"81
 [e ++ _index -> -> 1 `i `uc ]
-[; ;Controller.c: 100: }
-"100
+[; ;Controller.c: 82: }
+"82
 [e :UE 1601 ]
 }
-"102
+"84
 [v _Map `(uc ~T0 @X0 1 sf5`i`i`i`i`i ]
 {
-[; ;Controller.c: 102: static char Map(int x, int inMin, int inMax, int outMin, int outMax) {
+[; ;Controller.c: 84: static char Map(int x, int inMin, int inMax, int outMin, int outMax) {
 [e :U _Map ]
 [v _x `i ~T0 @X0 1 r1 ]
 [v _inMin `i ~T0 @X0 1 r2 ]
@@ -14066,54 +14036,54 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _outMin `i ~T0 @X0 1 r4 ]
 [v _outMax `i ~T0 @X0 1 r5 ]
 [f ]
-[; ;Controller.c: 104: return (((x - inMin) * (outMax - outMin)) / (inMax - inMin)) + outMin;
-"104
+[; ;Controller.c: 86: return (((x - inMin) * (outMax - outMin)) / (inMax - inMin)) + outMin;
+"86
 [e ) -> + / * - _x _inMin - _outMax _outMin - _inMax _inMin _outMin `uc ]
 [e $UE 1617  ]
-[; ;Controller.c: 105: }
-"105
+[; ;Controller.c: 87: }
+"87
 [e :UE 1617 ]
 }
-"107
+"89
 [v _lutInit `(v ~T0 @X0 1 ef ]
 {
-[; ;Controller.c: 107: void lutInit() {
+[; ;Controller.c: 89: void lutInit() {
 [e :U _lutInit ]
 [f ]
-"109
+"91
 [v _lxMin `uc ~T0 @X0 1 a ]
-[; ;Controller.c: 109: char lxMin = eepromRead(0x60);
+[; ;Controller.c: 91: char lxMin = eepromRead(0x60);
 [e = _lxMin ( _eepromRead (1 -> -> 96 `i `uc ]
-"110
+"92
 [v _lxMax `uc ~T0 @X0 1 a ]
-[; ;Controller.c: 110: char lxMax = eepromRead(0x61);
+[; ;Controller.c: 92: char lxMax = eepromRead(0x61);
 [e = _lxMax ( _eepromRead (1 -> -> 97 `i `uc ]
-"111
+"93
 [v _lyMin `uc ~T0 @X0 1 a ]
-[; ;Controller.c: 111: char lyMin = eepromRead(0x62);
+[; ;Controller.c: 93: char lyMin = eepromRead(0x62);
 [e = _lyMin ( _eepromRead (1 -> -> 98 `i `uc ]
-"112
+"94
 [v _lyMax `uc ~T0 @X0 1 a ]
-[; ;Controller.c: 112: char lyMax = eepromRead(0x63);
+[; ;Controller.c: 94: char lyMax = eepromRead(0x63);
 [e = _lyMax ( _eepromRead (1 -> -> 99 `i `uc ]
-"114
+"96
 [v _rxMin `uc ~T0 @X0 1 a ]
-[; ;Controller.c: 114: char rxMin = eepromRead(0x64);
+[; ;Controller.c: 96: char rxMin = eepromRead(0x64);
 [e = _rxMin ( _eepromRead (1 -> -> 100 `i `uc ]
-"115
+"97
 [v _rxMax `uc ~T0 @X0 1 a ]
-[; ;Controller.c: 115: char rxMax = eepromRead(0x65);
+[; ;Controller.c: 97: char rxMax = eepromRead(0x65);
 [e = _rxMax ( _eepromRead (1 -> -> 101 `i `uc ]
-"116
+"98
 [v _ryMin `uc ~T0 @X0 1 a ]
-[; ;Controller.c: 116: char ryMin = eepromRead(0x66);
+[; ;Controller.c: 98: char ryMin = eepromRead(0x66);
 [e = _ryMin ( _eepromRead (1 -> -> 102 `i `uc ]
-"117
+"99
 [v _ryMax `uc ~T0 @X0 1 a ]
-[; ;Controller.c: 117: char ryMax = eepromRead(0x67);
+[; ;Controller.c: 99: char ryMax = eepromRead(0x67);
 [e = _ryMax ( _eepromRead (1 -> -> 103 `i `uc ]
-[; ;Controller.c: 119: for (int position = 0; position < 256; position++) {
-"119
+[; ;Controller.c: 101: for (int position = 0; position < 256; position++) {
+"101
 {
 [v _position `i ~T0 @X0 1 a ]
 [e = _position -> 0 `i ]
@@ -14121,425 +14091,425 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e $U 1620  ]
 [e :U 1619 ]
 {
-[; ;Controller.c: 122: if (position < lxMin) {
-"122
+[; ;Controller.c: 104: if (position < lxMin) {
+"104
 [e $ ! < _position -> _lxMin `i 1622  ]
 {
-[; ;Controller.c: 124: lutLX[position] = 0;
-"124
+[; ;Controller.c: 105: lutLX[position] = 0;
+"105
 [e = *U + &U _lutLX * -> -> _position `ui `ux -> -> # *U &U _lutLX `ui `ux -> -> 0 `i `uc ]
-"125
+"106
 }
-[; ;Controller.c: 125: } else if (position > lxMax) {
+[; ;Controller.c: 106: } else if (position > lxMax) {
 [e $U 1623  ]
 [e :U 1622 ]
 [e $ ! > _position -> _lxMax `i 1624  ]
 {
-[; ;Controller.c: 126: lutLX[position] = 255;
-"126
+[; ;Controller.c: 107: lutLX[position] = 255;
+"107
 [e = *U + &U _lutLX * -> -> _position `ui `ux -> -> # *U &U _lutLX `ui `ux -> -> 255 `i `uc ]
-"128
+"109
 }
-[; ;Controller.c: 128: } else {
+[; ;Controller.c: 109: } else {
 [e $U 1625  ]
 [e :U 1624 ]
 {
-[; ;Controller.c: 129: lutLX[position] = Map(position, lxMin, lxMax, 0, 255);
-"129
+[; ;Controller.c: 110: lutLX[position] = Map(position, lxMin, lxMax, 0, 255);
+"110
 [e = *U + &U _lutLX * -> -> _position `ui `ux -> -> # *U &U _lutLX `ui `ux ( _Map (4 , , , , _position -> _lxMin `i -> _lxMax `i -> 0 `i -> 255 `i ]
-"130
+"111
 }
 [e :U 1625 ]
 [e :U 1623 ]
-[; ;Controller.c: 130: }
-[; ;Controller.c: 133: if (position < lyMin) {
-"133
+[; ;Controller.c: 111: }
+[; ;Controller.c: 114: if (position < lyMin) {
+"114
 [e $ ! < _position -> _lyMin `i 1626  ]
 {
-[; ;Controller.c: 134: lutLY[position] = 0;
-"134
+[; ;Controller.c: 115: lutLY[position] = 0;
+"115
 [e = *U + &U _lutLY * -> -> _position `ui `ux -> -> # *U &U _lutLY `ui `ux -> -> 0 `i `uc ]
-"135
+"116
 }
-[; ;Controller.c: 135: } else if (position > lyMax) {
+[; ;Controller.c: 116: } else if (position > lyMax) {
 [e $U 1627  ]
 [e :U 1626 ]
 [e $ ! > _position -> _lyMax `i 1628  ]
 {
-[; ;Controller.c: 136: lutLY[position] = 255;
-"136
+[; ;Controller.c: 117: lutLY[position] = 255;
+"117
 [e = *U + &U _lutLY * -> -> _position `ui `ux -> -> # *U &U _lutLY `ui `ux -> -> 255 `i `uc ]
-"138
+"119
 }
-[; ;Controller.c: 138: } else {
+[; ;Controller.c: 119: } else {
 [e $U 1629  ]
 [e :U 1628 ]
 {
-[; ;Controller.c: 139: lutLY[position] = Map(position, lyMin, lyMax, 0, 255);
-"139
+[; ;Controller.c: 120: lutLY[position] = Map(position, lyMin, lyMax, 0, 255);
+"120
 [e = *U + &U _lutLY * -> -> _position `ui `ux -> -> # *U &U _lutLY `ui `ux ( _Map (4 , , , , _position -> _lyMin `i -> _lyMax `i -> 0 `i -> 255 `i ]
-"140
+"121
 }
 [e :U 1629 ]
 [e :U 1627 ]
-[; ;Controller.c: 140: }
-[; ;Controller.c: 143: if (position < rxMin) {
-"143
+[; ;Controller.c: 121: }
+[; ;Controller.c: 124: if (position < rxMin) {
+"124
 [e $ ! < _position -> _rxMin `i 1630  ]
 {
-[; ;Controller.c: 144: lutRX[position] = 0;
-"144
+[; ;Controller.c: 125: lutRX[position] = 0;
+"125
 [e = *U + &U _lutRX * -> -> _position `ui `ux -> -> # *U &U _lutRX `ui `ux -> -> 0 `i `uc ]
-"145
+"126
 }
-[; ;Controller.c: 145: } else if (position > rxMax) {
+[; ;Controller.c: 126: } else if (position > rxMax) {
 [e $U 1631  ]
 [e :U 1630 ]
 [e $ ! > _position -> _rxMax `i 1632  ]
 {
-[; ;Controller.c: 146: lutRX[position] = 255;
-"146
+[; ;Controller.c: 127: lutRX[position] = 255;
+"127
 [e = *U + &U _lutRX * -> -> _position `ui `ux -> -> # *U &U _lutRX `ui `ux -> -> 255 `i `uc ]
-"148
+"129
 }
-[; ;Controller.c: 148: } else {
+[; ;Controller.c: 129: } else {
 [e $U 1633  ]
 [e :U 1632 ]
 {
-[; ;Controller.c: 149: lutRX[position] = Map(position, rxMin, rxMax, 0, 255);
-"149
+[; ;Controller.c: 130: lutRX[position] = Map(position, rxMin, rxMax, 0, 255);
+"130
 [e = *U + &U _lutRX * -> -> _position `ui `ux -> -> # *U &U _lutRX `ui `ux ( _Map (4 , , , , _position -> _rxMin `i -> _rxMax `i -> 0 `i -> 255 `i ]
-"150
+"131
 }
 [e :U 1633 ]
 [e :U 1631 ]
-[; ;Controller.c: 150: }
-[; ;Controller.c: 153: if (position < ryMin) {
-"153
+[; ;Controller.c: 131: }
+[; ;Controller.c: 134: if (position < ryMin) {
+"134
 [e $ ! < _position -> _ryMin `i 1634  ]
 {
-[; ;Controller.c: 154: lutRY[position] = 0;
-"154
+[; ;Controller.c: 135: lutRY[position] = 0;
+"135
 [e = *U + &U _lutRY * -> -> _position `ui `ux -> -> # *U &U _lutRY `ui `ux -> -> 0 `i `uc ]
-"155
+"136
 }
-[; ;Controller.c: 155: } else if (position > ryMax) {
+[; ;Controller.c: 136: } else if (position > ryMax) {
 [e $U 1635  ]
 [e :U 1634 ]
 [e $ ! > _position -> _ryMax `i 1636  ]
 {
-[; ;Controller.c: 156: lutRY[position] = 255;
-"156
+[; ;Controller.c: 137: lutRY[position] = 255;
+"137
 [e = *U + &U _lutRY * -> -> _position `ui `ux -> -> # *U &U _lutRY `ui `ux -> -> 255 `i `uc ]
-"158
+"139
 }
-[; ;Controller.c: 158: } else {
+[; ;Controller.c: 139: } else {
 [e $U 1637  ]
 [e :U 1636 ]
 {
-[; ;Controller.c: 159: lutRY[position] = Map(position, ryMin, ryMax, 0, 255);
-"159
+[; ;Controller.c: 140: lutRY[position] = Map(position, ryMin, ryMax, 0, 255);
+"140
 [e = *U + &U _lutRY * -> -> _position `ui `ux -> -> # *U &U _lutRY `ui `ux ( _Map (4 , , , , _position -> _ryMin `i -> _ryMax `i -> 0 `i -> 255 `i ]
-"160
+"141
 }
 [e :U 1637 ]
 [e :U 1635 ]
-"162
+"143
 }
-"119
+"101
 [e ++ _position -> 1 `i ]
 [e $ < _position -> 256 `i 1619  ]
 [e :U 1620 ]
-"162
+"143
 }
-[; ;Controller.c: 160: }
-[; ;Controller.c: 162: }
-[; ;Controller.c: 163: }
-"163
+[; ;Controller.c: 141: }
+[; ;Controller.c: 143: }
+[; ;Controller.c: 144: }
+"144
 [e :UE 1618 ]
 }
-"165
+"146
 [v _readADC `(ui ~T0 @X0 1 ef1`i ]
 {
-[; ;Controller.c: 165: unsigned int readADC(int channel) {
+[; ;Controller.c: 146: unsigned int readADC(int channel) {
 [e :U _readADC ]
 [v _channel `i ~T0 @X0 1 r1 ]
 [f ]
-[; ;Controller.c: 166: ADPCH = channel;
-"166
+[; ;Controller.c: 147: ADPCH = channel;
+"147
 [e = _ADPCH -> _channel `uc ]
-[; ;Controller.c: 167: ADPRE = 0x00;
-"167
+[; ;Controller.c: 148: ADPRE = 0x00;
+"148
 [e = _ADPRE -> -> 0 `i `uc ]
-[; ;Controller.c: 168: ADACQ = 0x3F;
-"168
+[; ;Controller.c: 149: ADACQ = 0x3F;
+"149
 [e = _ADACQ -> -> 63 `i `uc ]
-[; ;Controller.c: 170: ADCON0bits.ADGO = 1;
-"170
+[; ;Controller.c: 151: ADCON0bits.ADGO = 1;
+"151
 [e = . . _ADCON0bits 0 0 -> -> 1 `i `uc ]
-[; ;Controller.c: 171: while (ADCON0bits.ADGO);
-"171
+[; ;Controller.c: 152: while (ADCON0bits.ADGO);
+"152
 [e $U 1639  ]
 [e :U 1640 ]
 [e :U 1639 ]
 [e $ != -> . . _ADCON0bits 0 0 `i -> -> -> 0 `i `Vuc `i 1640  ]
 [e :U 1641 ]
-[; ;Controller.c: 173: return ((ADRESH << 6) | (ADRESL >> 2));
-"173
+[; ;Controller.c: 154: return ((ADRESH << 6) | (ADRESL >> 2));
+"154
 [e ) -> | << -> _ADRESH `i -> 6 `i >> -> _ADRESL `i -> 2 `i `ui ]
 [e $UE 1638  ]
-[; ;Controller.c: 174: }
-"174
+[; ;Controller.c: 155: }
+"155
 [e :UE 1638 ]
 }
-"176
+"157
 [v _reversebyte `(uc ~T0 @X0 1 ef1`uc ]
 {
-[; ;Controller.c: 176: char reversebyte(char byte) {
+[; ;Controller.c: 157: char reversebyte(char byte) {
 [e :U _reversebyte ]
 [v _byte `uc ~T0 @X0 1 r1 ]
 [f ]
-[; ;Controller.c: 177: byte = (byte & 0xF0) >> 4 | (byte & 0x0F) << 4;
-"177
+[; ;Controller.c: 158: byte = (byte & 0xF0) >> 4 | (byte & 0x0F) << 4;
+"158
 [e = _byte -> | >> & -> _byte `i -> 240 `i -> 4 `i << & -> _byte `i -> 15 `i -> 4 `i `uc ]
-[; ;Controller.c: 178: byte = (byte & 0xCC) >> 2 | (byte & 0x33) << 2;
-"178
+[; ;Controller.c: 159: byte = (byte & 0xCC) >> 2 | (byte & 0x33) << 2;
+"159
 [e = _byte -> | >> & -> _byte `i -> 204 `i -> 2 `i << & -> _byte `i -> 51 `i -> 2 `i `uc ]
-[; ;Controller.c: 179: byte = (byte & 0xAA) >> 1 | (byte & 0x55) << 1;
-"179
+[; ;Controller.c: 160: byte = (byte & 0xAA) >> 1 | (byte & 0x55) << 1;
+"160
 [e = _byte -> | >> & -> _byte `i -> 170 `i -> 1 `i << & -> _byte `i -> 85 `i -> 1 `i `uc ]
-[; ;Controller.c: 181: return byte;
-"181
+[; ;Controller.c: 162: return byte;
+"162
 [e ) _byte ]
 [e $UE 1642  ]
-[; ;Controller.c: 182: }
-"182
+[; ;Controller.c: 163: }
+"163
 [e :UE 1642 ]
 }
-"184
+"165
 [v _readControllerAnalog `(v ~T0 @X0 1 ef ]
 {
-[; ;Controller.c: 184: void readControllerAnalog() {
+[; ;Controller.c: 165: void readControllerAnalog() {
 [e :U _readControllerAnalog ]
 [f ]
-[; ;Controller.c: 186: lxData = reversebyte(lutLX[readADC(0b010000)]);
-"186
+[; ;Controller.c: 167: lxData = reversebyte(lutLX[readADC(0b010000)]);
+"167
 [e = _lxData ( _reversebyte (1 *U + &U _lutLX * -> ( _readADC (1 -> 16 `i `ux -> -> # *U &U _lutLX `ui `ux ]
-[; ;Controller.c: 187: lyData = reversebyte(lutLY[readADC(0b10001)]);
-"187
+[; ;Controller.c: 168: lyData = reversebyte(lutLY[readADC(0b10001)]);
+"168
 [e = _lyData ( _reversebyte (1 *U + &U _lutLY * -> ( _readADC (1 -> 17 `i `ux -> -> # *U &U _lutLY `ui `ux ]
-[; ;Controller.c: 189: rxData = reversebyte(lutRX[readADC(0b010110)]);
-"189
+[; ;Controller.c: 170: rxData = reversebyte(lutRX[readADC(0b010110)]);
+"170
 [e = _rxData ( _reversebyte (1 *U + &U _lutRX * -> ( _readADC (1 -> 22 `i `ux -> -> # *U &U _lutRX `ui `ux ]
-[; ;Controller.c: 190: ryData = reversebyte(lutRY[readADC(0b010111)]);
-"190
+[; ;Controller.c: 171: ryData = reversebyte(lutRY[readADC(0b010111)]);
+"171
 [e = _ryData ( _reversebyte (1 *U + &U _lutRY * -> ( _readADC (1 -> 23 `i `ux -> -> # *U &U _lutRY `ui `ux ]
-[; ;Controller.c: 191: }
-"191
+[; ;Controller.c: 172: }
+"172
 [e :UE 1643 ]
 }
-"193
+"174
 [v _configureController `(v ~T0 @X0 1 ef ]
 {
-[; ;Controller.c: 193: void configureController() {
+[; ;Controller.c: 174: void configureController() {
 [e :U _configureController ]
 [f ]
-[; ;Controller.c: 195: INTCONbits.GIE = 0;
-"195
+[; ;Controller.c: 176: INTCONbits.GIE = 0;
+"176
 [e = . . _INTCONbits 0 3 -> -> 0 `i `uc ]
-[; ;Controller.c: 196: INTCONbits.PEIE = 0;
-"196
+[; ;Controller.c: 177: INTCONbits.PEIE = 0;
+"177
 [e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
-"198
+"179
 [v _lxMin `uc ~T0 @X0 1 a ]
-[; ;Controller.c: 198: char lxMin = readADC(0b010000);
+[; ;Controller.c: 179: char lxMin = readADC(0b010000);
 [e = _lxMin -> ( _readADC (1 -> 16 `i `uc ]
-"199
+"180
 [v _lxMax `uc ~T0 @X0 1 a ]
-[; ;Controller.c: 199: char lxMax = readADC(0b010000);
+[; ;Controller.c: 180: char lxMax = readADC(0b010000);
 [e = _lxMax -> ( _readADC (1 -> 16 `i `uc ]
-"200
+"181
 [v _lyMin `uc ~T0 @X0 1 a ]
-[; ;Controller.c: 200: char lyMin = readADC(0b10001);
+[; ;Controller.c: 181: char lyMin = readADC(0b10001);
 [e = _lyMin -> ( _readADC (1 -> 17 `i `uc ]
-"201
+"182
 [v _lyMax `uc ~T0 @X0 1 a ]
-[; ;Controller.c: 201: char lyMax = readADC(0b10001);
+[; ;Controller.c: 182: char lyMax = readADC(0b10001);
 [e = _lyMax -> ( _readADC (1 -> 17 `i `uc ]
-"203
+"184
 [v _rxMin `uc ~T0 @X0 1 a ]
-[; ;Controller.c: 203: char rxMin = readADC(0b010110);
+[; ;Controller.c: 184: char rxMin = readADC(0b010110);
 [e = _rxMin -> ( _readADC (1 -> 22 `i `uc ]
-"204
+"185
 [v _rxMax `uc ~T0 @X0 1 a ]
-[; ;Controller.c: 204: char rxMax = readADC(0b010110);
+[; ;Controller.c: 185: char rxMax = readADC(0b010110);
 [e = _rxMax -> ( _readADC (1 -> 22 `i `uc ]
-"205
+"186
 [v _ryMin `uc ~T0 @X0 1 a ]
-[; ;Controller.c: 205: char ryMin = readADC(0b010111);
+[; ;Controller.c: 186: char ryMin = readADC(0b010111);
 [e = _ryMin -> ( _readADC (1 -> 23 `i `uc ]
-"206
+"187
 [v _ryMax `uc ~T0 @X0 1 a ]
-[; ;Controller.c: 206: char ryMax = readADC(0b010111);
+[; ;Controller.c: 187: char ryMax = readADC(0b010111);
 [e = _ryMax -> ( _readADC (1 -> 23 `i `uc ]
-"208
+"189
 [v _lx `uc ~T0 @X0 1 a ]
-"209
+"190
 [v _ly `uc ~T0 @X0 1 a ]
-"210
+"191
 [v _rx `uc ~T0 @X0 1 a ]
-"211
+"192
 [v _ry `uc ~T0 @X0 1 a ]
-[; ;Controller.c: 208: char lx;
-[; ;Controller.c: 209: char ly;
-[; ;Controller.c: 210: char rx;
-[; ;Controller.c: 211: char ry;
-[; ;Controller.c: 214: while (1) {
-"214
+[; ;Controller.c: 189: char lx;
+[; ;Controller.c: 190: char ly;
+[; ;Controller.c: 191: char rx;
+[; ;Controller.c: 192: char ry;
+[; ;Controller.c: 195: while (1) {
+"195
 [e :U 1646 ]
 {
-[; ;Controller.c: 216: readController(0);
-"216
+[; ;Controller.c: 197: readController(0);
+"197
 [e ( _readController (1 -> -> 0 `i `uc ]
-[; ;Controller.c: 218: if (digitalStateFirst == 0x7F && digitalStateSecond == 0xCF) {
-"218
+[; ;Controller.c: 199: if (digitalStateFirst == 0x7F && digitalStateSecond == 0xCF) {
+"199
 [e $ ! && == -> _digitalStateFirst `i -> 127 `i == -> _digitalStateSecond `i -> 207 `i 1648  ]
 {
-[; ;Controller.c: 219: break;
-"219
+[; ;Controller.c: 200: break;
+"200
 [e $U 1647  ]
-"220
+"201
 }
 [e :U 1648 ]
-[; ;Controller.c: 220: }
-[; ;Controller.c: 222: lx = readADC(0b010000);
-"222
+[; ;Controller.c: 201: }
+[; ;Controller.c: 203: lx = readADC(0b010000);
+"203
 [e = _lx -> ( _readADC (1 -> 16 `i `uc ]
-[; ;Controller.c: 223: ly = readADC(0b10001);
-"223
+[; ;Controller.c: 204: ly = readADC(0b10001);
+"204
 [e = _ly -> ( _readADC (1 -> 17 `i `uc ]
-[; ;Controller.c: 224: rx = readADC(0b010110);
-"224
+[; ;Controller.c: 205: rx = readADC(0b010110);
+"205
 [e = _rx -> ( _readADC (1 -> 22 `i `uc ]
-[; ;Controller.c: 225: ry = readADC(0b010111);
-"225
+[; ;Controller.c: 206: ry = readADC(0b010111);
+"206
 [e = _ry -> ( _readADC (1 -> 23 `i `uc ]
-[; ;Controller.c: 228: if (ly > lyMax) lyMax = ly;
-"228
+[; ;Controller.c: 209: if (ly > lyMax) lyMax = ly;
+"209
 [e $ ! > -> _ly `i -> _lyMax `i 1649  ]
 [e = _lyMax _ly ]
 [e :U 1649 ]
-[; ;Controller.c: 229: if (ly < lyMin) lyMin = ly;
-"229
+[; ;Controller.c: 210: if (ly < lyMin) lyMin = ly;
+"210
 [e $ ! < -> _ly `i -> _lyMin `i 1650  ]
 [e = _lyMin _ly ]
 [e :U 1650 ]
-[; ;Controller.c: 230: if (lx > lxMax) lxMax = lx;
-"230
+[; ;Controller.c: 211: if (lx > lxMax) lxMax = lx;
+"211
 [e $ ! > -> _lx `i -> _lxMax `i 1651  ]
 [e = _lxMax _lx ]
 [e :U 1651 ]
-[; ;Controller.c: 231: if (lx < lxMin) lxMin = lx;
-"231
+[; ;Controller.c: 212: if (lx < lxMin) lxMin = lx;
+"212
 [e $ ! < -> _lx `i -> _lxMin `i 1652  ]
 [e = _lxMin _lx ]
 [e :U 1652 ]
-[; ;Controller.c: 234: if (ry > ryMax) ryMax = ry;
-"234
+[; ;Controller.c: 215: if (ry > ryMax) ryMax = ry;
+"215
 [e $ ! > -> _ry `i -> _ryMax `i 1653  ]
 [e = _ryMax _ry ]
 [e :U 1653 ]
-[; ;Controller.c: 235: if (ry < ryMin) ryMin = ry;
-"235
+[; ;Controller.c: 216: if (ry < ryMin) ryMin = ry;
+"216
 [e $ ! < -> _ry `i -> _ryMin `i 1654  ]
 [e = _ryMin _ry ]
 [e :U 1654 ]
-[; ;Controller.c: 236: if (rx > rxMax) rxMax = rx;
-"236
+[; ;Controller.c: 217: if (rx > rxMax) rxMax = rx;
+"217
 [e $ ! > -> _rx `i -> _rxMax `i 1655  ]
 [e = _rxMax _rx ]
 [e :U 1655 ]
-[; ;Controller.c: 237: if (rx < rxMin) rxMin = rx;
-"237
+[; ;Controller.c: 218: if (rx < rxMin) rxMin = rx;
+"218
 [e $ ! < -> _rx `i -> _rxMin `i 1656  ]
 [e = _rxMin _rx ]
 [e :U 1656 ]
-[; ;Controller.c: 239: if (digitalStateFirst == 0x6F && digitalStateSecond == 0x3F) {
-"239
+[; ;Controller.c: 220: if (digitalStateFirst == 0x6F && digitalStateSecond == 0x3F) {
+"220
 [e $ ! && == -> _digitalStateFirst `i -> 111 `i == -> _digitalStateSecond `i -> 63 `i 1657  ]
 {
-[; ;Controller.c: 241: lxMin = 0;
-"241
+[; ;Controller.c: 222: lxMin = 0;
+"222
 [e = _lxMin -> -> 0 `i `uc ]
-[; ;Controller.c: 242: lxMax = 255;
-"242
+[; ;Controller.c: 223: lxMax = 255;
+"223
 [e = _lxMax -> -> 255 `i `uc ]
-[; ;Controller.c: 243: lyMin = 0;
-"243
+[; ;Controller.c: 224: lyMin = 0;
+"224
 [e = _lyMin -> -> 0 `i `uc ]
-[; ;Controller.c: 244: lyMax = 255;
-"244
+[; ;Controller.c: 225: lyMax = 255;
+"225
 [e = _lyMax -> -> 255 `i `uc ]
-[; ;Controller.c: 245: rxMin = 0;
-"245
+[; ;Controller.c: 226: rxMin = 0;
+"226
 [e = _rxMin -> -> 0 `i `uc ]
-[; ;Controller.c: 246: rxMax = 255;
-"246
+[; ;Controller.c: 227: rxMax = 255;
+"227
 [e = _rxMax -> -> 255 `i `uc ]
-[; ;Controller.c: 247: ryMin = 0;
-"247
+[; ;Controller.c: 228: ryMin = 0;
+"228
 [e = _ryMin -> -> 0 `i `uc ]
-[; ;Controller.c: 248: ryMax = 255;
-"248
+[; ;Controller.c: 229: ryMax = 255;
+"229
 [e = _ryMax -> -> 255 `i `uc ]
-[; ;Controller.c: 249: break;
-"249
+[; ;Controller.c: 230: break;
+"230
 [e $U 1647  ]
-"250
+"231
 }
 [e :U 1657 ]
-"251
+"232
 }
 [e :U 1645 ]
-"214
+"195
 [e $U 1646  ]
 [e :U 1647 ]
-[; ;Controller.c: 250: }
-[; ;Controller.c: 251: }
-[; ;Controller.c: 253: eepromWrite(0x60, lxMin);
-"253
+[; ;Controller.c: 231: }
+[; ;Controller.c: 232: }
+[; ;Controller.c: 234: eepromWrite(0x60, lxMin);
+"234
 [e ( _eepromWrite (2 , -> -> 96 `i `uc _lxMin ]
-[; ;Controller.c: 254: eepromWrite(0x61, lxMax);
-"254
+[; ;Controller.c: 235: eepromWrite(0x61, lxMax);
+"235
 [e ( _eepromWrite (2 , -> -> 97 `i `uc _lxMax ]
-[; ;Controller.c: 255: eepromWrite(0x62, lyMin);
-"255
+[; ;Controller.c: 236: eepromWrite(0x62, lyMin);
+"236
 [e ( _eepromWrite (2 , -> -> 98 `i `uc _lyMin ]
-[; ;Controller.c: 256: eepromWrite(0x63, lyMax);
-"256
+[; ;Controller.c: 237: eepromWrite(0x63, lyMax);
+"237
 [e ( _eepromWrite (2 , -> -> 99 `i `uc _lyMax ]
-[; ;Controller.c: 257: eepromWrite(0x64, rxMin);
-"257
+[; ;Controller.c: 238: eepromWrite(0x64, rxMin);
+"238
 [e ( _eepromWrite (2 , -> -> 100 `i `uc _rxMin ]
-[; ;Controller.c: 258: eepromWrite(0x65, rxMax);
-"258
+[; ;Controller.c: 239: eepromWrite(0x65, rxMax);
+"239
 [e ( _eepromWrite (2 , -> -> 101 `i `uc _rxMax ]
-[; ;Controller.c: 259: eepromWrite(0x66, ryMin);
-"259
+[; ;Controller.c: 240: eepromWrite(0x66, ryMin);
+"240
 [e ( _eepromWrite (2 , -> -> 102 `i `uc _ryMin ]
-[; ;Controller.c: 260: eepromWrite(0x67, ryMax);
-"260
+[; ;Controller.c: 241: eepromWrite(0x67, ryMax);
+"241
 [e ( _eepromWrite (2 , -> -> 103 `i `uc _ryMax ]
-[; ;Controller.c: 262: lutInit();
-"262
+[; ;Controller.c: 243: lutInit();
+"243
 [e ( _lutInit ..  ]
-[; ;Controller.c: 264: INTCONbits.GIE = 1;
-"264
+[; ;Controller.c: 245: INTCONbits.GIE = 1;
+"245
 [e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
-[; ;Controller.c: 265: INTCONbits.PEIE = 1;
-"265
+[; ;Controller.c: 246: INTCONbits.PEIE = 1;
+"246
 [e = . . _INTCONbits 0 2 -> -> 1 `i `uc ]
-[; ;Controller.c: 266: }
-"266
+[; ;Controller.c: 247: }
+"247
 [e :UE 1644 ]
 }

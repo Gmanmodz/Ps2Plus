@@ -18,6 +18,8 @@
 #define RY_MIN_EEPROM 0x66
 #define RY_MAX_EEPROM 0x67
 
+#define RESET_EEPROM 0x68
+
 typedef enum {
     //values are in order for data_byte1 LSB first
     DLeft,

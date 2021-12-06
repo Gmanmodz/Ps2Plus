@@ -15,18 +15,17 @@
 #include <stdint.h>
 
 char response[20] = {DIGITAL_MODE, END_HEADER};
-char responseLength = 9;
-char cmdCounter = 0;
-char analogMode = 0; //0: 0x41 mode 1: 0x73 mode 2: 0x79 mode
-char escapeMode = 0;
-char previousCmd;
+char cmdCounter = 0;    //keeps track of which byte number the transmission is on
+char analogMode = 0;    //0: 0x41 mode 1: 0x73 mode 2: 0x79 mode
+char escapeMode = 0;    //escape/config mode active
+char previousCmd = 0;   //stores main command 
 char MODE_LOCK = 0; //when 1, you cannot use the analog button to switch modes
 char AN_latch = 0;  //used to toggle analog mode on falling edge of analog button
 
 char INIT_PRESSURE_SENSOR_byte3 = 0;    //stores data from 0x40 command
 char INIT_PRESSURE_SENSOR_byte4 = 0;    //stores data from 0x40 command
-char MAP_SMALL_MOTOR = 0xFF;
-char MAP_LARGE_MOTOR = 0xFF;
+char MAP_SMALL_MOTOR = 0xFF;            //Mapping of the small motor byte as set by the PS2
+char MAP_LARGE_MOTOR = 0xFF;            //Mapping of the large motor byte as set by the PS2
 char CONTROL_RESPONSE_byte3 = 0;    //stores data from 0x4F command
 char CONTROL_RESPONSE_byte4 = 0;    //stores data from 0x4F command
 char CONTROL_RESPONSE_byte5 = 0;    //stores data from 0x4F command
@@ -39,7 +38,6 @@ void pollController(char response[20]) {
     response[6] = lxData;
     response[7] = lyData;   
     if(analogMode == 2) {
-        responseLength = 20;
         response[8] = analogStateFirst[2];
         response[9] = analogStateFirst[0];
         response[10] = analogStateFirst[3];
@@ -53,94 +51,14 @@ void pollController(char response[20]) {
         response[18] = analogStateSecond[7];
         response[19] = analogStateSecond[6];
     }
-    else {
-        responseLength = 5;
-    }
 }
 
 void __interrupt() PS2Command() {
 
     if (SSP1IF) {
         char cmd = spiRead();
-
         switch (cmdCounter) { 
-            case 3:
-                switch (previousCmd) {
-                    case INIT_PRESSURE_SENSOR:                       
-                        INIT_PRESSURE_SENSOR_byte3 = cmd;                    
-                        break;
-                    case MAIN_POLLING:                      
-                        if(MAP_SMALL_MOTOR == 0 && cmd == 0xFF) SMALL_MOTOR = 1;
-                        else SMALL_MOTOR = 0;                   
-                        break;
-                    case ENTER_EXIT_ESCAPE:
-                        if (cmd == 0x80) escapeMode = 1;
-                        else escapeMode = 0;
-                        break;
-                    case ANALOG_DIGITAL_SWITCH:
-                        if (cmd == 0x80) analogMode = 1;
-                        else analogMode = 0; 
-                        break;
-                    case DEVICE_DESCRIPTOR_FIRST:
-                        if (cmd == 0x80) { //command 0x01
-                            response[2] = 0x00;
-                            response[3] = 0x00;
-                            response[4] = 0x80; //0x01 reversed
-                            response[5] = 0x80; //0x01 reversed
-                            response[6] = 0x80; //0x01 reversed
-                            response[7] = 0x28; //0x14 reversed
-                        }                                               
-                        break;
-                    case DEVICE_DESCRIPTOR_LAST:
-                        if (cmd == 0x80) {
-                            response[2] = 0x00;
-                            response[3] = 0x00;
-                            response[4] = 0x00;
-                            response[5] = 0xE0; 
-                            response[6] = 0x00;
-                            response[7] = 0x00;
-                        }
-                        break;
-                    case CONTROL_RESPONSE:
-                        //Obtain which buttons we want to collect analog data from here
-                        CONTROL_RESPONSE_byte3 = cmd;
-                        break;
-                    case MAP_MOTOR:
-                        MAP_SMALL_MOTOR = cmd;
-                        break;
-                }
-                break;
-            case 4:
-                switch (previousCmd) {              
-                    case INIT_PRESSURE_SENSOR:                        
-                        INIT_PRESSURE_SENSOR_byte4 = cmd;                     
-                        break;
-                    case MAIN_POLLING:
-                        if(MAP_LARGE_MOTOR == 0x80 && reversebyte(cmd) >= 0x40) LARGE_MOTOR = 1;
-                        else LARGE_MOTOR = 0;
-                        break;
-                    case ANALOG_DIGITAL_SWITCH:
-                        if(cmd == 0xC0) MODE_LOCK = 1;
-                        else MODE_LOCK = 0;
-                        break;
-                    case CONTROL_RESPONSE:
-                        //Obtain which buttons we want to collect analog data from here
-                        CONTROL_RESPONSE_byte4 = cmd;
-                        break;
-                    case MAP_MOTOR:
-                        MAP_LARGE_MOTOR = cmd;
-                        break;
-                }
-                break;
-            case 5:
-                switch (previousCmd) {
-                    case CONTROL_RESPONSE:
-                        //Obtain which buttons we want to collect analog data from here
-                        CONTROL_RESPONSE_byte5 = cmd;
-                        break;
-                }
-                break;
-            default:
+            case 1:
                 switch (cmd) {
                     case INIT_PRESSURE_SENSOR:
                         /* 
@@ -224,7 +142,6 @@ void __interrupt() PS2Command() {
                          * The PS2 is requesting certain information about the controller
                          * like whether the controller is a guitar hero controller
                          * or DualShock controller.
-                         * 
                          */
                         response[2] = 0xC0; //0x03 reversed (DualShock)
                         response[3] = 0x40; //0x02 reversed
@@ -301,6 +218,81 @@ void __interrupt() PS2Command() {
                         if(analogMode == 1) analogMode = 2; //there isn't any recorded documentation of the button masking being used so we will always go into 0x79 mode for now
                         break;
                 }
+                break;                              
+            case 3:
+                switch (previousCmd) {
+                    case INIT_PRESSURE_SENSOR:                       
+                        INIT_PRESSURE_SENSOR_byte3 = cmd;                    
+                        break;
+                    case MAIN_POLLING:                      
+                        if(MAP_SMALL_MOTOR == 0 && cmd == 0xFF) SMALL_MOTOR = 1;
+                        else SMALL_MOTOR = 0;                   
+                        break;
+                    case ENTER_EXIT_ESCAPE:
+                        if (cmd == 0x80) escapeMode = 1;
+                        else escapeMode = 0;
+                        break;
+                    case ANALOG_DIGITAL_SWITCH:
+                        if (cmd == 0x80) analogMode = 1;
+                        else analogMode = 0; 
+                        break;
+                    case DEVICE_DESCRIPTOR_FIRST:
+                        if (cmd == 0x80) {
+                            response[2] = 0x00;
+                            response[3] = 0x00;
+                            response[4] = 0x80; //0x01 reversed
+                            response[5] = 0x80; //0x01 reversed
+                            response[6] = 0x80; //0x01 reversed
+                            response[7] = 0x28; //0x14 reversed
+                        }                                               
+                        break;
+                    case DEVICE_DESCRIPTOR_LAST:
+                        if (cmd == 0x80) {
+                            response[2] = 0x00;
+                            response[3] = 0x00;
+                            response[4] = 0x00;
+                            response[5] = 0xE0; 
+                            response[6] = 0x00;
+                            response[7] = 0x00;
+                        }
+                        break;
+                    case CONTROL_RESPONSE:
+                        CONTROL_RESPONSE_byte3 = cmd;   //Obtain which buttons we want to collect analog data from here
+                        break;
+                    case MAP_MOTOR:
+                        MAP_SMALL_MOTOR = cmd;
+                        break;
+                }
+                break;
+            case 4:
+                switch (previousCmd) {              
+                    case INIT_PRESSURE_SENSOR:                        
+                        INIT_PRESSURE_SENSOR_byte4 = cmd;                     
+                        break;
+                    case MAIN_POLLING:
+                        if(MAP_LARGE_MOTOR == 0x80 && reversebyte(cmd) >= 0x40) LARGE_MOTOR = 1;
+                        else LARGE_MOTOR = 0;
+                        break;
+                    case ANALOG_DIGITAL_SWITCH:
+                        if(cmd == 0xC0) MODE_LOCK = 1;
+                        else MODE_LOCK = 0;
+                        break;
+                    case CONTROL_RESPONSE:
+                        CONTROL_RESPONSE_byte4 = cmd;   //Obtain which buttons we want to collect analog data from here
+                        break;
+                    case MAP_MOTOR:
+                        MAP_LARGE_MOTOR = cmd;
+                        break;
+                }
+                break;
+            case 5:
+                switch (previousCmd) {
+                    case CONTROL_RESPONSE:
+                        CONTROL_RESPONSE_byte5 = cmd;   //Obtain which buttons we want to collect analog data from here
+                        break;
+                }
+                break;
+            default:
                 break;
         }
 
@@ -311,10 +303,7 @@ void __interrupt() PS2Command() {
         __delay_us(1);
         ACK = 1;
 
-        //Increment index to next command
-        if (cmdCounter < responseLength) {
-            cmdCounter++;
-        }
+        cmdCounter++;   //Increment index to next command
         
         //Output the correct controller state
         if (escapeMode) {
@@ -327,7 +316,6 @@ void __interrupt() PS2Command() {
         }        
      
         SSP1IF = 0;
-
     }
 }
 
@@ -336,9 +324,20 @@ void main(void) {
     picInit();
     IO_MAPPING();
     adcInit();
+    
+    if(eepromRead(RESET_EEPROM != 0x69)) {
+        eepromWrite(RESET_EEPROM, 0x69);
+        eepromWrite(LX_MIN_EEPROM, 0);
+        eepromWrite(LX_MAX_EEPROM, 255);
+        eepromWrite(LY_MIN_EEPROM, 0);
+        eepromWrite(LY_MAX_EEPROM, 255);
+        eepromWrite(RX_MIN_EEPROM, 0);
+        eepromWrite(RX_MAX_EEPROM, 255);
+        eepromWrite(RY_MIN_EEPROM, 0);
+        eepromWrite(RY_MAX_EEPROM, 255);          
+    }
+    
     lutInit();
-
-    response[1] = END_HEADER; //Finish header
 
     char slaveSelect;
     char slaveSelectStatePrev = 0;
@@ -360,7 +359,7 @@ void main(void) {
             else analogMode = 1;
             AN_latch = 0;
         }
-        else AN_latch = 1;
+        if(AN_btn) AN_latch = 1;
              
         slaveSelect = SLAVE_SELECT;
         if (slaveSelect) if(count < 3) count++;
@@ -368,7 +367,6 @@ void main(void) {
         slaveSelectStatePrev = slaveSelect;
         if (count >= 3) { //Clear transmission counters
             cmdCounter = 0;
-            responseLength = 9;
             SSP1BUF = 0xFF;
             previousCmd = 0x00;
         }

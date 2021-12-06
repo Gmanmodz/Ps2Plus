@@ -17,8 +17,12 @@ void readController(char analogMode) {
     
     //debouncing ANALOG button
     AN_temp = ANALOG_BTN;
-    if(AN_temp ^ AN_prev) AN_timer = 0;
-    else if(AN_timer < 4) AN_timer++;
+    if(AN_temp ^ AN_prev) {
+        AN_timer = 0;
+    }
+    else if(AN_timer < 4) {
+        AN_timer++;
+    }
     if(AN_timer > 3) AN_btn = AN_temp;
     AN_prev = AN_temp;
     
@@ -42,54 +46,32 @@ void readController(char analogMode) {
     DigitalControllerByte2[L2] = L2BUTTON;
 
     //Debounce inputs
-    if (index > Select) {
-        index = 0;
-    }
+    if (index > Select) index = 0;
 
     //if button is pressed, start timer
-    if (!DigitalControllerByte1[index]) {
-        IndexDigitalByte1[index]++;
-    }
-    if (!DigitalControllerByte2[index]) {
-        IndexDigitalByte2[index]++;
-    }
+    if (!DigitalControllerByte1[index]) IndexDigitalByte1[index]++;
+    if (!DigitalControllerByte2[index]) IndexDigitalByte2[index]++;
 
     //if values don't match, reset count, clear data
     if (DigitalControllerByte1[index] ^ PreviousDigitalByte1[index]) {
         IndexDigitalByte1[index] = 0;
         digitalStateFirst |= 1 << index; //clear data
-
-        if (analogMode >= 1) {
-            analogStateFirst[index] = 0x00;
-        }
-
+        if (analogMode >= 1) analogStateFirst[index] = 0x00;
     }
     if (DigitalControllerByte2[index] ^ PreviousDigitalByte2[index]) {
         IndexDigitalByte2[index] = 0;
         digitalStateSecond |= 1 << index; //clear data
-
-        if (analogMode >= 1) {
-            analogStateSecond[index] = 0x00;
-        }
-
+        if (analogMode >= 1) analogStateSecond[index] = 0x00;
     }
 
     //if counter reaches debounce time, button is debounced, set data        
     if (IndexDigitalByte1[index] >= debounceLoops) {
         digitalStateFirst &= ~(1 << index); //set data
-
-        if (analogMode >= 1) {
-            analogStateFirst[index] = 0xFF;
-        }
-
+        if (analogMode >= 1) analogStateFirst[index] = 0xFF;
     }
     if (IndexDigitalByte2[index] >= debounceLoops) {
         digitalStateSecond &= ~(1 << index); //set data      
-
-        if (analogMode >= 1) {
-            analogStateSecond[index] = 0xFF;
-        }
-
+        if (analogMode >= 1) analogStateSecond[index] = 0xFF;
     }
 
     //store prev button states
@@ -120,7 +102,6 @@ void lutInit() {
 
         //Left Stick X
         if (position < lxMin) {
-
             lutLX[position] = 0;
         } else if (position > lxMax) {
             lutLX[position] = 255;

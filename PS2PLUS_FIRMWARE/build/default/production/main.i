@@ -21045,7 +21045,7 @@ void ppsUnlock(void);
 void ppsLock(void);
 void adcInit(void);
 
-# 21 "Controller.h"
+# 23 "Controller.h"
 typedef enum {
 
 DLeft,
@@ -21206,11 +21206,10 @@ typedef uint16_t uintptr_t;
 
 # 17 "main.c"
 char response[20] = {0x82, 0x5A};
-char responseLength = 9;
 char cmdCounter = 0;
 char analogMode = 0;
 char escapeMode = 0;
-char previousCmd;
+char previousCmd = 0;
 char MODE_LOCK = 0;
 char AN_latch = 0;
 
@@ -21230,7 +21229,6 @@ response[5] = ryData;
 response[6] = lxData;
 response[7] = lyData;
 if(analogMode == 2) {
-responseLength = 20;
 response[8] = analogStateFirst[2];
 response[9] = analogStateFirst[0];
 response[10] = analogStateFirst[3];
@@ -21244,17 +21242,149 @@ response[17] = analogStateSecond[4];
 response[18] = analogStateSecond[7];
 response[19] = analogStateSecond[6];
 }
-else {
-responseLength = 5;
-}
 }
 
 void __interrupt() PS2Command() {
 
 if (SSP1IF) {
 char cmd = spiRead();
-
 switch (cmdCounter) {
+case 1:
+switch (cmd) {
+case 0x02:
+
+# 67
+response[2] = 0x00;
+response[3] = 0x00;
+response[4] = 0x40;
+response[5] = 0x00;
+response[6] = 0x00;
+response[7] = 0x5A;
+previousCmd = cmd;
+break;
+case 0x82:
+
+# 81
+if(analogMode == 0) {
+response[2] = 0x00;
+response[3] = 0x00;
+response[4] = 0x00;
+response[7] = 0x00;
+}
+if(analogMode >= 1) {
+
+
+
+
+response[2] = 0xFF;
+response[3] = 0xFF;
+response[4] = 0xC0;
+response[7] = 0x5A;
+}
+response[5] = 0x00;
+response[6] = 0x00;
+break;
+case 0x42:
+
+# 105
+pollController(response);
+previousCmd = cmd;
+break;
+case 0xC2:
+
+# 114
+if(escapeMode) {
+response[2] = 0x00;
+response[3] = 0x00;
+response[4] = 0x00;
+response[5] = 0x00;
+response[6] = 0x00;
+response[7] = 0x00;
+}
+else {
+pollController(response);
+}
+previousCmd = cmd;
+break;
+case 0x22:
+
+# 132
+response[2] = 0x00;
+response[3] = 0x00;
+response[4] = 0x00;
+response[5] = 0x00;
+response[6] = 0x00;
+response[7] = 0x00;
+previousCmd = cmd;
+break;
+case 0xA2:
+
+# 146
+response[2] = 0xC0;
+response[3] = 0x40;
+if (analogMode >= 1) response[4] = 0x80;
+else response[4] = 0x00;
+response[5] = 0x40;
+response[6] = 0x80;
+response[7] = 0x00;
+break;
+case 0x62:
+
+# 159
+response[2] = 0x00;
+response[3] = 0x00;
+response[4] = 0x80;
+response[5] = 0x40;
+response[6] = 0x00;
+response[7] = 0x50;
+previousCmd = cmd;
+break;
+case 0xE2:
+
+# 173
+response[2] = 0x00;
+response[3] = 0x00;
+response[4] = 0x40;
+response[5] = 0x00;
+response[6] = 0x80;
+response[7] = 0x00;
+break;
+case 0x32:
+
+# 186
+response[2] = 0x00;
+response[3] = 0x00;
+response[4] = 0x00;
+response[5] = 0x20;
+response[6] = 0x00;
+response[7] = 0x00;
+previousCmd = cmd;
+break;
+case 0xB2:
+
+# 199
+response[2] = MAP_SMALL_MOTOR;
+response[3] = MAP_LARGE_MOTOR;
+response[4] = 0xFF;
+response[5] = 0xFF;
+response[6] = 0xFF;
+response[7] = 0xFF;
+previousCmd = cmd;
+break;
+case 0xF2:
+
+# 211
+response[2] = 0x00;
+response[3] = 0x00;
+response[4] = 0x00;
+response[5] = 0x00;
+response[6] = 0x00;
+response[7] = 0x5A;
+previousCmd = cmd;
+if(analogMode == 1) analogMode = 2;
+break;
+}
+break;
 case 3:
 switch (previousCmd) {
 case 0x02:
@@ -21293,7 +21423,6 @@ response[7] = 0x00;
 }
 break;
 case 0xF2:
-
 CONTROL_RESPONSE_byte3 = cmd;
 break;
 case 0xB2:
@@ -21315,7 +21444,6 @@ if(cmd == 0xC0) MODE_LOCK = 1;
 else MODE_LOCK = 0;
 break;
 case 0xF2:
-
 CONTROL_RESPONSE_byte4 = cmd;
 break;
 case 0xB2:
@@ -21326,146 +21454,11 @@ break;
 case 5:
 switch (previousCmd) {
 case 0xF2:
-
 CONTROL_RESPONSE_byte5 = cmd;
 break;
 }
 break;
 default:
-switch (cmd) {
-case 0x02:
-
-# 149
-response[2] = 0x00;
-response[3] = 0x00;
-response[4] = 0x40;
-response[5] = 0x00;
-response[6] = 0x00;
-response[7] = 0x5A;
-previousCmd = cmd;
-break;
-case 0x82:
-
-# 163
-if(analogMode == 0) {
-response[2] = 0x00;
-response[3] = 0x00;
-response[4] = 0x00;
-response[7] = 0x00;
-}
-if(analogMode >= 1) {
-
-
-
-
-response[2] = 0xFF;
-response[3] = 0xFF;
-response[4] = 0xC0;
-response[7] = 0x5A;
-}
-response[5] = 0x00;
-response[6] = 0x00;
-break;
-case 0x42:
-
-# 187
-pollController(response);
-previousCmd = cmd;
-break;
-case 0xC2:
-
-# 196
-if(escapeMode) {
-response[2] = 0x00;
-response[3] = 0x00;
-response[4] = 0x00;
-response[5] = 0x00;
-response[6] = 0x00;
-response[7] = 0x00;
-}
-else {
-pollController(response);
-}
-previousCmd = cmd;
-break;
-case 0x22:
-
-# 214
-response[2] = 0x00;
-response[3] = 0x00;
-response[4] = 0x00;
-response[5] = 0x00;
-response[6] = 0x00;
-response[7] = 0x00;
-previousCmd = cmd;
-break;
-case 0xA2:
-
-# 229
-response[2] = 0xC0;
-response[3] = 0x40;
-if (analogMode >= 1) response[4] = 0x80;
-else response[4] = 0x00;
-response[5] = 0x40;
-response[6] = 0x80;
-response[7] = 0x00;
-break;
-case 0x62:
-
-# 242
-response[2] = 0x00;
-response[3] = 0x00;
-response[4] = 0x80;
-response[5] = 0x40;
-response[6] = 0x00;
-response[7] = 0x50;
-previousCmd = cmd;
-break;
-case 0xE2:
-
-# 256
-response[2] = 0x00;
-response[3] = 0x00;
-response[4] = 0x40;
-response[5] = 0x00;
-response[6] = 0x80;
-response[7] = 0x00;
-break;
-case 0x32:
-
-# 269
-response[2] = 0x00;
-response[3] = 0x00;
-response[4] = 0x00;
-response[5] = 0x20;
-response[6] = 0x00;
-response[7] = 0x00;
-previousCmd = cmd;
-break;
-case 0xB2:
-
-# 282
-response[2] = MAP_SMALL_MOTOR;
-response[3] = MAP_LARGE_MOTOR;
-response[4] = 0xFF;
-response[5] = 0xFF;
-response[6] = 0xFF;
-response[7] = 0xFF;
-previousCmd = cmd;
-break;
-case 0xF2:
-
-# 294
-response[2] = 0x00;
-response[3] = 0x00;
-response[4] = 0x00;
-response[5] = 0x00;
-response[6] = 0x00;
-response[7] = 0x5A;
-previousCmd = cmd;
-if(analogMode == 1) analogMode = 2;
-break;
-}
 break;
 }
 
@@ -21476,10 +21469,7 @@ RA4 = 0;
 _delay((unsigned long)((1)*(32000000/4000000.0)));
 RA4 = 1;
 
-
-if (cmdCounter < responseLength) {
 cmdCounter++;
-}
 
 
 if (escapeMode) {
@@ -21492,7 +21482,6 @@ if(analogMode > 1) response[0] = 0x9E;
 }
 
 SSP1IF = 0;
-
 }
 }
 
@@ -21501,9 +21490,20 @@ void main(void) {
 picInit();
 IO_MAPPING();
 adcInit();
-lutInit();
 
-response[1] = 0x5A;
+if(eepromRead(0x68 != 0x69)) {
+eepromWrite(0x68, 0x69);
+eepromWrite(0x60, 0);
+eepromWrite(0x61, 255);
+eepromWrite(0x62, 0);
+eepromWrite(0x63, 255);
+eepromWrite(0x64, 0);
+eepromWrite(0x65, 255);
+eepromWrite(0x66, 0);
+eepromWrite(0x67, 255);
+}
+
+lutInit();
 
 char slaveSelect;
 char slaveSelectStatePrev = 0;
@@ -21525,7 +21525,7 @@ if(analogMode >= 1) analogMode = 0;
 else analogMode = 1;
 AN_latch = 0;
 }
-else AN_latch = 1;
+if(AN_btn) AN_latch = 1;
 
 slaveSelect = RA5;
 if (slaveSelect) if(count < 3) count++;
@@ -21533,7 +21533,6 @@ if (slaveSelect ^ slaveSelectStatePrev) count = 0;
 slaveSelectStatePrev = slaveSelect;
 if (count >= 3) {
 cmdCounter = 0;
-responseLength = 9;
 SSP1BUF = 0xFF;
 previousCmd = 0x00;
 }

@@ -20968,7 +20968,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 
-# 21 "Controller.h"
+# 23 "Controller.h"
 typedef enum {
 
 DLeft,
@@ -21050,8 +21050,12 @@ void readController(char analogMode) {
 
 
 AN_temp = RD4;
-if(AN_temp ^ AN_prev) AN_timer = 0;
-else if(AN_timer < 4) AN_timer++;
+if(AN_temp ^ AN_prev) {
+AN_timer = 0;
+}
+else if(AN_timer < 4) {
+AN_timer++;
+}
 if(AN_timer > 3) AN_btn = AN_temp;
 AN_prev = AN_temp;
 
@@ -21075,54 +21079,32 @@ DigitalControllerByte2[L1] = RB2;
 DigitalControllerByte2[L2] = RB3;
 
 
-if (index > Select) {
-index = 0;
-}
+if (index > Select) index = 0;
 
 
-if (!DigitalControllerByte1[index]) {
-IndexDigitalByte1[index]++;
-}
-if (!DigitalControllerByte2[index]) {
-IndexDigitalByte2[index]++;
-}
+if (!DigitalControllerByte1[index]) IndexDigitalByte1[index]++;
+if (!DigitalControllerByte2[index]) IndexDigitalByte2[index]++;
 
 
 if (DigitalControllerByte1[index] ^ PreviousDigitalByte1[index]) {
 IndexDigitalByte1[index] = 0;
 digitalStateFirst |= 1 << index;
-
-if (analogMode >= 1) {
-analogStateFirst[index] = 0x00;
-}
-
+if (analogMode >= 1) analogStateFirst[index] = 0x00;
 }
 if (DigitalControllerByte2[index] ^ PreviousDigitalByte2[index]) {
 IndexDigitalByte2[index] = 0;
 digitalStateSecond |= 1 << index;
-
-if (analogMode >= 1) {
-analogStateSecond[index] = 0x00;
-}
-
+if (analogMode >= 1) analogStateSecond[index] = 0x00;
 }
 
 
 if (IndexDigitalByte1[index] >= debounceLoops) {
 digitalStateFirst &= ~(1 << index);
-
-if (analogMode >= 1) {
-analogStateFirst[index] = 0xFF;
-}
-
+if (analogMode >= 1) analogStateFirst[index] = 0xFF;
 }
 if (IndexDigitalByte2[index] >= debounceLoops) {
 digitalStateSecond &= ~(1 << index);
-
-if (analogMode >= 1) {
-analogStateSecond[index] = 0xFF;
-}
-
+if (analogMode >= 1) analogStateSecond[index] = 0xFF;
 }
 
 
@@ -21153,7 +21135,6 @@ for (int position = 0; position < 256; position++) {
 
 
 if (position < lxMin) {
-
 lutLX[position] = 0;
 } else if (position > lxMax) {
 lutLX[position] = 255;
